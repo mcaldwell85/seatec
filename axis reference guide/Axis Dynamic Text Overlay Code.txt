@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using System.Net;
+
+namespace WindowsFormsApplication3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+                 }
+
+
+
+
+        private void btnSendData_Click(object sender, EventArgs e)
+        {
+            string CameraUrl;
+            CameraUrl = txtCameraUrl.Text;
+            string User;
+            User = txtUser.Text;
+            string Pass;
+            Pass = txtPass.Text;
+            string Cashier;
+            Cashier = txtCashier.Text;
+            string TransNumber;
+            TransNumber = txtTransNumber.Text;
+            string Total;
+            Total = txtTotal.Text;
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(CameraUrl + "axis-cgi/dynamicoverlay.cgi?action=settext&text=" + Cashier + "%20" + "Trans%23" + TransNumber + "%20$" + Total);
+            request.PreAuthenticate = true;
+            request.Credentials = new NetworkCredential("matt","admin");
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Console.WriteLine("\nResponse Received.Trying to Close the response stream..");
+            Console.ReadLine();
+            response.Close();
+            Console.WriteLine("\nResponse Stream successfully closed");
+            Console.ReadLine();
+
+            MessageBox.Show("Data Sent!");
+        
+
+
+
+
+
+        }
+    }
+}

@@ -1,0 +1,11 @@
+Text Overlay:
+
+Turn On Dynamic Text Overlay:
+http://16800001a.axiscam.net:9080/axis-cgi/param.cgi?action=update&Image.I0.Text.ClockEnabled=no&Image.I0.Text.DateEnabled=no&Image.I0.Text.TextEnabled=yes&Image.I0.Text.String=%25Y-%25m-%25d%20%25X%20%23D
+
+
+Set Text:
+http://16800001a.axiscam.net:9080/axis-cgi/dynamicoverlay.cgi?action=settext&text=M.%20Caldwell%2020037%20$12.64
+
+Clear Text:
+http://16800001a.axiscam.net:9080/axis-cgi/dynamicoverlay.cgi?action=settext&text=

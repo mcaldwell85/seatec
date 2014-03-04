@@ -1,0 +1,173 @@
+/**
+ * helper.js v1.1
+ * Syrena admin template
+ *
+ * License:
+ * For License Information check out - https://wrapbootstrap.com
+ * 
+ * Copyright 2014, Stilearning
+ * http://stilearning.com
+ */
+
+/**
+ * Transition helper
+ * make a element enable transition
+ */
+.transition{
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+
+/**
+ * Utils
+ * like border, rounded, flat, shadow, etc
+ */
+.text-bold{ font-weight: 500; }
+.text-italic{ font-style: italic; }
+.text-left{ text-align: left; }
+.text-center{ text-align: center; }
+.text-right{ text-align: right; }
+.text-sm{ font-size: .9em !important;}
+.text-lg{ font-size: 1.6em !important;}
+.text-xg{ font-size: 2em !important;}
+
+.fixed{
+	position: fixed !important;
+}
+.bordered{
+	border-width: 1px 1px 2px;
+	border-style: solid;
+	border-color: #bdc3c7 !important;	/* silver */
+}
+.bordered-smart{
+	position: relative;
+	height: 1px;
+	top: 0;
+	left: 0;
+	border: solid #3498db;
+	border-width: 3px 1px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.bordered-none{
+	border: none !important;
+}
+.rounded{
+	border-radius: 3px !important;
+}
+.no-radius{
+	border-radius: 0 !important;
+}
+
+
+/**
+ * Background color helper
+ * Available backgrounds from Flat UI Colors (http://flatuicolors.com/)
+ */
+.bg-none{ background-color: transparent !important; }
+.bg-white{ background-color: #ffffff !important; }
+
+.bg-turquoise{ background-color: #1abc9c !important; color: #ecf0f1 !important; border-color: #1abc9c; }
+	.bg-greensea{ background-color: #16a085 !important; color: #ecf0f1 !important; border-color: #16a085; }
+
+.bg-sunflower{ background-color: #f1c40f !important; color: #ecf0f1 !important; border-color: #f1c40f; }
+	.bg-orange{ background-color: #f39c12 !important; color: #ecf0f1 !important; border-color: #f39c12; }
+
+.bg-emerald{ background-color: #2ecc71 !important; color: #ecf0f1 !important; border-color: #2ecc71; }
+	.bg-nephritis{ background-color: #27ae60 !important; color: #ecf0f1 !important; border-color: #27ae60; }
+
+.bg-carrot{ background-color: #e67e22 !important; color: #ecf0f1 !important; border-color: #e67e22; }
+	.bg-pumpkin{ background-color: #d35400 !important; color: #ecf0f1 !important; border-color: #d35400; }
+
+.bg-peterriver{ background-color: #3498db !important; color: #ecf0f1 !important; border-color: #3498db; }
+	.bg-belizehole{ background-color: #2980b9 !important; color: #ecf0f1 !important; border-color: #2980b9; }
+
+.bg-alizarin{ background-color: #e74c3c !important; color: #ecf0f1 !important; border-color: #e74c3c; }
+	.bg-pomegranate{ background-color: #c0392b !important; color: #ecf0f1 !important; border-color: #c0392b; }
+
+.bg-amethyst{ background-color: #9b59b6 !important; color: #ecf0f1 !important; border-color: #9b59b6; }
+	.bg-wisteria{ background-color: #8e44ad !important; color: #ecf0f1 !important; border-color: #8e44ad; }
+
+.bg-cloud{ background-color: #ecf0f1 !important;}
+	.bg-silver{ background-color: #bdc3c7 !important;}
+
+.bg-wetasphalt{ background-color: #34495e !important; color: #ecf0f1 !important; border-color: #34495e; }
+	.bg-midnightblue{ background-color: #2c3e50 !important; color: #ecf0f1 !important; border-color: #2c3e50; }
+
+.bg-concrete{ background-color: #95a5a6 !important; color: #ecf0f1 !important;  border-color: #95a5a6; }
+	.bg-asbestos{ background-color: #7f8c8d !important; color: #ecf0f1 !important;  border-color: #7f8c8d; }
+
+
+/**
+ * Border color helper
+ */
+.border-turquoise{ border-color: #1abc9c !important; }
+	.border-greensea{ border-color: #16a085 !important; }
+
+.border-sunflower{ border-color: #f1c40f !important; }
+	.border-orange{ border-color: #f39c12 !important; }
+
+.border-emerald{ border-color: #2ecc71 !important; }
+	.border-nephritis{ border-color: #27ae60 !important; }
+
+.border-carrot{ border-color: #e67e22 !important; }
+	.border-pumpkin{ border-color: #d35400 !important; }
+
+.border-peterriver{ border-color: #3498db !important; }
+	.border-belizehole{ border-color: #2980b9 !important; }
+
+.border-alizarin{ border-color: #e74c3c !important; }
+	.border-pomegranate{ border-color: #c0392b !important; }
+
+.border-amethyst{ border-color: #9b59b6 !important; }
+	.border-wisteria{ border-color: #8e44ad !important; }
+
+.border-cloud{ border-color: #ecf0f1 !important; }
+	.border-silver{ border-color: #bdc3c7 !important; }
+
+.border-wetasphalt{ border-color: #34495e !important; }
+	.border-midnightblue{ border-color: #2c3e50 !important; }
+
+.border-concrete{ border-color: #95a5a6 !important; }
+	.border-asbestos{ border-color: #7f8c8d !important; }
+
+
+/**
+ * Text color helper
+ */
+.text-turquoise{ color: #1abc9c !important; }
+	.text-greensea{ color: #16a085 !important; }
+
+.text-sunflower{ color: #f1c40f !important; }
+	.text-orange{ color: #f39c12 !important; }
+
+.text-emerald{ color: #2ecc71 !important; }
+	.text-nephritis{ color: #27ae60 !important; }
+
+.text-carrot{ color: #e67e22 !important; }
+	.text-pumpkin{ color: #d35400 !important; }
+
+.text-peterriver{ color: #3498db !important; }
+	.text-belizehole{ color: #2980b9 !important; }
+
+.text-alizarin{ color: #e74c3c !important; }
+	.text-pomegranate{ color: #c0392b !important; }
+
+.text-amethyst{ color: #9b59b6 !important; }
+	.text-wisteria{ color: #8e44ad !important; }
+
+.text-cloud{ color: #ecf0f1 !important; }
+	.text-silver{ color: #bdc3c7 !important; }
+
+.text-wetasphalt{ color: #34495e !important; }
+	.text-midnightblue{ color: #2c3e50 !important; }
+
+.text-concrete{ color: #95a5a6 !important; }
+	.text-asbestos{ color: #7f8c8d !important; }
+
+
+

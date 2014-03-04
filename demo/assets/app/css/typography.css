@@ -1,0 +1,178 @@
+/**
+ * typography.js v1.1
+ * Syrena admin template
+ *
+ *
+ * Replace bootstrap typography
+ * 
+ * License:
+ * For License Information check out - https://wrapbootstrap.com
+ * 
+ * Copyright 2014, Stilearning
+ * http://stilearning.com
+ */
+
+
+
+
+/**
+ * Bootstrap Typhography
+ * 	- primary: peterriver - #3498db;
+ * 	- success: emerald - #2ecc71;
+ * 	- info: bluesky - #5bc0de;
+ * 	- warning: orange - #f39c12;
+ * 	- danger: alizarin - #e74c3c;
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small,
+.h1 .small,
+.h2 .small,
+.h3 .small,
+.h4 .small,
+.h5 .small,
+.h6 .small {
+  font-weight: normal;
+  color: #999999;
+}
+
+label{
+  font-weight: normal;
+}
+
+.lead{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+dl dt + dd{
+	padding-bottom: 10px;
+}
+dl dd + dd{
+	margin-top: -10px;
+	padding-bottom: 10px;
+}
+
+
+@media (min-width: 768px) {
+	.dl-horizontal dt {
+		width: 120px;
+	}
+	.dl-horizontal.text-left dt{
+		text-align: left;
+	}
+  	.dl-horizontal dd {
+    	margin-left: 140px;
+  	}
+}
+
+
+.text-muted { color: #999999; }
+
+.text-primary { color: #3498db; } 			/* peterriver */
+.text-primary:hover { color: #2980b9; } 	/* belizehole */
+
+.text-warning { color: #f39c12; } 			/* orange */
+.text-warning:hover { color: #e67e22; } 	/* carrot */
+
+.text-danger { color: #e74c3c; } 			/* alizarin */
+.text-danger:hover { color: #c0392b; } 		/* pomegranate */
+
+.text-success { color: #2ecc71; } 			/* emerald */
+.text-success:hover { color: #27ae60; } 	/* nephritis */
+
+.text-info { color: #5bc0de; } 				/* bluesky */
+.text-info:hover { color: #269abc; } 		/*  */
+
+
+
+/* Pretty printing styles. Used with prettify.js. */
+
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln { color: #000 }  /* plain text */
+
+@media screen {
+  .str { color: #2ecc71 }  /* string content */
+  .kwd { color: #2980b9 }  /* a keyword */
+  .com { color: #7f8c8d }  /* a comment */
+  .typ { color: #8e44ad }  /* a type name */
+  .lit { color: #1abc9c }  /* a literal value */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  .pun, .opn, .clo { color: #d35400 }
+  .tag { color: #2980b9 }  /* a markup tag name */
+  .atn { color: #8e44ad }  /* a markup attribute name */
+  .atv { color: #e74c3c }  /* a markup attribute value */
+  .dec, .var { color: #8e44ad }  /* a declaration; a variable name */
+  .fun { color: #e74c3c }  /* a function name */
+}
+
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  .str { color: #27ae60 }
+  .kwd { color: #16a085; font-weight: bold }
+  .com { color: #7f8c8d; font-style: italic }
+  .typ { color: #8e44ad; font-weight: bold }
+  .lit { color: #1abc9c }
+  .pun, .opn, .clo { color: #440 }
+  .tag { color: #16a085; font-weight: bold }
+  .atn { color: #8e44ad }
+  .atv { color: #27ae60 }
+}
+
+/* Put a border around prettyprinted code snippets. */
+pre.prettyprint { 
+	padding: 2px; 
+	padding-left: 10px;
+	border: solid #e5e5e5; 
+	border-width: 1px 1px 2px;
+	border-radius: 3px; 
+  	background-color: #ecf0f1;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 { background: #eee }

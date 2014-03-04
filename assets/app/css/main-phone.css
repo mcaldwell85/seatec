@@ -1,0 +1,87 @@
+ /**
+ * main-phone.css v1.1
+ * Syrena admin template
+ *
+ * License:
+ * For License Information check out - https://wrapbootstrap.com
+ * 
+ * Copyright 2014, Stilearning
+ * http://stilearning.com
+ */
+
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.magic-layout > .magic-element,
+	.magic-layout > .magic-element.width-2x,
+	.magic-layout > .magic-element.width-3x,
+	.magic-layout > .magic-element.width-4x,
+	.magic-layout > .magic-element.width-full,
+	.magic-layout.ml-col-3 > .magic-element,
+	.magic-layout.ml-col-3 > .magic-element.width-2x,
+	.magic-layout.ml-col-3 > .magic-element.width-3x,
+	.magic-layout.ml-col-3 > .magic-element.width-4x,
+	.magic-layout.ml-col-3 > .magic-element.width-full,
+	.magic-layout.ml-col-4 > .magic-element,
+	.magic-layout.ml-col-4 > .magic-element.width-2x,
+	.magic-layout.ml-col-4 > .magic-element.width-3x,
+	.magic-layout.ml-col-4 > .magic-element.width-4x,
+	.magic-layout.ml-col-4 > .magic-element.width-full{
+		width: 98%;		/* default is 2 coloumns */
+	}
+
+	
+	/**
+	 * Visibility class
+	 */
+	.view-sm{ display: inline; } 	/* visible from 480  */
+	.hide-sm{ display: none; }
+
+
+	/* Message page */
+	.message-content{
+		width: auto;
+		right: 0;
+		z-index: 1;
+	}
+		.message-content-search .form-control{
+			width: auto !important;
+		}
+	.message-preview{
+		left: 0;
+		z-index: 2;
+
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+
+		-webkit-transform: translateX(100%);
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		-o-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+	.message-preview.open{
+		-webkit-transform: translateX(0);
+		-moz-transform: translateX(0);
+		-ms-transform: translateX(0);
+		-o-transform: translateX(0);
+		transform: translateX(0);
+	}
+	/* End Message page */
+
+}
+
+
+/* HVGA, old iPhones and small androids */
+@media (max-width: 360px) {
+	
+
+	/**
+	 * Visibility class
+	 */
+	.hide-xs{ display: none; }
+}

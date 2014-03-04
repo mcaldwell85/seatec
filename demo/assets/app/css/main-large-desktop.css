@@ -1,0 +1,43 @@
+/**
+ * main-large-desktop.css v1.1
+ * Syrena admin template
+ *
+ * License:
+ * For License Information check out - https://wrapbootstrap.com
+ * 
+ * Copyright 2014, Stilearning
+ * http://stilearning.com
+ */
+
+
+
+/* stylesheet for Large desktop */
+@media (min-width: 1680px) {
+	/**
+	 * Theme Split Layout
+	 * We use fixe mode layout width every section inside wrapper
+	 */
+	.content-main{
+		right: -1px;
+	}
+	.content-main.content-main-md{
+		-ms-transform: translateX(0px);
+		-webkit-transform: translateX(0px);
+		-moz-transform: translateX(0px);
+		transform: translateX(0px);
+		right: 300px;
+	}
+}
+
+/* stylesheet for Medium desktop */
+@media (min-width: 1280px) {
+	
+
+	/**
+	 * Visibility class
+	 */
+	.view-lg{ display: none; } 	/* visible from 1280  */
+	.view-md{ display: none; } 	/* visible from 767  */
+	.view-sm{ display: none; } 	/* visible from 480  */
+
+}

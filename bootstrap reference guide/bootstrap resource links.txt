@@ -1,0 +1,11 @@
+Compilation of 300+ bootstrap sites for developers:
+http://bootstraphero.com/the-big-badass-list-of-twitter-bootstrap-resources#component
+
+http://bootsnipp.com/?page=1		//Gallery of many bootstrap elements
+
+http://exacttarget.github.io/fuelux/#tree		//Fuel UX php web app builder
+
+https://github.com/jdewit/bootstrap-timepicker		//bootstrap date time picker
+
+http://html5-ninja.com/preview/index/5#.UJmYFGl26_C	//embedded html5 video player for bootstrap
+

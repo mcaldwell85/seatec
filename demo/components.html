@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=yes" />
+    <title>Syrena Admin Template</title>
+    
+    <!-- fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/app/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/app/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/app/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/app/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/app/ico/favico.png">
+    <link rel="shortcut icon" href="assets/app/ico/favico.ico">
+
+    <!-- theme fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- theme bootstrap stylesheets -->
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- theme dependencies stylesheets -->
+    <link href="assets/app/css/dependencies.css" rel="stylesheet" />
+
+    <!-- theme app main.css (this import of all custom css, you can use requirejs for optimizeCss or grunt to optimize them all) -->
+    <link href="assets/app/css/syrena-admin.css" rel="stylesheet" />
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- content wrapper to define fullpage or container -->
+    <!-- (recomended: dont change the id value) -->
+    <section id="wrapper" class="container">
+        <!-- define side left theme -->
+        <aside class="side-left">
+            <!-- side header -->
+            <div class="side-header">
+                <!-- place your brand (recomended: dont change the id value) -->
+                <!-- (recomended: dont change the id value) -->
+                <h1 id="brand" class="brand">
+                    <a href="index.html">
+                        <!-- <i class="icon ion-waterdrop"></i> -->
+                        <img src="assets/app/img/brand.png" alt="Brand">   <!-- 32px image logo -->
+                        Syrena
+                    </a>
+                </h1><!-- /brand -->
+
+                <!-- form search, remove class hide if you not place your brand -->
+                <!-- (recomended: dont change the id value) -->
+                <form id="smart-search" class="side-form hide" role="form">
+                    <input type="text" class="form-control" data-target=".side-wrapper" placeholder="Smart Finder">
+                </form><!-- /side wrapper -->
+            </div><!-- /side header -->
+
+            <!-- side body -->
+            <div class="side-body">
+                <!-- this you can place your search result with ajax -->
+                <div class="side-wrapper side-wrapper-large">
+                    <div class="side-wrapper-status lead">No result, please start typing!</div>
+                    <div class="side-wrapper-result">
+                        <!-- just sample result -->
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar1.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Post title <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar2.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Username <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar3.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Item name <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar4.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Other result <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar5.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Something else <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+                    </div><!-- /side-wrapper-result -->
+                </div><!-- /side wrapper -->
+
+                <!-- separate nav for ease development -->
+                <nav class="side-nav">
+                    <!-- open nav ul -->
+                    <ul>
+                        <li class="side-nav-item">
+                            <a href="index.html">
+                                <i class="nav-item-icon icon ion-social-rss-outline"></i>
+                                Dashboard
+                            </a>
+                        </li><!-- /coverage -->
+                        <li class="side-nav-item">
+                            <a href="#layouts">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-ios7-monitor-outline"></i>
+                                Layouts
+                            </a>
+                            <ul id="layouts" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Layouts
+                                    </a>
+                                </li><!-- /header layouts child -->
+                                <li class="side-nav-item">
+                                    <a href="layout_blank.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Blank Page
+                                    </a>
+                                </li><!-- /blank -->
+                                <li class="side-nav-item">
+                                    <a href="layout_static.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Static Header App
+                                    </a>
+                                </li><!-- /variation -->
+                                <li class="side-nav-item">
+                                    <a href="layout_variation.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Variation Header App
+                                    </a>
+                                </li><!-- /variation -->
+                                <li class="side-nav-item">
+                                    <a href="layout_transition.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Transition Layout
+                                    </a>
+                                </li><!-- /transition -->
+                                <li class="side-nav-item">
+                                    <a href="layout_magic.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Magic Layout
+                                    </a>
+                                </li><!-- /magic -->
+                            </ul><!-- /layouts child -->
+                        </li><!-- /layout -->
+                        <li class="side-nav-item">
+                            <a href="messages.html">
+                                <span class="badge">3</span>
+                                <i class="nav-item-icon icon ion-ios7-email-outline"></i>
+                                Messages
+                            </a>
+                        </li><!-- /messages -->
+                        <li class="side-nav-item active">
+                            <a href="#uielements">
+                                <span class="badge">7</span>
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-ios7-navigate-outline"></i>
+                                UI Elements
+                            </a>
+                            <!-- ui elements child -->
+                            <ul id="uielements" class="side-nav-child open">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        UI Elements
+                                    </a>
+                                </li><!-- /header ui elements child -->
+                                <li class="side-nav-item active">
+                                    <a href="components.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-flag-outline"></i>
+                                        General Elements
+                                    </a>
+                                </li><!-- /components -->
+                                <li class="side-nav-item">
+                                    <a href="typography.html">
+                                        <i class="nav-item-icon icon ion-ios7-paperplane-outline"></i>
+                                        Typography
+                                    </a>
+                                </li><!-- /typography -->
+                                <li class="side-nav-item">
+                                    <a href="grids.html">
+                                        <i class="nav-item-icon icon ion-grid"></i>
+                                        Grids
+                                    </a>
+                                </li><!-- /grids -->
+                                <li class="side-nav-item">
+                                    <a href="buttons.html">
+                                        <i class="nav-item-icon icon ion-ios7-circle-outline"></i>
+                                        Buttons
+                                    </a>
+                                </li><!-- /Buttons -->
+                                <li class="side-nav-item">
+                                    <a href="icons.html">
+                                        <i class="nav-item-icon icon ion-ios7-ionic-outline"></i>
+                                        Icons
+                                    </a>
+                                </li><!-- /icons -->
+                                <li class="side-nav-item">
+                                    <a href="nestable_list.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-drag"></i>
+                                        Nestable List
+                                    </a>
+                                </li><!-- /nestable list -->
+                                <li class="side-nav-item">
+                                    <a href="calendar.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-calendar-outline"></i>
+                                        Calendar
+                                    </a>
+                                </li><!-- /calendar -->
+                                <li class="side-nav-item">
+                                    <a href="helper_class.html">
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Helper Class
+                                    </a>
+                                </li><!-- /helper class -->
+                            </ul><!-- /ui elements child -->
+                        </li><!-- /ui elements -->
+                        <li class="side-nav-item">
+                            <a href="#widgets">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-ios7-heart-outline"></i>
+                                Widgets
+                            </a>
+                            <!-- widgets child -->
+                            <ul id="widgets" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Widgets
+                                    </a>
+                                </li><!-- /header pages child -->
+                                <li class="side-nav-item">
+                                    <a href="widget_panels.html">
+                                        <i class="nav-item-icon icon ion-ios7-glasses-outline"></i>
+                                        Panels
+                                    </a>
+                                </li><!-- /panel -->
+                                <li class="side-nav-item">
+                                    <a href="widget_kits.html">
+                                        <i class="nav-item-icon icon ion-ios7-glasses-outline"></i>
+                                        Kits
+                                    </a>
+                                </li><!-- /panel -->
+                                <li class="side-nav-item">
+                                    <a href="widget_tabs.html">
+                                        <i class="nav-item-icon icon ion-ios7-glasses-outline"></i>
+                                        Tabs
+                                    </a>
+                                </li><!-- /panel -->
+                            </ul><!-- /widgets child -->
+                        </li><!-- /widgets -->
+                        <li class="side-nav-item">
+                            <a href="#forms">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                Forms
+                            </a>
+                            <!-- forms child -->
+                            <ul id="forms" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Forms
+                                    </a>
+                                </li><!-- /header pages child -->
+                                <li class="side-nav-item">
+                                    <a href="form_elements.html">
+                                        <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                        Form Elements
+                                    </a>
+                                </li><!-- /form-element -->
+                                <li class="side-nav-item">
+                                    <a href="form_wizard.html">
+                                        <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                        Wizard & Validation
+                                    </a>
+                                </li><!-- /wizard&validation -->
+                                <li class="side-nav-item">
+                                    <a href="form_wysiwyg.html">
+                                        <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                        Wysiwyg
+                                    </a>
+                                </li><!-- /wysiwyg -->
+                                <li class="side-nav-item">
+                                    <a href="form_dropzone.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                        Dropzone
+                                    </a>
+                                </li><!-- /dropzone -->
+                            </ul><!-- /forms child -->
+                        </li><!-- /forms -->
+                        <li class="side-nav-item">
+                            <a href="tables.html">
+                                <i class="nav-item-icon icon ion-ios7-at-outline"></i>
+                                Tables
+                            </a>
+                        </li><!-- /tables -->
+                        <li class="side-nav-item">
+                            <a href="#charts">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-stats-bars"></i>
+                                Charts
+                            </a>
+                            <!-- charts child -->
+                            <ul id="charts" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Charts
+                                    </a>
+                                </li><!-- /header pages child -->
+                                <li class="side-nav-item">
+                                    <a href="chart_morris.html">
+                                        <i class="nav-item-icon icon ion-arrow-graph-up-right"></i>
+                                        Morris Chart
+                                    </a>
+                                </li><!-- /xChart -->
+                                <li class="side-nav-item">
+                                    <a href="chart_others.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-pie-outline"></i>
+                                        Other Charts
+                                    </a>
+                                </li><!-- /other charts -->
+                            </ul><!-- /charts child -->
+                        </li><!-- /charts -->
+                        <li class="side-nav-item">
+                            <a href="#pages">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-document"></i>
+                                Pages
+                            </a>
+                            <!-- pages child -->
+                            <ul id="pages" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Pages
+                                    </a>
+                                </li><!-- /header pages child -->
+                                <li class="side-nav-item">
+                                    <a href="page_dashboard2.html">
+                                        <i class="nav-item-icon icon ion-ios7-speedometer-outline"></i>
+                                        Dashboard #2
+                                    </a>
+                                </li><!-- /dashboard #2 -->
+                                <li class="side-nav-item">
+                                    <a href="page_profile.html">
+                                        <i class="nav-item-icon icon ion-ios7-person-outline"></i>
+                                        Profile
+                                    </a>
+                                </li><!-- /profile -->
+                                <li class="side-nav-item">
+                                    <a href="page_gallery.html">
+                                        <i class="nav-item-icon icon ion-ios7-albums-outline"></i>
+                                        Gallery
+                                    </a>
+                                </li><!-- /galery -->
+                                <li class="side-nav-item">
+                                    <a href="page_invoice.html">
+                                        <i class="nav-item-icon icon ion-ios7-checkmark-outline"></i>
+                                        Invoice
+                                    </a>
+                                </li><!-- /invoice -->
+                                <li class="side-nav-item">
+                                    <a href="page_pricing.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-briefcase-outline"></i>
+                                        Pricing Table
+                                    </a>
+                                </li><!-- /invoice -->
+                                <li class="side-nav-item">
+                                    <a href="page_help.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Help page
+                                    </a>
+                                </li><!-- /invoice -->
+                                <li class="side-nav-item">
+                                    <a href="page_search.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-search-strong"></i>
+                                        Search page
+                                    </a>
+                                </li><!-- /invoice -->
+                                <li class="side-nav-item">
+                                    <a href="page_signin.html">
+                                        <i class="nav-item-icon icon ion-ios7-locked-outline"></i>
+                                        Signin Page
+                                    </a>
+                                </li><!-- /signin -->
+                                <li class="side-nav-item">
+                                    <a href="page_404.html">
+                                        <i class="nav-item-icon icon ion-ios7-minus-outline"></i>
+                                        404 Page
+                                    </a>
+                                </li><!-- /404 -->
+                            </ul><!-- /pages child -->
+                        </li><!-- /pages -->
+                        <li class="side-nav-item">
+                            <a href="#level1">
+                                <span class="badge">4</span>
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-navicon"></i>
+                                Level Menu
+                            </a>
+                            <!-- /level menu child -->
+                            <ul id="level1" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Level Menu
+                                    </a>
+                                </li><!-- /header level menu child -->
+                                <li class="side-nav-item">
+                                    <a href="#">
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Menu
+                                    </a>
+                                </li><!-- /menu -->
+                                <li class="side-nav-item">
+                                    <a href="#level2">
+                                        <i class="nav-item-caret"></i>
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Go to level 2
+                                    </a>
+                                    <ul id="level2" class="side-nav-child">
+                                        <li class="side-nav-item-heading">
+                                            <a href="#" class="side-nav-back">
+                                                <i class="nav-item-caret"></i>
+                                                Go to level 2
+                                            </a>
+                                        </li><!-- /header level2 child -->
+                                        <li class="side-nav-item">
+                                            <a href="#level3">
+                                                <i class="nav-item-caret"></i>
+                                                <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                Go to level 3
+                                            </a>
+                                            <ul id="level3" class="side-nav-child">
+                                                <li class="side-nav-item-heading">
+                                                    <a href="#" class="side-nav-back">
+                                                        <i class="nav-item-caret"></i>
+                                                        Go to level 3
+                                                    </a>
+                                                </li><!-- /header level3 child -->
+                                                <li class="side-nav-item">
+                                                    <a href="#">
+                                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                        List menu
+                                                    </a>
+                                                </li><!-- /list menu -->
+                                                <li class="side-nav-item">
+                                                    <a href="#">
+                                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                        Other list Menu
+                                                    </a>
+                                                </li><!-- /other list menu -->
+                                                <li class="side-nav-item">
+                                                    <a href="#">
+                                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                        Unlimited Menu
+                                                    </a>
+                                                </li><!-- /unlimited menu -->
+                                            </ul><!-- /level3 child -->
+                                        </li><!-- /level3 -->
+                                    </ul><!-- /level2 child -->
+                                </li><!-- /level2 -->
+                                <li class="side-nav-item">
+                                    <a href="#">
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Other menu
+                                    </a>
+                                </li><!-- /other menu -->
+                                <li class="side-nav-item">
+                                    <a href="#otherlevel2">
+                                        <i class="nav-item-caret"></i>
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Other level 2
+                                    </a>
+                                    <ul id="otherlevel2" class="side-nav-child">
+                                        <li class="side-nav-item-heading">
+                                            <a href="#" class="side-nav-back">
+                                                <i class="nav-item-caret"></i>
+                                                Other level 2
+                                            </a>
+                                        </li><!-- /header other level2 -->
+                                        <li class="side-nav-item">
+                                            <a href="#">
+                                                <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                List menu #other
+                                            </a>
+                                        </li><!-- /other menu #other -->
+                                    </ul><!-- /other level2 child -->
+                                </li><!-- /other level2 -->
+                            </ul><!-- /level menu child -->
+                        </li><!-- /level menu -->
+                    </ul><!-- /nav ul-->
+                </nav>
+
+            </div><!-- /side body -->
+        </aside><!-- /side left -->
+
+        <!-- define content theme, use data-swipe="true" to enable gesture event -->
+        <!-- (recomended: dont change the id value) -->
+        <section id="content" class="content">
+            <!-- define your content header here -->
+            <header class="content-header">
+                <!-- header actions -->
+                <div class="header-actions pull-right">
+                    <!-- (recomended: dont change the id value) -->
+                    <div class="btn-group">
+                        <a id="notif-alerts" class="btn btn-icon hide-sm dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="icon ion-alert-circled"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-extend pull-right" role="menu">
+                            <li class="dropdown-header">Notofications</li><!-- /dropdown-header -->
+                            <li class="notif-minimal">
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-danger">
+                                        <i class="icon ion-ios7-heart-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-danger">Mr. Doe</span> favorite your Post</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-warning">
+                                        <i class="icon ion-ios7-personadd-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-warning">Iin T</span> register as a Member</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-success">
+                                        <i class="icon ion-ios7-heart-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-success">Harab</span> purchase an Item</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-danger">
+                                        <i class="icon ion-ios7-chatbubble-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-danger">Pathoel</span> Comment on your Post</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-info">
+                                        <i class="icon ion-social-twitter-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-info">Imran</span> is now following you</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-success">
+                                        <i class="icon ion-ios7-cloud-upload-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-success">Bent</span> upload new Portofolio</p>
+                                </a><!-- /notif-item -->
+                            </li><!-- /dropdown-alert -->
+                            <li class="dropdown-footer">
+                                <a class="view-all" tabindex="-1" href="#">
+                                    <i class="icon ion-ios7-arrow-thin-right pull-right"></i> See all notifications
+                                </a>
+                            </li><!-- /dropdown-footer -->
+                        </ul><!-- /dropdown-extend -->
+                    </div><!-- /btn-group notifications -->
+
+                    <!-- (recomended: dont change the id value) -->
+                    <div class="btn-group">
+                        <a id="notif-messages" class="btn btn-icon hide-sm dropdown-toggle active" data-toggle="dropdown" role="button">
+                            <i class="icon ion-chatboxes"></i>
+                            <span class="badge">3</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-extend pull-right" role="menu">
+                            <li class="dropdown-header">You have 3 new messages</li><!-- /dropdown-header -->
+                            <li class="notif-media">
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar11.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Account Team <small>58 min</small></h3>
+                                    <p class="notif-text">Spread the Word & Earn!</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar5.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Mahatma, me (6) <small>Wed</small></h3>
+                                    <p class="notif-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar4.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Wrapbootstrap <small>Tue</small></h3>
+                                    <p class="notif-text">Consectetur adipisicing elit. Sequi, pariatur vel eum porro quae! Eos!</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar6.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Stilearning <small>Tue</small></h3>
+                                    <p class="notif-text">Approval for new design</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar9.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">janesmith@mail.com <small>Mon</small></h3>
+                                    <p class="notif-text">Consectetur adipisicing elit. Sequi, pariatur vel eum porro quae! Eos!</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar8.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Microsoft Customer Support <small>Mon</small></h3>
+                                    <p class="notif-text">Thanks for ordering Windows 8 (order #WD12345678)</p>
+                                </a><!-- /notif-item -->
+                            </li><!-- /dropdown-alert -->
+                            <li class="dropdown-footer">
+                                <a class="view-all" tabindex="-1" href="messages.html">
+                                    <i class="icon ion-ios7-arrow-thin-right pull-right"></i> See all messages
+                                </a>
+                            </li><!-- /dropdown-footer -->
+                        </ul><!-- /dropdown-extend -->
+                    </div><!-- /btn-group new messages -->
+
+                    <!-- (recomended: dont change the id value) -->
+                    <div class="btn-group">
+                        <a id="users-setting" class="btn btn-icon data-toggle" data-toggle="dropdown" role="button">
+                            <i class="icon ion-gear-b"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-extend pull-right" role="menu">
+                            <li class="dropdown-profile">
+                                <div class="dp-cover">
+                                    <img class="img-bg" src="assets/app/img/cover-blur.jpg" alt="">
+                                    <a class="img-avatar" href="page_profile.html">
+                                        <img class="img-circle" src="assets/app/img/avatar4.png" alt="">
+                                    </a>
+                                    <div class="dp-details">Mr. Doe - UI Designer</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">138 <small>Posts</small></a>
+                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">26 <small>Items</small></a>
+                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">570 <small>Follow</small></a>
+                                </div>
+                            </li>
+                            <li class="dropdown-footer">
+                                <div class="clearfix">
+                                    <a href="page_signin.html" class="btn btn-sm btn-default pull-right">Sign out</a>
+                                    <a href="page_profile.html" class="btn btn-sm btn-default pull-left">Profile</a>
+                                </div>
+                            </li><!-- /dropdown-footer -->
+                        </ul><!-- /dropdown-extend -->
+                    </div><!-- /btn-group setting -->
+                    
+                    
+                    <!-- (recomended: dont change the id value) -->
+                    <a id="toggle-aside" class="btn btn-icon" role="button"><i class="icon ion-navicon-round"></i></a>
+                </div><!-- /header actions -->
+
+                <!-- header actions -->
+                <div class="header-actions pull-left">
+                    <!-- (recomended: dont change the id value) -->
+                    <button id="toggle-content" class="btn btn-icon" type="button"><i class="icon ion-navicon-round"></i></button>
+                    <!-- (recomended: dont change the id value) -->
+                    <button id="toggle-search" class="btn btn-icon" type="button"><i class="icon ion-search"></i></button>
+                </div><!-- /header actions -->
+
+                <!-- your Awesome App title -->
+                <h1 class="content-title">General Components</h1>
+            </header><!-- /side left -->
+            
+
+            <!-- define content row -->
+            <div class="content-spliter">
+                <!-- define your awesome apps here -->
+                <!-- (recomended: dont change the id value) -->
+                <section id="content-main" class="content-main">
+                    
+                    <!-- your app content -->
+                    <div class="content-app fixed-header">
+                        <!-- app header -->
+                        <div class="app-header">
+                            <div class="pull-right">
+                                <a class="btn btn-default" role="button">Left</a>
+                                <a class="btn btn-default" role="button">Midle</a>
+                                <a class="btn btn-default" role="button">Right</a>
+                            </div>
+                            <ol class="breadcrumb bg-none pull-left hide-xs">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Library</a></li>
+                                <li class="active">Data</li>
+                            </ol>
+                            <!-- <h3 class="app-title">Drop App Modules</h3> -->
+                        </div><!-- /app header -->
+
+                        <!-- app body -->
+                        <div class="app-body">
+                            
+                            <!-- app content here -->
+                            <!-- Magic Layout, also try to use  data-cols="3" or "4" -->
+                            <div class="magic-layout">
+                                <div id="panel-bsbutton" class="panel panel-default magic-element magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-bsbutton" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-bsbutton" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-bsbutton" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-bsbutton" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Bootstrap Buttons</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <!-- Button trigger modal -->
+                                        <button class="btn btn-ion btn-primary" data-toggle="modal" data-target="#myModal">
+                                          Launch demo modal
+                                        </button>
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-bsbutton -->
+
+                                <div id="panel-bootbox" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-bootbox" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-bootbox" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-bootbox" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-bootbox" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Bootbox</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <!-- Button trigger modal -->
+                                        <button id="bootbox1" class="btn btn-ion btn-primary">Alert</button>
+                                        <button id="bootbox2" class="btn btn-ion btn-primary">Confirm</button>
+                                        <button id="bootbox3" class="btn btn-ion btn-primary">Prompt</button>
+                                        <button id="bootbox4" class="btn btn-ion btn-primary">Dialog</button>
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-bootbox -->
+
+                                <div id="panel-tooltips" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-tooltips" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-tooltips" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-tooltips" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-tooltips" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Tooltips & Popover</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <p>
+                                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">right</button>
+                                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">top</button>
+                                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">bottom</button>
+                                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">left</button>
+                                        </p><!-- /tooltip -->
+                                        <p>
+                                            <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                                right
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                                top
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                                bottom
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                                left
+                                            </button>
+                                        </p><!-- /popover -->
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-tooltips -->
+
+                                <div id="panel-labelbadge" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-labelbadge" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-labelbadge" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-labelbadge" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-labelbadge" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Labels & Badge</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <p>
+                                            <span class="label label-default">Default</span>
+                                            <span class="label label-primary">Primary</span>
+                                            <span class="label label-success">Success</span>
+                                        </p>
+                                        <p>
+                                            <span class="label label-info">Info</span>
+                                            <span class="label label-warning">Warning</span>
+                                            <span class="label label-danger">Danger</span>
+                                        </p>
+                                        <p style="margin-top:30px">
+                                            <a href="#">Inbox Badge <span class="badge">42</span></a>
+                                        </p>
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-labelbadge -->
+
+                                <div id="panel-spinner" class="panel panel-default magic-element magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <div class="label label-warning">New</div>
+                                            <a role="button" data-refresh="#panel-spinner" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-spinner" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-spinner" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-spinner" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Spinner Kits</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <p>Support with background color helper <code>.bg-</code></p>
+                                        <h3 class="box-heading">Rotate plane</h3>
+                                        <div class="help-block">
+                                            <div class="spinner spinner-rotate-plane"></div>
+                                        </div>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <div class="spinner spinner-rotate-plane bg-success"></div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-rotate-plane bg-warning"></div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-rotate-plane bg-danger"></div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-rotate-plane bg-wetasphalt"></div>
+                                            </li>
+                                        </ul><!-- /spinner-rotate-plane -->
+
+                                        <br>
+
+                                        <h3 class="box-heading">Double bounce</h3>
+                                        <div class="help-block">
+                                            <div class="spinner spinner-double-bounce clearfix">
+                                                <div class="double-bounce"></div>
+                                                <div class="double-bounce"></div>
+                                            </div>
+                                        </div>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <div class="spinner spinner-double-bounce">
+                                                    <div class="double-bounce bg-success"></div>
+                                                    <div class="double-bounce bg-success"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-double-bounce">
+                                                    <div class="double-bounce bg-warning"></div>
+                                                    <div class="double-bounce bg-warning"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-double-bounce">
+                                                    <div class="double-bounce bg-danger"></div>
+                                                    <div class="double-bounce bg-danger"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-double-bounce">
+                                                    <div class="double-bounce bg-wetasphalt"></div>
+                                                    <div class="double-bounce bg-wetasphalt"></div>
+                                                </div>
+                                            </li>
+                                        </ul><!-- /spinner-double-bounce -->
+
+                                        <br>
+
+                                        <h3 class="box-heading">Rectangle Bounce</h3>
+                                        <div class="help-block">
+                                            <div class="spinner spinner-rectangle-bounce">
+                                                <div class="rect1"></div>
+                                                <div class="rect2"></div>
+                                                <div class="rect3"></div>
+                                                <div class="rect4"></div>
+                                                <div class="rect5"></div>
+                                            </div>
+                                        </div>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <div class="spinner spinner-rectangle-bounce">
+                                                    <div class="rect1 bg-success"></div>
+                                                    <div class="rect2 bg-success"></div>
+                                                    <div class="rect3 bg-success"></div>
+                                                    <div class="rect4 bg-success"></div>
+                                                    <div class="rect5 bg-success"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-rectangle-bounce">
+                                                    <div class="rect1 bg-warning"></div>
+                                                    <div class="rect2 bg-warning"></div>
+                                                    <div class="rect3 bg-warning"></div>
+                                                    <div class="rect4 bg-warning"></div>
+                                                    <div class="rect5 bg-warning"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-rectangle-bounce">
+                                                    <div class="rect1 bg-danger"></div>
+                                                    <div class="rect2 bg-danger"></div>
+                                                    <div class="rect3 bg-danger"></div>
+                                                    <div class="rect4 bg-danger"></div>
+                                                    <div class="rect5 bg-danger"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-rectangle-bounce">
+                                                    <div class="rect1 bg-wetasphalt"></div>
+                                                    <div class="rect2 bg-wetasphalt"></div>
+                                                    <div class="rect3 bg-wetasphalt"></div>
+                                                    <div class="rect4 bg-wetasphalt"></div>
+                                                    <div class="rect5 bg-wetasphalt"></div>
+                                                </div>
+                                            </li>
+                                        </ul><!-- /spinner-rectangle-bounce -->
+
+                                        <br>
+
+                                        <h3 class="box-heading">Three Bounce</h3>
+                                        <div class="help-block">
+                                            <div class="spinner spinner-three-bounce">
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
+                                            </div>
+                                        </div>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <div class="spinner spinner-three-bounce">
+                                                    <div class="bounce1 bg-success"></div>
+                                                    <div class="bounce2 bg-success"></div>
+                                                    <div class="bounce3 bg-success"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-three-bounce">
+                                                    <div class="bounce1 bg-warning"></div>
+                                                    <div class="bounce2 bg-warning"></div>
+                                                    <div class="bounce3 bg-warning"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-three-bounce">
+                                                    <div class="bounce1 bg-danger"></div>
+                                                    <div class="bounce2 bg-danger"></div>
+                                                    <div class="bounce3 bg-danger"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="spinner spinner-three-bounce">
+                                                    <div class="bounce1 bg-wetasphalt"></div>
+                                                    <div class="bounce2 bg-wetasphalt"></div>
+                                                    <div class="bounce3 bg-wetasphalt"></div>
+                                                </div>
+                                            </li>
+                                        </ul><!-- /spinner-three-bounce -->
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-spinner -->
+
+                                <div id="panel-carousel" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-carousel" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-carousel" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-carousel" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-carousel" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Carousel</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <div id="carousel-text" class="carousel full-line slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carousel-text" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carousel-text" data-slide-to="1"></li>
+                                                <li data-target="#carousel-text" data-slide-to="2"></li>
+                                            </ol><!-- /carousel-indicator -->
+                                            <div class="carousel-inner">
+                                                <div class="item item-text-only bg-wisteria active">
+                                                    <div class="carousel-caption">
+                                                        <h3>Caption 1</h3>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, ratione.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="item item-text-only bg-turquoise">
+                                                    <div class="carousel-caption">
+                                                        <h3>Caption 2</h3>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, ratione.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="item item-text-only bg-alizarin">
+                                                    <div class="carousel-caption">
+                                                        <h3>Caption 3</h3>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, ratione.</p>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /carousel-inner -->
+
+                                            <a class="left carousel-control" href="#carousel-text" data-slide="prev">
+                                                <span class="ion-prev icon ion-ios7-arrow-left"></span>
+                                            </a>
+                                            <a class="right carousel-control" href="#carousel-text" data-slide="next">
+                                                <span class="ion-next icon ion-ios7-arrow-right"></span>
+                                            </a>
+                                        </div><!-- /carousel -->
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-carousel -->
+
+                                <div id="panel-messenger" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-messenger" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-messenger" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-messenger" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-messenger" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Messenger</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <p>
+                                            <a href="#" id="messenger1" role="button" class="btn btn-sm btn-ion btn-default">Default</a>
+                                            <a href="#" id="messenger2" role="button" class="btn btn-sm btn-ion btn-primary">Info</a>
+                                            <a href="#" id="messenger3" role="button" class="btn btn-sm btn-ion btn-success">Success</a>
+                                            <a href="#" id="messenger4" role="button" class="btn btn-sm btn-ion btn-danger">Error</a>
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h2 class="box-heading">Placement</h2>
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <input class="msgPlacement" name="msgPlacement" type="radio" value="messenger-on-top">
+                                                        <label for="msgPlacement" class="icheck-label">Top</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="msgPlacement" name="msgPlacement" type="radio" value="messenger-on-top messenger-on-right">
+                                                        <label for="msgPlacement" class="icheck-label">Top Right</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="msgPlacement" name="msgPlacement" type="radio" value="messenger-on-top messenger-on-left">
+                                                        <label for="msgPlacement" class="icheck-label">Top Left</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="msgPlacement" name="msgPlacement" type="radio" value="messenger-on-bottom">
+                                                        <label for="msgPlacement" class="icheck-label">Bottom</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="msgPlacement" name="msgPlacement" type="radio" value="messenger-on-bottom messenger-on-right" checked>
+                                                        <label for="msgPlacement" class="icheck-label">Bottom Right</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="msgPlacement" name="msgPlacement" type="radio" value="messenger-on-bottom messenger-on-left">
+                                                        <label for="msgPlacement" class="icheck-label">Bottom Left</label>
+                                                    </li>
+                                                </ul><!-- /list placement -->
+                                            </div><!-- /col -->
+                                            <div class="col-md-6">
+                                                <h2 class="box-heading">Theme</h2>
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <input class="msgTheme" name="msgTheme" type="radio" value="flat" checked>
+                                                        <label for="msgTheme" class="icheck-label">Flat</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="msgTheme" name="msgTheme" type="radio" value="future">
+                                                        <label for="msgTheme" class="icheck-label">Future</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="msgTheme" name="msgTheme" type="radio" value="air">
+                                                        <label for="msgTheme" class="icheck-label">Air</label>
+                                                    </li>
+                                                </ul><!-- /list theme -->
+                                            </div><!-- /col -->
+                                        </div><!-- /row -->
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-messenger -->
+
+                                <div id="panel-listgroup" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-listgroup" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-listgroup" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-listgroup" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-listgroup" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">List Group</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Cras justo odio</li>
+                                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                                            <li class="list-group-item">Morbi leo risus</li>
+                                            <li class="list-group-item">Porta ac consectetur ac</li>
+                                            <li class="list-group-item">Vestibulum at eros</li>
+                                        </ul><!-- /list group -->
+                                        <h2 class="box-heading">Linked Items</h2>
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item active">
+                                            Cras justo odio
+                                            </a>
+                                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                                            <a href="#" class="list-group-item">Morbi leo risus</a>
+                                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                                            <a href="#" class="list-group-item">Vestibulum at eros</a>
+                                        </div><!-- /linked items -->
+                                        <h2 class="box-heading">Custom content</h2>
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item active">
+                                                <h4 class="list-group-item-heading">List group item heading</h4>
+                                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                            </a>
+                                            <a href="#" class="list-group-item">
+                                                <h4 class="list-group-item-heading">List group item heading</h4>
+                                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                            </a>
+                                            <a href="#" class="list-group-item">
+                                                <h4 class="list-group-item-heading">List group item heading</h4>
+                                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                            </a>
+                                        </div><!-- /custom content -->
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-listgroup -->
+
+                                <div id="panel-navs" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-navs" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-navs" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-navs" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-navs" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Navs</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <p>
+                                            <ul class="nav nav-tabs">
+                                                <li class="active"><a href="#">Home</a></li>
+                                                <li><a href="#">Profile</a></li>
+                                                <li><a href="#">Messages</a></li>
+                                            </ul><!-- /nav tabs -->
+                                        </p>
+                                        <br>
+                                        <p>
+                                            <ul class="nav nav-pills">
+                                                <li class="active"><a href="#">Home</a></li>
+                                                <li><a href="#">Profile</a></li>
+                                                <li><a href="#">Messages</a></li>
+                                            </ul><!-- /nav pills -->
+                                        </p>
+
+                                        <h2 class="box-heading">Stacked</h2>
+                                        <p>
+                                            <ul class="nav nav-pills nav-stacked">
+                                                <li class="active">
+                                                    <a href="#">
+                                                        <span class="badge pull-right">42</span> Home
+                                                    </a>
+                                                </li>
+                                                <li><a href="#">Profile</a></li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="badge pull-right">3</span> Messages
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </p>
+
+                                        <h2 class="box-heading">Justified</h2>
+                                        <p>
+                                            <ul class="nav nav-tabs nav-justified">
+                                                <li class="active"><a href="#">Home</a></li>
+                                                <li><a href="#">Profile</a></li>
+                                                <li><a href="#">Messages</a></li>
+                                            </ul><!-- /nav tabs -->
+                                        </p>
+                                        <br>
+                                        <p>
+                                            <ul class="nav nav-pills nav-justified">
+                                                <li class="active"><a href="#">Home</a></li>
+                                                <li><a href="#">Profile</a></li>
+                                                <li><a href="#">Messages</a></li>
+                                            </ul><!-- /nav pills -->
+                                        </p>
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-navs -->
+
+                                <div id="panel-alerts" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-alerts" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-alerts" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-alerts" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-alerts" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Alerts</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+
+                                        <div class="alert alert-info">
+                                            <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                                        </div><!-- /alert-info -->
+
+                                        <h3 class="box-heading">With alert icon</h3>
+
+                                        <div class="alert alert-success alert-icon">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <div class="icon"><i class="icon ion-ios7-checkmark-empty"></i></div>
+                                            <strong>Well done!</strong> You successfully read this <a class="alert-link" href="#">important alert</a>
+                                        </div><!-- /alert-success -->
+
+                                        <div class="alert alert-info alert-icon">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <div class="icon"><i class="icon ion-ios7-information-empty"></i></div>
+                                            <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                                        </div><!-- /alert-info -->
+
+                                        <div class="alert alert-warning alert-icon">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <div class="icon"><i class="icon ion-ios7-information-empty"></i></div>
+                                            <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                                        </div><!-- /alert-warning -->
+
+                                        <div class="alert alert-danger alert-icon">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <div class="icon"><i class="icon ion-ios7-close-empty"></i></div>
+                                            <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                                        </div><!-- /alert-danger -->
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-alerts -->
+
+                                <div id="panel-progressbar" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <div class="label label-warning">New</div>
+                                            <a role="button" data-refresh="#panel-progressbar" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-progressbar" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-progressbar" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-progressbar" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Progress Bar</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <p>
+                                            <div class="btn-group">
+                                                <button data-bar="default" class="btn btn-default btn-sm typebar">Default</button>
+                                                <button data-bar="striped" class="btn btn-default btn-sm typebar">Striped</button>
+                                                <button  data-bar="animate" class="btn btn-default btn-sm typebar">Animate</button>
+                                            </div>
+                                            <button class="btn btn-default btn-sm playbar">Start</button>
+                                        </p>
+                                        <div class="demoplaybar">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-info" aria-valuetransitiongoal="40"></div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" aria-valuetransitiongoal="60"></div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-warning" aria-valuetransitiongoal="80"></div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-danger" aria-valuetransitiongoal="100"></div>
+                                            </div>
+                                        </div>
+
+                                        <h2 class="box-heading">Vertical</h2>
+                                        <div class="demoplaybar clearfix" style="height: 180px">
+                                            <div class="progress vertical bottom">
+                                                <div class="progress-bar" aria-valuetransitiongoal="20"></div>
+                                            </div>
+                                            <div class="progress vertical bottom">
+                                                <div class="progress-bar progress-bar-success" aria-valuetransitiongoal="40"></div>
+                                            </div>
+                                            <div class="progress vertical bottom">
+                                                <div class="progress-bar progress-bar-info" aria-valuetransitiongoal="60"></div>
+                                            </div>
+                                            <div class="progress vertical bottom progress-sm">
+                                                <div class="progress-bar progress-bar-warning" aria-valuetransitiongoal="80"></div>
+                                            </div>
+                                            <div class="progress vertical bottom progress-lg">
+                                                <div class="progress-bar progress-bar-danger" aria-valuetransitiongoal="100"></div>
+                                            </div>
+                                        </div>
+
+                                        <h2 class="box-heading">Stacked</h2>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-success" style="width: 35%"></div>
+                                            <div class="progress-bar progress-bar-warning" style="width: 20%"></div>
+                                            <div class="progress-bar progress-bar-danger" style="width: 10%"></div>
+                                        </div><!-- /stacked -->
+
+                                        <h2 class="box-heading">Sizing</h2>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                                        </div>
+                                        <div class="progress progress-lg">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                                        </div>
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-progressbar -->
+
+                                <div id="panel-nouislider" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-nouislider" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-nouislider" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-nouislider" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-nouislider" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">noUiSliders</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <p class="clearfix">
+                                            <div data-toggle="nouislider"></div>
+                                        </p>
+                                        <p class="clearfix">
+                                            <div class="nouislider-default" data-toggle="nouislider"></div>
+                                        </p>
+                                        <p class="clearfix">
+                                            <div class="nouislider-primary" data-toggle="nouislider"></div>
+                                        </p>
+                                        <p class="clearfix">
+                                            <div class="nouislider-success" data-toggle="nouislider"></div>
+                                        </p>
+                                        <p class="clearfix">
+                                            <div class="nouislider-warning" data-toggle="nouislider"></div>
+                                        </p>
+                                        <p class="clearfix">
+                                            <div class="nouislider-danger" data-toggle="nouislider"></div>
+                                        </p>
+                                        
+                                        <h2 class="box-heading">Sizing</h2>
+                                        <p class="clearfix">
+                                            <div class="nouislider-sm nouislider-default" data-toggle="nouislider"></div>
+                                        </p>
+                                        <p class="clearfix">
+                                            <div class="nouislider-primary" data-toggle="nouislider"></div>
+                                        </p>
+                                        <p class="clearfix">
+                                            <div class="nouislider-lg nouislider-danger" data-toggle="nouislider"></div>
+                                        </p>
+
+                                        <h2 class="box-heading">Vertical</h2>
+                                        <p>
+                                            <div style="height:240px;display:inline-block;margin-right:20px" data-toggle="nouislider-vertical"></div>
+                                            <div class="nouislider-default" style="height:240px;display:inline-block;margin-right:20px" data-toggle="nouislider-vertical"></div>
+                                            <div class="nouislider-primary" style="height:240px;display:inline-block;margin-right:20px" data-toggle="nouislider-vertical"></div>
+                                            <div class="nouislider-success" style="height:240px;display:inline-block;margin-right:20px" data-toggle="nouislider-vertical"></div>
+                                            <div class="nouislider-warning" style="height:240px;display:inline-block;margin-right:20px" data-toggle="nouislider-vertical"></div>
+                                            <div class="nouislider-danger" style="height:240px;display:inline-block;margin-right:60px" data-toggle="nouislider-vertical"></div>
+
+                                            <div class="nouislider-sm nouislider-default" style="height:240px;display:inline-block;margin-right:20px" data-toggle="nouislider-vertical"></div>
+                                            <div class="nouislider-primary" style="height:240px;display:inline-block;margin-right:20px" data-toggle="nouislider-vertical"></div>
+                                            <div class="nouislider-lg nouislider-danger" style="height:240px;display:inline-block;margin-right:20px" data-toggle="nouislider-vertical"></div>
+                                        </p>
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-nouislider -->
+
+                                <div id="panel-pagination" class="panel panel-default magic-element">
+                                    <div class="panel-heading">
+                                        <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                                        <div class="panel-actions">
+                                            <a role="button" data-refresh="#panel-pagination" title="refresh" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-refresh"></i>
+                                            </a>
+                                            <a role="button" data-expand="#panel-pagination" title="expand" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-arrow-resize"></i>
+                                            </a>
+                                            <a role="button" data-collapse="#panel-pagination" title="collapse" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-chevron-down"></i>
+                                            </a>
+                                            <a role="button" data-close="#panel-pagination" title="close" class="btn btn-sm btn-icon">
+                                                <i class="icon ion-close-round"></i>
+                                            </a>
+                                        </div><!-- /panel-actions -->
+                                        <h3 class="panel-title">Pagination</h3>
+                                    </div><!-- /panel-heading -->
+                                    <div class="panel-body">
+                                        <div class="help-block">
+                                            <ul style="margin:0;" class="pagination pagination-lg">
+                                                <li class="disabled"><a href="#">&laquo;</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#">&raquo;</a></li>
+                                            </ul><!-- /pagination large -->
+                                        </div>
+
+                                        <div class="help-block">
+                                            <ul style="margin:0;" class="pagination">
+                                                <li class="disabled"><a href="#">&laquo;</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#">&raquo;</a></li>
+                                            </ul><!-- /pagination -->
+                                        </div>
+                                    
+                                        <div class="help-block">
+                                            <ul style="margin:0;" class="pagination pagination-sm">
+                                                <li class="disabled"><a href="#">&laquo;</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#">&raquo;</a></li>
+                                            </ul><!-- /pagination small -->
+                                        </div>
+                                        
+                                        <div class="help-block">
+                                            <ul style="margin:0;" class="pager">
+                                                <li class="disabled"><a href="#">Previous</a></li>
+                                                <li><a href="#">Next</a></li>
+                                            </ul><!-- /pager -->
+                                        </div>
+
+                                        <div class="help-block">
+                                            <ul style="margin:0;" class="pager">
+                                                <li class="previous disabled"><a href="#">&larr; Older</a></li>
+                                                <li class="next"><a href="#">Newer &rarr;</a></li>
+                                            </ul><!-- /pager aligned -->
+                                        </div>
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel-pagination -->
+
+                            </div><!-- /magic-layout -->
+
+                        </div><!-- /app body -->
+                    </div><!-- /content app -->
+
+                </section><!-- /content main -->
+
+                
+                <!-- define your extra apps here -->
+                <!-- (recomended: dont change the id value) -->
+                <section id="content-aside" class="content-aside">
+                    <!-- your module content -->
+                    <div class="content-module fixed-header">
+                        <!-- module header -->
+                        <div class="module-header">
+                            <h3 class="module-title">
+                                <i class="icon ion-ios7-chatboxes-outline"></i> Chats
+                            </h3>
+                        </div><!-- /module header -->
+
+                        <!-- module body -->
+                        <div class="module-body">
+                            
+                            <!-- app module here -->
+                            
+                            <!-- chat module -->
+                            <div class="chats-module">
+                                <div class="cm-contact">
+                                    <div class="cm-contact-separate">Top contacts</div>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar8.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Iin Bent <small>Team Leader</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar1.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Mr. Doe <small>UI Designer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar9.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Yu Darsih <small>Data Analyst</small></p>
+                                    </a>
+
+                                    <div class="cm-contact-separate">More contacts</div>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar2.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Mba Jessica <small>PHP Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar1.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Doel Jony <small>Rubi Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar11.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Yumiko <small>Java Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar4.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Mark Londrian <small>PHP Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar5.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Mahatma <small>PHP Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar6.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Harab <small>Junior Designer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar7.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Sungep <small>Acountant</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar10.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Pathoel <small>Acountant</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar6.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Opytama <small>Data Analyst</small></p>
+                                    </a>
+                                </div><!-- /chat module contact -->
+
+                                <div class="cm-content">
+                                    <a href="#" class="cm-content-heading">
+                                        <h3><i class="icon ion-ios7-arrow-left"></i> Mr. Doe</h3>
+                                    </a><!-- /cm-content-heading -->
+
+                                    <div class="cm-content-chats">
+                                        <div class="chat-in">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar5.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>In eget pellentesque vehicula, quam aliquet turpis convallis</p>
+                                                <time datetime="2013-12-13T20:00">Mr. Doe - 12 min</time>
+                                            </div>
+                                        </div><!-- /chat-in -->
+
+                                        <div class="chat-out">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar4.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>lorem nibh nam suspendisse lacinia</p>
+                                                <time datetime="2013-12-13T20:00">8 min</time>
+                                            </div>
+                                        </div><!-- /chat-out -->
+
+                                        <div class="chat-in">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar5.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>massa cursus auctor urna parturient</p>
+                                                <p>
+                                                    <small><a href="#"><i class="icon ion-paperclip"></i> paperclips.zip</a></small>
+                                                </p>
+                                                <time datetime="2013-12-13T20:00">Mr. Doe - 5 min</time>
+                                            </div>
+                                        </div><!-- /chat-in -->
+
+                                        <div class="chat-out">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar4.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>Great!</p>
+                                                <time datetime="2013-12-13T20:00">4 min</time>
+                                            </div>
+                                        </div><!-- /chat-out -->
+
+                                        <div class="chat-in">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar5.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>Pulvinar aute massa amet dapibus, etiam consectetuer consectetuer sagittis, egestas massa nibh vestibulum, sapien in sodales, quisque nec habitasse phasellus ultricies tempus</p>
+                                                <time datetime="2013-12-13T20:00">Mr. Doe - 2 min</time>
+                                            </div>
+                                        </div><!-- /chat-in -->
+                                    </div><!-- /cm-content-chats -->
+
+                                    <div class="cm-content-status">
+                                        <i class="icon ion-chatbubble-working"></i> Mr. Doe is typing...
+                                    </div><!-- /cm-content-status -->
+
+                                    <div class="cm-content-input">
+                                        <form id="frm-send-chat" role="form">
+                                            <button type="button" class="btn btn-lg btn-transparent" title="Attach file">
+                                                <i class="icon ion-paperclip"></i>
+                                            </button>
+                                            <input type="text" name="chat-msg" class="form-control" placeholder="Write a message" />
+                                            <button type="submit" class="btn btn-lg btn-transparent" title="Send">
+                                                <i class="icon ion-ios7-paperplane-outline"></i>
+                                            </button>
+                                        </form>
+                                    </div><!-- /cm-content-input -->
+                                </div><!-- /chat module content -->
+                            </div><!-- /chat module -->
+                            
+                        </div><!-- /module body -->
+                    </div><!-- /content module -->
+                </section><!-- /content asside -->
+            </div><!-- /content spliter -->
+
+        </section><!-- /content -->
+    </section><!-- /wrapper -->
+
+    <!-- Modal, Note: the modal should be placed on the outside wrapper -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-flat btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <!-- jQuery, theme required for theme -->
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- theme dependencies -->
+    <!-- 
+        Contents List
+        1. Raphaël
+        2. Isotope
+        3. verge
+        4. Moment
+        5. Prettify
+    -->
+    <script src="assets/app/js/dependencies.js"></script>
+        
+        <!-- other dependencies -->
+        <script src="assets/bootbox/bootbox.js"></script>
+        <script src="assets/jquery-icheck/jquery.icheck.min.js"></script>
+        <script src="assets/messenger/js/messenger.min.js"></script>
+        <script src="assets/messenger/js/messenger-theme-flat.js"></script>
+        <script src="assets/messenger/js/messenger-theme-future.js"></script>
+        <script src="assets/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <script src="assets/nouislider/jquery.nouislider.js"></script>
+    
+    <!-- theme app main.js -->
+    <script src="assets/app/js/main.js"></script>
+
+    <script type="text/javascript">
+    $(function(){
+
+        // panel refresh
+        $('.panel [data-refresh]').on('click', function(){
+            var $this = $(this),
+                panel = $this.attr('data-refresh');
+
+            setTimeout(function(){
+                $(panel).find('.panel-progress').remove();  // remove proggress spinner
+            }, 1000 );
+        });
+        
+        // bootbox
+        $('#bootbox1').on('click', function(){
+            bootbox.alert("Hello world!");
+        })
+        $('#bootbox2').on('click', function(){
+            bootbox.confirm("Are you sure?", function(result) {
+                alert("Confirm result: " + result);
+            }); 
+        })
+        $('#bootbox3').on('click', function(){
+            bootbox.prompt("What is your name?", function(result) {                
+              if (result === null) {                                             
+                alert("Prompt dismissed");                              
+              } 
+              else {
+                alert("Hi " + result);                          
+              }
+            });
+        })
+        $('#bootbox4').on('click', function(){
+            bootbox.dialog({
+                message: "I am a custom dialog",
+                title: "Custom title",
+                buttons: {
+                    success: {
+                        label: "Success!",
+                        className: "btn-flat btn-success",
+                        callback: function() {
+                            alert("great success");
+                        }
+                    },
+                    danger: {
+                        label: "Danger!",
+                        className: "btn-flat btn-danger",
+                        callback: function() {
+                            alert("uh oh, look out!");
+                        }
+                    },
+                    main: {
+                        label: "Click ME!",
+                        className: "btn-flat btn-primary",
+                        callback: function() {
+                            alert("Primary button");
+                        }
+                    }
+                }
+            });
+        })
+
+        // iCheck
+        $('.msgPlacement').iCheck({
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red'
+        });
+        $('.msgTheme').iCheck({
+            checkboxClass: 'icheckbox_flat-blue',
+            radioClass: 'iradio_flat-blue'
+        });
+
+        // Messenger
+        var msgOpt = function(place, theme){
+            Messenger.options = {
+                extraClasses: 'messenger-fixed ' + place,
+                theme: theme
+            }
+        }
+        $('#messenger1').on('click', function(){
+            var place = $('input[name="msgPlacement"]:checked').val(),
+                theme = $('input[name="msgTheme"]:checked').val();
+
+            msgOpt(place, theme);
+            Messenger().post("Your request has succeded!");
+        });
+        $('#messenger2').on('click', function(){
+            var place = $('input[name="msgPlacement"]:checked').val(),
+                theme = $('input[name="msgTheme"]:checked').val();
+            
+            msgOpt(place, theme);
+            msg = Messenger().post({
+                message: 'Launching thermonuclear war...',
+                type: 'info',
+                showCloseButton: true,
+                actions: {
+                    cancel: {
+                        label: 'cancel launch',
+                        action: function() {
+                            return msg.update({
+                                message: 'Thermonuclear war averted',
+                                type: 'success',
+                                actions: false
+                            });
+                        }
+                    }
+                }
+            });
+        });
+        $('#messenger3').on('click', function(){
+            var place = $('input[name="msgPlacement"]:checked').val(),
+                theme = $('input[name="msgTheme"]:checked').val();
+            
+            msgOpt(place, theme);
+            Messenger().post({
+                message: 'Alien planet destroyed!',
+                type: 'success',
+                showCloseButton: true
+            });
+        });
+        $('#messenger4').on('click', function(){
+            var i = 0;
+
+            var place = $('input[name="msgPlacement"]:checked').val(),
+                theme = $('input[name="msgTheme"]:checked').val();
+            
+            msgOpt(place, theme);
+            Messenger().run({
+                errorMessage: 'Error destroying alien planet',
+                successMessage: 'Alien planet destroyed!',
+                action: function(opts) {
+                    if (++i < 3) {
+                        return opts.error({
+                            status: 500,
+                            readyState: 0,
+                            responseText: 0
+                        });
+                    } 
+                    else {
+                        return opts.success();
+                    }
+                }
+            });
+        });
+
+
+
+        // bootstrap progress bar
+        $('.playbar').on('click', function(){
+            $('.progress-bar').progressbar({
+                display_text: 'center',
+            });
+        });
+
+        $('.typebar').on('click', function(){
+            var $this = $(this),
+                type = $this.attr('data-bar');
+
+            if(type == 'default'){
+                $('.demoplaybar > .progress').removeClass('progress-striped active');
+            }
+            else if(type == 'striped'){
+                $('.demoplaybar > .progress').removeClass('active');
+                $('.demoplaybar > .progress').addClass('progress-striped');
+            }
+            else if(type == 'animate'){
+                $('.demoplaybar > .progress').removeClass('progress-striped');
+                $('.demoplaybar > .progress').addClass('progress-striped active');
+            }
+        });
+
+        
+        
+
+        // noUiSlider
+        $('[data-toggle="nouislider"]').noUiSlider({
+            range: [20,60],
+            start: [30,50],
+            connect: true,
+            behaviour: 'extend-tap'
+        });
+        $('[data-toggle="nouislider-vertical"]').noUiSlider({
+            range: [20,60],
+            start: [30,50],
+            connect: true,
+            behaviour: 'extend-tap',
+            orientation: "vertical"
+        })
+
+
+        // magic-layout relayout
+    })
+    </script>
+  </body>
+</html>

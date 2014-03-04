@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=yes" />
+    <title>Syrena Admin Template</title>
+    
+    <!-- fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/app/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/app/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/app/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/app/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/app/ico/favico.png">
+    <link rel="shortcut icon" href="assets/app/ico/favico.ico">
+
+    <!-- theme fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- theme bootstrap stylesheets -->
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- theme dependencies stylesheets -->
+    <link href="assets/app/css/dependencies.css" rel="stylesheet" />
+
+    <!-- theme app main.css (this import of all custom css, you can use requirejs for optimizeCss or grunt to optimize them all) -->
+    <link href="assets/app/css/syrena-admin.css" rel="stylesheet" />
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- content wrapper to define fullpage or container -->
+    <!-- (recomended: dont change the id value) -->
+    <section id="wrapper" class="container">
+        <!-- define side left theme -->
+        <aside class="side-left">
+            <!-- side header -->
+            <div class="side-header">
+                <!-- place your brand (recomended: dont change the id value) -->
+                <!-- (recomended: dont change the id value) -->
+                <h1 id="brand" class="brand">
+                    <a href="index.html">
+                        <!-- <i class="icon ion-waterdrop"></i> -->
+                        <img src="assets/app/img/brand.png" alt="Brand">   <!-- 32px image logo -->
+                        Syrena
+                    </a>
+                </h1><!-- /brand -->
+            </div><!-- /side header -->
+
+            <!-- side body -->
+            <div class="side-body">
+                <!-- separate nav for ease development -->
+                <nav class="side-nav">
+                    <!-- open nav ul -->
+                    <ul>
+                        <li class="side-nav-item-heading">
+                            <a href="index.html">
+                                <i class="nav-item-caret"></i>
+                                Back to home
+                            </a>
+                        </li><!-- /dashboard -->
+                        <li class="side-nav-item">
+                            <a href="#">
+                                <i class="nav-item-icon icon ion-ios7-email-outline"></i>
+                                Inbox
+                            </a>
+                        </li><!-- /inbox -->
+                        <li class="side-nav-item">
+                            <a href="#">
+                                <i class="nav-item-icon icon ion-ios7-paperplane-outline"></i>
+                                Send Email
+                            </a>
+                        </li><!-- /inbox -->
+                        <li class="side-nav-item">
+                            <a href="#">
+                                <i class="nav-item-icon icon ion-ios7-flag-outline"></i>
+                                Flag
+                            </a>
+                        </li><!-- /inbox -->
+                        <li class="side-nav-item">
+                            <a href="#">
+                                <i class="nav-item-icon icon ion-ios7-star-outline"></i>
+                                Important
+                            </a>
+                        </li><!-- /inbox -->
+                        <li class="side-nav-item">
+                            <a href="#">
+                                <i class="nav-item-icon icon ion-ios7-box-outline"></i>
+                                Drafts
+                            </a>
+                        </li><!-- /inbox -->
+                        <li class="side-nav-item">
+                            <a href="#">
+                                <i class="nav-item-icon icon ion-ios7-trash-outline"></i>
+                                Trash
+                            </a>
+                        </li><!-- /inbox -->
+                    </ul><!-- /nav-ul -->
+                </nav><!-- /nav -->
+
+            </div><!-- /side body -->
+        </aside><!-- /side left -->
+
+        <!-- define content theme, use data-swipe="true" to enable gesture event -->
+        <!-- (recomended: dont change the id value) -->
+        <section id="content" class="content">
+            <!-- define content row -->
+            <div class="content-spliter">
+                <div class="message">
+                    <div class="message-content">
+                        <div class="message-content-heading">
+                            <button id="toggle-content" class="btn btn-icon pull-left" type="button">
+                                <i class="icon ion-navicon text-primary"></i>
+                            </button>
+                            <a class="btn btn-icon pull-right view-sm" role="button" title="Compose" style="top:4px">
+                                <i class="icon ion-ios7-plus-outline text-primary"></i>
+                            </a><!-- only use on small phone viewport -->
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon ion-ios7-arrow-down"></i>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Mark as read</a></li>
+                                    <li><a href="#">Mark as unread</a></li>
+                                    <li><a href="#">Move to</a></li>
+                                    <li><a href="#">Something else</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Trash</a></li>
+                                </ul>
+                            </div>
+                            <h3>Inbox <small>8 unread</small></h3>
+                        </div><!-- /message-content-heading -->
+
+                        <div class="message-content-search">
+                            <form role="form">
+                                <div class="pull-right">
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-check-all" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <button type="submit" class="btn btn-link">
+                                        <i class="icon ion-android-search"></i>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search..." />
+                            </form>
+                        </div><!-- /message-content-search -->
+
+                        <div class="message-content-body">
+                            <ul class="mc-group">
+                                <li class="mc-group-item active">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <h3 class="mcgi-sender">Account Team</h3>
+                                    <p class="mcgi-subject">Spread the Word & Earn!</p>
+                                    <small class="mcgi-time">05:07</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item unread">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as read">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <a href="#" class="mcgi-attach"><i class="icon ion-paperclip"></i></a>
+                                    <h3 class="mcgi-sender">Mahatma, me (6)</h3>
+                                    <p class="mcgi-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia</p>
+                                    <small class="mcgi-time">Wed</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star"></a>
+                                    <h3 class="mcgi-sender">Wrapbootstrap</h3>
+                                    <p class="mcgi-subject">Consectetur adipisicing elit. Sequi, pariatur vel eum porro quae! Eos!</p>
+                                    <small class="mcgi-time">Tue</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <a href="#" class="mcgi-attach"><i class="icon ion-paperclip"></i></a>
+                                    <h3 class="mcgi-sender">Stilearning</h3>
+                                    <p class="mcgi-subject">Approval for new design</p>
+                                    <small class="mcgi-time">Tue</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star"></a>
+                                    <h3 class="mcgi-sender">janesmith@mail.com</h3>
+                                    <p class="mcgi-subject">Consectetur adipisicing elit. Sequi, pariatur vel eum porro quae! Eos!</p>
+                                    <small class="mcgi-time">Mon</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <h3 class="mcgi-sender">Microsoft Customer Support</h3>
+                                    <p class="mcgi-subject">Thanks for ordering Windows 8 (order #WD12345678)</p>
+                                    <small class="mcgi-time">Mon</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <h3 class="mcgi-sender">James Simmons</h3>
+                                    <p class="mcgi-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, cumque</p>
+                                    <small class="mcgi-time">Sun</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <h3 class="mcgi-sender">Account Team</h3>
+                                    <p class="mcgi-subject">Spread the Word & Earn!</p>
+                                    <small class="mcgi-time">Sat</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item unread">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as read">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <a href="#" class="mcgi-attach"><i class="icon ion-paperclip"></i></a>
+                                    <h3 class="mcgi-sender">Mahatma, me (6)</h3>
+                                    <p class="mcgi-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia</p>
+                                    <small class="mcgi-time">Fri</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star"></a>
+                                    <h3 class="mcgi-sender">Wrapbootstrap</h3>
+                                    <p class="mcgi-subject">Consectetur adipisicing elit. Sequi, pariatur vel eum porro quae! Eos!</p>
+                                    <small class="mcgi-time">Fri</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <a href="#" class="mcgi-attach"><i class="icon ion-paperclip"></i></a>
+                                    <h3 class="mcgi-sender">Stilearning</h3>
+                                    <p class="mcgi-subject">Approval for new design</p>
+                                    <small class="mcgi-time">12 Dec</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star"></a>
+                                    <h3 class="mcgi-sender">janesmith@mail.com</h3>
+                                    <p class="mcgi-subject">Consectetur adipisicing elit. Sequi, pariatur vel eum porro quae! Eos!</p>
+                                    <small class="mcgi-time">12 Dec</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <h3 class="mcgi-sender">Microsoft Customer Support</h3>
+                                    <p class="mcgi-subject">Thanks for ordering Windows 8 (order #WD12345678)</p>
+                                    <small class="mcgi-time">11 Dec</small>
+                                </li><!-- /mc-group-item -->
+
+                                <li class="mc-group-item">
+                                    <div class="mcgi-actions">
+                                        <a role="button" title="Mark as unread">
+                                            <i class="icon ion-ios7-recording"></i>
+                                        </a>
+                                        <a role="button" title="Delete">
+                                            <i class="icon ion-ios7-trash"></i>
+                                        </a>
+                                        <a role="button" title="Flag">
+                                            <i class="icon ion-ios7-flag"></i>
+                                        </a>
+                                    </div><!-- /mcgi-actions -->
+                                    <div class="mcgi-checker">
+                                        <input class="icheck" name="mcgi-checkbox" type="checkbox" />
+                                    </div><!-- /mcgi-checker -->
+                                    <a href="#" class="mcgi-star important"></a>
+                                    <h3 class="mcgi-sender">James Simmons</h3>
+                                    <p class="mcgi-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, cumque</p>
+                                    <small class="mcgi-time">10 Dec</small>
+                                </li><!-- /mc-group-item -->
+                            </ul><!-- /mc-group -->
+                        </div><!-- /message-content-body -->
+                    </div><!-- /message-content -->
+
+                    <div class="message-preview">
+                        <div class="message-preview-heading">
+                            <div class="pull-left" style="margin-left:-12px">
+                                <a class="back-to-mc-group btn btn-icon view-sm" role="button" title="Back">
+                                    <i class="icon ion-arrow-left-c text-primary"></i>
+                                </a><!-- only use on small phone viewport -->
+                                <div class="btn-group">
+                                    <a class="btn btn-icon btn-transparent dropdown-toggle" data-toggle="dropdown" role="button" title="Respons">
+                                        <i class="icon ion-ios7-undo text-primary"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Reply</a></li>
+                                        <li><a href="#">Reply all</a></li>
+                                        <li><a href="#">Forward</a></li>
+                                    </ul>
+                                </div>
+                                <a class="btn btn-icon" role="button" title="Compose">
+                                    <i class="icon ion-ios7-plus text-primary"></i>
+                                </a>
+                                <a class="btn btn-icon" role="button" title="Trash">
+                                    <i class="icon ion-ios7-trash text-primary"></i>
+                                </a>
+                            </div><!-- /left preview actions -->
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-icon" title="Prev"><i class="icon ion-ios7-arrow-back text-primary"></i></a>
+                                    <a href="#" class="btn btn-icon" title="Next"><i class="icon ion-ios7-arrow-forward text-primary"></i></a>
+                                </div>
+                            </div><!-- /right preview actions -->
+                        </div><!-- /message-preview-heading -->
+
+                        <div class="message-preview-content">
+                            <div class="mpc-details">
+                                <div class="pull-right">
+                                    <small class="text-muted">Thu 19 Dec, 05:07</small>
+                                    <p class="help-block text-highlight text-right">
+                                        <i class="icon ion-ios7-flag" title="Flag"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="icon ion-ios7-star" title="Important"></i>
+                                    </p>
+                                </div>
+                                <div class="mpc-avatar">
+                                    <img class="img-circle" src="assets/app/img/avatar6.png" alt=""/>
+                                </div>
+                                <h3 class="mpc-sender-name">Mr. Doe</h3>
+                                <div class="mpc-sender-mail">
+                                    <a href="#">thedoe@mail.com</a> to <a href="#">me</a>
+                                </div>
+                            </div>
+                            <h3 class="mpc-subject">Spread the Word & Earn!</h3>
+                            <div class="mpc-msg">
+                                <p>Lorem ipsum dolor sit amet, amet tincidunt elit, magna luctus, neque eget. Et ut risus, duis eu vivamus, scelerisque et. Sit ut, eget sagittis tincidunt, risus magnis at. Nec ac, sed non, arcu turpis ligula. Nam magna, id donec magnis, vitae eu dictum. Donec mattis proin, purus porta.</p>
+                                <p>Vel neque nisl. Eu nunc pede, scelerisque vitae erat. Non neque urna, viverra dui nullam, molestie erat scelerisque. Et adipiscing. Et vestibulum, commodo etiam, venenatis accumsan quam. Sed torquent, eu sed, diam ut morbi.</p>
+                                <blockquote>Mauris magnis, elit maecenas. Sollicitudin nisl, ante rhoncus mi, vitae mollis. Lobortis ut volutpat. Senectus nullam cras, rerum velit. Qui expedita.</blockquote>
+                                <p>Metus mattis justo, tristique eget. Volutpat malesuada, odio at mi. Sed nulla, ac nulla. Maecenas pretium duis, libero phasellus pretium. Sed libero, at ipsum, magna lectus suscipit.</p><br>
+                                <p>Regards,</p>
+                                <p>Mr. Doe</p>
+                            </div>
+                            <div class="mpc-attach">
+                                <div class="lead">Attachments <small class="text-muted">(3 files, 1.21 MB)</small></div>
+                                <ul class="list-unstyled text-muted">
+                                    <li>
+                                        <div class="btn-group btn-group-sm pull-right">
+                                            <div class="btn btn-link">Download</div>
+                                            <div class="btn btn-link">View</div>
+                                        </div>
+                                        <p><small>design_brief.zip (654 KB)</small></p>
+                                    </li>
+                                    <li>
+                                        <div class="btn-group btn-group-sm pull-right">
+                                            <div class="btn btn-link">Download</div>
+                                            <div class="btn btn-link">View</div>
+                                        </div>
+                                        <p><small>Flowchart.docx (421 KB)</small></p>
+                                    </li>
+                                    <li>
+                                        <div class="btn-group btn-group-sm pull-right">
+                                            <div class="btn btn-link">Download</div>
+                                            <div class="btn btn-link">View</div>
+                                        </div>
+                                        <p><small>Revision_191213.jpg (184 KB)</small></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mpc-quick-reply">
+                                <form action="?" role="form">
+                                    <div class="form-group">
+                                        <textarea name="quick-replay" id="quick-replay" class="form-control bg-cloud" placeholder="Start typing to reply or forward"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /message-preview-content -->
+                    </div><!-- /message-preview -->
+                </div><!-- /message -->
+            </div><!-- /content spliter -->
+
+        </section><!-- /content -->
+    </section><!-- /wrapper -->
+
+    
+
+
+    <!-- jQuery, theme required for theme -->
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- theme dependencies -->
+    <!-- 
+        Contents List
+        1. Raphaël
+        2. Isotope
+        3. verge
+        4. Moment
+        5. Prettify
+    -->
+    <script src="assets/app/js/dependencies.js"></script>
+        
+        <!-- other dependencies -->
+        <script src="assets/jquery-icheck/jquery.icheck.min.js"></script>
+    
+    <!-- theme app main.js -->
+    <script src="assets/app/js/main.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        'use strict';
+
+        // toggle important state
+        $('.mc-group-item').on('click', function(e){
+            e.preventDefault()
+
+            $('.mc-group-item').removeClass('active');
+            $(this).addClass('active');
+            $('.message-preview').addClass('open');
+        })
+
+        // back to show mc-group, only for small phone viewport
+        $('.back-to-mc-group').on('click', function(){
+            $('.message-preview').removeClass('open');
+        })
+        
+        // toggle important state
+        $('.mcgi-star').on('click', function(e){
+            e.preventDefault();
+
+            $(this).toggleClass('important');
+        })
+        // end mark as important stat
+
+        // message content checker
+        $('.icheck').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue',
+        });
+
+        // checked all state
+        $('[name="mcgi-check-all"]').on('ifChecked', function(){
+            $('[name="mcgi-checkbox"]').iCheck('check');
+        })
+        .on('ifUnchecked', function(){
+            $('[name="mcgi-checkbox"]').iCheck('uncheck');
+        });
+
+        // single checked state
+        $('[name="mcgi-checkbox"]').on('ifToggled', function(e){
+            var isAnyChecked = $('[name="mcgi-checkbox"]:checked').length,
+                msg_item = $(this).parent().parent().parent();
+
+            msg_item.toggleClass('selected');
+                
+            if (!isAnyChecked) {
+                $('.mcgi-checker').removeClass('checked');
+                $('[name="mcgi-check-all"]').iCheck('uncheck');
+            }
+            else{
+                $('.mcgi-checker').addClass('checked');
+            };
+        });
+        // end message content checker
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+1.0
+
+ - Initial Releas
+
+1.1
+
+ - Fix some css issue
+ - Redesign bootstrap alert and table state classes
+ - Change structure demo menu ;)
+ - Adding more components:
+   - Nestable list
+   - Dropzone
+   - Beautiful CSS Loader
+   - Bootstrap progressbar (vertical mode available and interactive)
+   - Calendar (CLNDR)
+   - jQuery sparkline
+   - Easy pie chart
+ - Adding more pages:
+   - Pricing table page
+   - Faq/help page
+   - Manual Search page
+ - Change .box to .panel for demo
+ - Build CSS and JS to single file (keep available separate files for each components)
+ 

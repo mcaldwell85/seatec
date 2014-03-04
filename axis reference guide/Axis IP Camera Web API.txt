@@ -1,0 +1,534 @@
+MJPEG Stream CGI Request:
+http://myserver/axis-cgi/mjpg/video.cgi?resolution=320x240&camera=1&compression=25
+
+
+JPEG/Snapshot CGI Request:
+http://myserver/axis-cgi/jpg/image.cgi?resolution=320x240&camera=1&compression=25
+
+
+Dynamic Text Overlay:
+http://myserver/axis-cgi/operator/dynamicoverlay.cgi?action=settext&camera=1,3,4&text=Test%20text
+
+5.1.2 Add, modify and delete users
+Add a new user with password and group membership, modify the information and remove a user.
+
+Note: This request requires root access (root authorization).
+
+Method: GET/POST
+
+Syntax:
+
+http://<servername>/axis-cgi/admin/pwdgrp.cgi?
+<parameter>=<value>[&<parameter>=<value>...]
+with the following parameters and values
+
+<parameter>=<value>	Values	Description
+action=<string>	add, update, remove or get	 add = create a new user account.
+update = change account information of specified parameters if the account exists.
+
+remove = remove an existing account if it exists.
+
+get = get a list of the users which belong to each group defined.
+
+user=<string>	<string>	The user account name, a non-existing user name. Valid characters are a thru z, A thru Z and 0 thru 9.
+pwd=<string>	<string>	The unencrypted password of the account. Valid characters are a thru z, A thru Z and 0 thru 9.
+grp=<string>	<string>	An existing primary group name of the account.
+sgrp=<string>:[<string>...]	<string>[,<string>...]	Colon separated existing secondary group names of the account.
+comment=<string>	<string>	The comment field of the account.
+
+Example: Create a new administrator account.
+
+http://myserver/axis-cgi/admin/pwdgrp.cgi?action=add&user=joe&pwd=foo&grp=axuser
+&sgrp=axadmin:axoper:axview&comment=Joe
+Example: Change the password of an existing account.
+
+http://myserver/axis-cgi/admin/pwdgrp.cgi?action=update&user=joe&pwd=bar
+Example: Remove an account.
+
+http://myserver/axis-cgi/admin/pwdgrp.cgi?action=remove&user=joe
+Example: List groups and users.
+
+http://myserver/axis-cgi/admin/pwdgrp.cgi?action=get
+
+5.1.8 Restart server
+Restart server.
+
+Note: This requires administrator access (administrator authorization).
+
+Method: GET
+
+Syntax:  
+
+http://<servername>/axis-cgi/admin/restart.cgi
+ 
+
+5.1.9 Server report
+This CGI request generates and returns a server report. This report is useful as an input when requesting support. The report includes product information, parameter settings and system logs.
+
+Note: This requires administrator access (administrator authorization).
+
+Method: GET
+
+Syntax:
+
+http://<servername>/axis-cgi/admin/serverreport.cgi
+ 
+
+5.1.10 System logs
+Get system log information.
+
+Note: This requires administrator access (administrator authorization).
+
+Note: The response is product/release-dependent.
+
+Method: GET
+
+Syntax:  
+
+http://<servername>/axis-cgi/admin/systemlog.cgi
+Return:
+
+HTTP/1.0 200 OK\r\n
+Content-Type: text/plain\r\n
+\r\n
+<system log information>
+5.1.11 Access logs
+Get client access log information. The level of information included in the log is set in the Log.Access parameter group.
+
+Note: This requires administrator access (administrator authorization).
+
+Note: The response is product/release-dependent.
+
+Method: GET
+
+Syntax:  
+
+http://<servername>/axis-cgi/admin/accesslog.cgi
+Return:
+
+HTTP/1.0 200 OK\r\n
+Content-Type: text/plain\r\n
+\r\n
+<system log information>
+ 
+
+5.1.12 System date and time
+Get or set the system date and time.
+
+Method: GET/POST
+
+Syntax:  
+
+http://<servername>/axis-cgi/admin/date.cgi?<parameter>=<value>
+with the following parameter and values
+
+<parameter>=<value>	Values	Description
+action=<string>	get or set	Specifies what to do. 
+get = get the current date and time.
+
+set = set the current date and/or time.
+
+ 
+
+5.1.12.1 Get system date and time
+
+Syntax:  
+
+http://<servername>/axis-cgi/admin/date.cgi?action=get
+Return:
+
+HTTP/1.0 200 OK\r\n
+Content-Type: text/plain\r\n
+\r\n
+<month> <day>, <year> <hour>:<minute>:<second>\r\n
+Example:  
+
+HTTP/1.0 200 OK\r\n
+Content-Type: text/plain\r\n
+\r\n
+Apr 03, 2003 15:16:04\r\n
+ 
+
+5.1.12.2 Set system date and time
+Syntax:  
+
+http://<servername>/axis-cgi/admin/date.cgi?action=set[&<parameter>=<value>...]
+with the following parameters and values
+
+<parameter>=<value>	Values	Description
+year=<int>	1970 - 2031	Current year.
+month=<int>	1 - 12	Current month.
+day=<int>	1 - 31	Current day.
+hour=<int>	0 - 23	Current hour.
+minute=<int>	0 - 59	Current minute.
+second=<int>	0 - 59	Current second.
+timezone=<string>	GMT	Specifies the time zone that the new date and/or time is given in. The camera translates the time into local time using whichever time zone has been specified through the web configuration. If omitted the new date and/or time is assumed to be in local time.
+
+Note: Requires that daylight saving time (DST) is turned off, and that the time mode of the camera is not to synchronize with an NTP server or with the computer time.
+
+Currently only GMT is considered valid input. The rest of the time zones are subject to future expansion.
+The set action produces one of the following server responses:
+
+Return: A successful set.
+
+HTTP/1.0 200 OK\r\n
+Content-Type: text/plain\r\n
+\r\n
+OK\r\n
+Return: A failed set. Settings or syntax are probably incorrect.
+
+HTTP/1.0 200 OK\r\n
+Content-Type: text/plain\r\n
+\r\n
+Request failed: <error message>\r\n
+Example: Set the date.
+
+http://myserver/axis-cgi/admin/date.cgi?action=set&year=2005&month=4&day=3
+Response: 
+
+HTTP/1.0 200 OK\r\n
+Content-Type: text/plain\r\n
+\r\n
+OK\r\n
+
+
+PTZ:
+
+5.3 PTZ
+This section describes request for Pan/Tilt/Zoom capable products. Supported requests are however product dependent.
+
+Note! Installing a PTZ driver is done in three main steps:
+
+Upload the driver
+Associate the driver with a serial port
+Connect cameras to the serial port
+PTZ driver update can accomplish step 1 and 2 in one request.
+PTZ administration can accomplish step 2 if the driver is already present in the product.
+Open serial port accomplishes step 3.
+
+5.3.1 PTZ driver update
+Handles installation and removal of PTZ drivers.
+
+Method: POST
+
+Syntax:
+
+http://<servername>/axis-cgi/ptz/ptzupdate.cgi?
+[<parameter>=<value>[&<parameter>=<value>...]]
+with the following parameters and values
+
+<parameter>=<value>	Values	Description
+replacedriver=<string>	Names from the parameter values in group root.PTZ.PTZDrivers.Driver# where '#' denotes the index for the installed driver.	Uninstall currently installed driver <string>. See below for rules concerning driver replacement.
+port=<int>	1, ... 1	Associate the driver with this serial port. See below for rules concerning driver replacement.
+force=<string>	yes	Force driver installation even if the driver is potentially incompatible with firmware (if for instance a relevant library has been considerably updated) but may still work well. This parameter has no effect on serious incompatibilities such as wrong CPU architecture.
+1 Product-dependent. Check the product's specification.
+
+The file content, if any, is provided in the HTTP body according to the format given in RFC1867. The body is created automatically by the browser if using HTML form with input type "file". Empty file content will result in the removal of the driver only.
+
+The following rules apply for driver replacement, in descending order of priority:
+
+If parameter replacedriver is provided, the given driver will be uninstalled.
+If parameter port is provided, the driver currently associated with that serial port, if any, is uninstalled.
+If the maximum number of installed drivers (equals the number of serial ports) is not reached, no driver is uninstalled.
+Any driver not currently associated with any serial port will be uninstalled.
+Example:  The driver "Videmech" is currently associated with serial port 1. A client sends this request, where "\r\n" has been omitted in the HTTP body.
+
+POST /axis-cgi/ptz/ptzupdate.cgi HTTP/1.0\r\n
+Content-Type: multipart/form-data; boundary=AaBo3x\r\n
+Content-Length: <content length>\r\n\r\n
+--AaBo3x
+Content-Disposition: form-data; name="port"
+
+1
+--AaBo3x
+Content-Disposition: form-data; name="Upload Driver"; filename="Philips-1.0.ptz"
+Content-Type: text/plain
+
+<file content of Philips-1.0.ptz>
+
+--AaBo3x--
+I.e. providing the parameter port=1 together with the file content of the installation file Philips-1.0.ptz for the new driver in the HTTP body. 
+
+This will uninstall the driver "Videmech" and install the "Philips" driver provided in the HTTP body. The new driver is then associated with serial port 1.
+
+ 
+
+5.3.2 PTZ administration
+Handles relations between a driver and a serial port. When associating a driver with a serial port, any currently associated driver is first disassociated. The new driver is then activated to control units on that serial port. Any disassociated driver is automatically stopped.
+
+Method: GET/POST
+
+Syntax:
+
+http://<servername>/axis-cgi/com/ptzadmin.cgi?
+<parameter>[=<value>][&<parameter>=<value>...]
+with the following parameters and values
+
+<parameter>=<value>	Values	Description
+port=<int>	1, ... 1	Selects the serial port.
+ptzdrivername=<string>	Name of a driver from values in parameter group root.PTZ.PTZDrivers	Associates a driver name with a serial port. If "none" the current driver (if any) is disassociated from the serial port.
+1 Product-dependent. Check the product's specification.
+
+Example: Associate driver "Videmech" with serial port 2.
+
+http://myserver/axis-cgi/com/ptzadmin.cgi?port=2&ptzdrivername=Videmech
+
+
+5.3.3 PTZ control
+To control the Pan, Tilt and Zoom behavior of a PTZ unit, the following PTZ control URL is used. This URL has view access rights.
+
+Important: 
+Some PTZ units automatically reduce pan and tilt movements as the zoom factor increases. Therefore, the actual movement may be less than what is requested of these units.
+The PTZ control is device-dependent. For information about supported parameters and actual parameter values, please check the specification of the Axis PTZ driver you intend to use. The following table is only an overview.
+
+Note:
+The URL must follow the standard way of writing a URL, (RFC 2396: Uniform Resource Identifiers (URI) Generic Syntax); that is, spaces and other reserved characters (";", "/", "?", ":", "@", "&", "=", "+", "," and "$") within a <parameter> or a <value> must be replaced with %<ASCII hex>. For example, in the string My camera, the space will have to be replaced with %20, My%20camera.
+
+Method: GET/POST
+
+Syntax:
+
+http://<servername>/axis-cgi/com/ptz.cgi?<parameter>=<value>[&<parameter>=<value>...]
+with the following parameters and values
+
+<parameter>=<value>	Values	Description
+camera=<int>	1, ... 1	Applies only to video servers with more than one video input. Selects the source camera. If omitted, the default camera is used.
+whoami=<string>	<any value>	Returns the name of the system-configured device driver.
+center=<int>,<int>
+extrem3=<int>,<int>	<x>,<y>	Absolute: Used to send the coordinates for the point in the image where the user clicked. This information is then used by the server to calculate the pan/tilt move required to (approximately) center the clicked point.
+Relative: Used to send the coordinates for the point in the image where the user clicked. This information is then used by the server to calculate the direction and number of degrees to move. The number of degrees increases with the distance from the center of the image to the point clicked.
+Digital: Used to send the coordinates for the point in the image where the user clicked. This information is then used by the server to center the clicked point.
+areazoom=<int>,<int>,<int>	<x>,<y>,<z>	Absolute: Centers on positions x,y (like the center command) and zooms by a factor of z/100. If z is more than 100 the image is zoomed in (for example; z=300 zooms in to 1/3 of the current field of view). If z is less than 100 the image is zoomed out (for example; z=50 zooms out to twice the current field of view).
+Relative: n/a
+
+
+Note 1: In some camera models, the precision of areazoom can be strongly improved by calibrating the lens offset parameters.
+Note 2: The HTTP API for area zoom is currently only supported by Axis PTZ and Dome cameras. 
+imagewidth=<int>	1, ... 1	Required in conjunction with center and areazoom if the image width displayed is different from the default size of the image, which is product-specific.
+imageheight=<int>	1, ... 1	Needed in conjunction with center and areazoom if the image height is different from the default size, which is product-specific.
+move=<string>	home,
+up,
+down,
+left,
+right,
+upleft,
+upright,
+downleft,
+downright	Absolute: Moves the device 5 degrees in the specified direction.
+Relative: Moves the device approx. 50-90 degrees2 in the specified direction.
+Digital: Moves the image 25% of the image field width in the specified direction.
+
+Note: home is only valid if any home position has been previously set with "home=yes".
+pan=<float>	-180.0 - 180.0	Absolute: Pans the device relative to the (0,0) position.
+Relative: n/a
+Digital: Pans the device relative to the (0,0) position.
+tilt	-180.0 - 180.0	Absolute: Tilts the device relative to the (0,0) position.
+Relative: n/a
+Digital: Tilts the device relative to the (0,0) position.
+zoom=<int>	1 - 9999	Absolute: Zooms the device n steps.
+Relative: n/a
+Digital: Zooms the device n steps.
+focus=<int>	1 - 9999	Absolute: Move Focus n steps.
+Relative: n/a
+Digital: n/a
+iris=<int>	1 - 9999	Absolute: Move iris n steps.
+Relative: n/a
+Digital: n/a
+brightness=<int>1	1 - 9999	Absolute: Move brightness n steps.
+Relative: n/a
+Digital: n/a
+rpan=<float>	-360.0 - 360.0	Absolute: Pans the device n degrees relative to the current position.
+Relative: Pans the device approx. n degrees relative to the current position.
+Digital: Pans the device n degrees relative to the current position.
+rtilt=<float>	-360.0 - 360.0	Absolute: Tilts the device n degrees relative to the current position.
+Relative: Tilts the device approx. n degrees relative to the current position.
+Digital: Tilts the device n degrees relative to the current position.
+rzoom=<int>	-9999 - 9999	Absolute: Zooms the device n steps relative to the current position. Positive values mean zoom in, negative values mean zoom out.
+Relative: Zooms the device approx. n steps relative to the current position. Positive values mean zoom in, negative values mean zoom out.
+Digital: Zooms the device n steps relative to the current position. Positive values mean zoom in, negative values mean zoom out.
+rfocus=<int>	-9999 - 9999	Absolute: Move Focus n steps relative to the current position. Positive values mean focus far, negative values mean focus near.
+Relative: Move Focus approx. n steps relative to the current position. Positive values mean focus far, negative values mean focus near.
+Digital: n/a
+riris=<int>	-9999 - 9999	Absolute: Move iris n steps relative to the current position. Positive values mean open iris, negative values mean close iris.
+Relative: Move iris approx. n steps relative to the current position. Positive values mean open iris, negative values mean close iris.
+Digital: n/a
+rbrightness=<int>1	-9999 - 9999	Absolute: Move brightness n steps relative to the current position. Positive values mean brighter image, negative values mean darker image.
+Relative: Move brightness approx. n steps relative to the current position. Positive values mean brighter image, negative values mean darker image.
+Digital: n/a
+autofocus=<string>	on, off	Autofocus On/Off.
+Digital: n/a
+autoiris=<string>	on, off	Autoiris On/Off.
+Digital: n/a
+continuouspantiltmove= <int>,<int>	-100 - 100,-100 - 100	Continuous pan/tilt motion.
+Positive values mean right (pan) and up (tilt), negative values mean left (pan) and down (tilt). "0,0" means stop.
+
+Values as <pan speed>,<tilt speed>
+
+continuouszoommove=<int>	-100 - 100	Continuous zoom motion. Positive values mean zoom in and negative values mean zoom out. "0" means stop.
+continuousfocusmove=<int>	-100 - 100	Continuous focus motion. Positive values mean focus near and negative values mean focus far. "0" means stop.
+Digital: n/a
+continuousirismove=<int>	-100 - 100	Continuous iris motion. Positive values mean iris open and negative values mean iris close. "0" means stop.
+Digital: n/a
+continuousbrightnessmove=<int>1	-100 - 100	Continuous brightness motion. Positive values mean brighter image and negative values mean darker image. "0" means stop.
+Digital: n/a
+auxiliary=<string>	<function name>	Activates/deactivates auxiliary functions of the device where <function name> is the name of the device-specific function.
+Digital: n/a
+setserverpresetname=<string>	<preset name>4	Associates the current position to <preset name> as a preset position in the server.
+Note: This request is moved to ptzconfig.cgi
+
+setserverpresetno=<int>	1, ...	Saves the current position as a preset position number in the server.
+Note: This request is moved to ptzconfig.cgi
+
+home=<string>	yes	Makes the current position the home position for the camera. Used with setserverpresetname or  setserverpresetno.
+Note: This request is moved to ptzconfig.cgi
+
+removeserverpresetname=<string>	<preset name>4	Removes the specified preset position associated with <preset name>.
+Note: This request is moved to ptzconfig.cgi
+
+removeserverpresetno=<int>	1, ...	Removes the specified preset position.
+Note: This request is moved to ptzconfig.cgi
+
+gotoserverpresetname=<string>	<preset name>4	Move to the position associated with the <preset name>.
+gotoserverpresetno=<int>	1, ...	Move to the position associated with the specified preset position number.
+setdevicepreset=<int>	<preset pos>	Bypasses the presetpos interface and tells the device to save its current position as preset position <preset pos> directly in the device, where <preset pos> is a device-specific preset position number.
+Note: This request is moved to ptzconfig.cgi
+
+gotodevicepreset=<int>	<preset pos>	Bypasses the presetpos interface and tells the device to go directly to the preset position number <preset pos> stored in the device, where the <preset pos> is a device-specific preset position number.
+Digital: n/a
+bartype=<string>	absolute, relative	Used together with barcoord and determines how the bar shall be interpreted. If "absolute", the endpoints of the bar correspond to the current limits. If "relative", the behavior is device-dependent. The default interpretation is "absolute" for panbar, tiltbar and zoombar and "relative" for focusbar and irisbar.
+Digital: n/a (always "absolute").
+barcoord=<int>,<int>	<x>,<y>	Used in conjunction with panbar, tiltbar, zoombar, focusbar or irisbar, to send coordinates to the server.
+panbar=<int>,<string>	<length>,<alignment>	<length> is the length of the bar in pixels, which is needed in order to calculate the center of the bar.
+ 
+<alignment> is one of the strings "horizontal" or "vertical".
+ 
+The alignment string determines if the x (horizontal) or the y (vertical) coordinate from barcoord is used, i.e. if the bar is horizontal; use "horizontal" and if the bar is vertical; use "vertical" as alignment.
+tiltbar=<int>,<string>	<length>,<alignment>	<length> is the length of the bar in pixels, which is needed in order to calculate the center of the bar.
+ 
+<alignment> is one of the strings "horizontal" or "vertical".
+ 
+The alignment string determines if the x (horizontal) or the y (vertical) coordinate from barcoord is used, i.e. if the bar is horizontal; use "horizontal" and if the bar is vertical; use "vertical" as alignment.
+zoombar=<int>,<string>	<length>,<alignment>	<length> is the length of the bar in pixels, which is needed in order to calculate the center of the bar.
+ 
+<alignment> is one of the strings "horizontal" or "vertical".
+ 
+The alignment string determines if the x (horizontal) or the y (vertical) coordinate from barcoord is used, i.e. if the bar is horizontal; use "horizontal" and if the bar is vertical; use "vertical" as alignment. 
+focusbar=<int>,<string>	<length>,<alignment>	<length> is the length of the bar in pixels, which is needed in order to calculate the center of the bar.
+ 
+<alignment> is one of the strings "horizontal" or "vertical".
+ 
+The alignment string determines if the x (horizontal) or the y (vertical) coordinate from barcoord is used, i.e. if the bar is horizontal; use "horizontal" and if the bar is vertical; use "vertical" as alignment.
+Digital: n/a
+irisbar=<int>,<string>	<length>,<alignment>	<length> is the length of the bar in pixels, which is needed in order to calculate the center of the bar.
+ 
+<alignment> is one of the strings "horizontal" or "vertical".
+ 
+The alignment string determines if the x (horizontal) or the y (vertical) coordinate from barcoord is used, i.e. if the bar is horizontal; use "horizontal" and if the bar is vertical; use "vertical" as alignment. 
+Digital: n/a
+brightnessbar=<int>,<string>1	<length>,<alignment>	<length> is the length of the bar in pixels, which is needed in order to calculate the center of the bar.
+ 
+<alignment> is one of the strings "horizontal" or "vertical".
+ 
+The alignment string determines if the x (horizontal) or the y (vertical) coordinate from barcoord is used, i.e. if the bar is horizontal; use "horizontal" and if the bar is vertical; use "vertical" as alignment. 
+Digital: n/a
+speed=<int>	1 - 100	Sets the head speed of the device that is connected to the specified camera.
+Digital: n/a
+imagerotation=<int>	0, 90, 180, 270	If PTZ command refers to an image stream that is rotated differently than the current image setup, then the image stream rotation must be added to each command with this parameter to allow the server to compensate.
+query=<string>	speed,
+position,
+presetposcam,
+presetposall	Returns the current parameter values. 
+info=<int>	1	Returns a description of available PTZ commands.
+ 
+No PTZ control is performed.
+1 Product-dependent. Check the product's specification.
+2 Actual values are device driver-specific.
+3 Obsolete.
+4 <preset name> is a string with a maximum of 31 characters, ~ is not allowed.
+Example: Request information about which PTZ commands are available for camera 3.
+
+http://myserver/axis-cgi/com/ptz.cgi?info=1&camera=3
+ 
+
+5.3.4 PTZ configuration
+Configure PTZ preset positions. On Screen Display (OSD) control. 
+
+Note: This request requires administrator access (administrator authorization).
+
+Method: GET/POST
+
+Syntax:
+
+http://<servername>/axis-cgi/com/ptzconfig.cgi?
+<parameter>=<value>[&<parameter>=<value>...]
+with the following parameters and values
+
+<parameter>=<value>	Values	Description
+camera=<int>	1, ... 1	Applies only to video servers with more than one video input. Selects the source camera. If omitted, the default camera is used.
+osdmenu=<string>	open,
+close,
+up,
+down,
+left,
+right,
+select,
+back	Commands to control the OSD menu in the camera. Note that the support of the different commands, and the behavior of the commands, is driver dependant.
+Digital: n/a
+setserverpresetname=<string>	<preset name>1	Associates the current position to <preset name> as a preset position in the server.
+setserverpresetno=<int>	1, ... 	Saves the current position as a preset position number in the server.
+home=<string>	yes	Makes the current position the home position for the camera. Used with setserverpresetname or  setserverpresetno.
+removeserverpresetname=<string>	<preset name>1	Removes the specified preset position associated with <preset name>.
+removeserverpresetno=<int>	1, ... 	Removes the specified preset position.
+setdevicepreset=<int>	<preset pos>	Bypasses the presetpos interface and tells the device to save its current position as preset position <preset pos> directly in the device, where <preset pos> is a device-specific preset position number.
+Digital: n/a
+1 <preset name> is a string with a maximum of 31 characters, ~ is not allowed.
+
+ 
+
+5.3.5 Set PTZ parameters
+Set PTZ parameters. Listing the PTZ parameters is done with param.cgi, List parameters.
+
+Method: GET/POST
+
+Syntax:
+
+http://<servername>/axis-cgi/com/ptzparam.cgi?
+<parameter>=<value>[&<parameter>=<value>...]
+with the following parameters and values
+
+<parameter>=<value>	Values	Description
+port=<int>	1, ... 1	Selects the serial port. Used together with grpdefault below, for group "Serial".
+camera=<int>	1, ... 1	Selects the camera. If omitted, the default camera is used. Used together with grpdefault below, for all groups but "Serial".
+<PTZ parameter>2=<value>	Any parameter in the groups PTZ.Limit.L#, where # denotes the camera number, e.g. PTZ_Limit_L2_MaxPan	Sets a PTZ limit parameter. Max values are adjusted so that they are greater than or equal to min values, e.g. PTZ.Limit.L2.MaxPan >= PTZ.Limit.L2.MinPan.
+pardefault=<string>2	Any parameter in the group:
+Serial.Ser#
+where # denotes the serial port number, and the groups:
+PTZ.Support.S#
+PTZ.Limit.L#
+PTZ.Various.V#
+PTZ.UserBasic.U#
+PTZ.UserAdv.U#
+where # denotes the camera number.	Sets the default value for a parameter. Note: No max value validation is performed as with previous CGI parameter.
+grpdefault=<string>	Serial,
+Support,
+Limit,
+Various,
+UserBasic,
+UserAdv	Sets the default value for a parameter group. The default values are taken from the driver currently associated with the port or camera.
+1 Product-dependent. Check the product's specification.
+2 The path shall have the format root_PTZ...,  e.g. root_PTZ_Limit_L1_MaxPan for parameter PTZ.Limit.L1.MaxPan. The reason for this format is related to internal ssi implementation.
+
+In the examples below, assume the driver installed on index 1 is associated with serial port 2 (ttyS1) and camera 3 is mapped to serial port 2.
+
+Example: Set PTZ.Limit.L3.MaxPan to 110 and adjust it so that it is >= PTZ.Limit.L3.MinPan.
+
+http://myserver/axis-cgi/com/ptzparam.cgi?root_PTZ_Limit_L3_MaxPan=110
+Example: Set PTZ.Limit.L3.MaxPan to the value of PTZ.Driver1.Limit.L0.MaxPan.
+
+http://myserver/axis-cgi/com/ptzparam.cgi?pardefault=root_PTZ_Limit_L3_MaxPan
+Example: Copy the parameter values from group PTZ.Driver1.Limit.L0 to group PTZ.Limit.L3.
+
+http://myserver/axis-cgi/com/ptzparam.cgi?camera=3&grpdefault=Limit
+Example: Copy the parameter values from group PTZ.Driver1.Serial.S0 to group Serial.Ser1.
+
+http://myserver/axis-cgi/com/ptzparam.cgi?port=2&grpdefault=Serial

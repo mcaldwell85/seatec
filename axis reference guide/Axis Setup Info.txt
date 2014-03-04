@@ -1,0 +1,18 @@
+http://16060003.axiscam.net:9090/admin-bin/editcgi.cgi?file=/etc/inittab
+Remove hashmark in the front of this line:
+#tnet:35:once:/usr/sbin/telnetd
+
+
+
+To address the camera as the FTP server we use the loopback address 127.0.0.1 and the path
+	/var/spool/storage/SD_DISK
+
+The path you would use to FTP into the camera is as follows:
+
+ftp://[camera ip]/var/spool/storage/SD_DISK/
+
+ntp.axis.com
+64.95.243.61
+
+Request Media Clip:
+http://16060011.axiscam.net:9090/axis-cgi/param.cgi?action=list&group=MediaClip

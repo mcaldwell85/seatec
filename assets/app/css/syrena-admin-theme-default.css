@@ -1,0 +1,403 @@
+/**
+ * syrena-admin-theme-default.css v1.1
+ * Syrena admin template
+ *
+ * Use to setting font-family, basic color, events element (hover, active, focus, etc)
+ * default theme usage colors: 
+ *  - body: none;
+ *  - side left: wetasphalt - #34495e;
+ *  - side header: belizehole - #2980b9;
+ *  - content: cloud - #ecf0f1;
+ *  - content header: peterriver - #3498db;
+ *  
+ * 	- primary: peterriver - #3498db;
+ * 	- success: emerald - #2ecc71;
+ * 	- info: bluesky - #5bc0de;
+ * 	- warning: orange - #f39c12;
+ * 	- danger: alizarin - #e74c3c;
+ *
+ * License:
+ * For License Information check out - https://wrapbootstrap.com
+ * 
+ * Copyright 2014, Stilearning
+ * http://stilearning.com
+ */
+
+
+
+/**
+ * Helper theme color
+ */
+.bg-primary{ background-color: #3498db !important; color: #ecf0f1; border-color: #3498db; }
+.bg-success{ background-color: #2ecc71 !important; color: #ecf0f1; border-color: #2ecc71; }
+.bg-info{ background-color: #5bc0de !important; color: #ecf0f1; border-color: #5bc0de; }
+.bg-warning{ background-color: #f39c12 !important; color: #ecf0f1; border-color: #f39c12; }
+.bg-danger{ background-color: #e74c3c !important; color: #ecf0f1; border-color: #e74c3c; }
+
+.border-primary{ border-color: #3498db !important; }
+.border-success{ border-color: #2ecc71 !important; }
+.border-info{ border-color: #5bc0de !important; }
+.border-warning{ border-color: #f39c12 !important; }
+.border-danger{ border-color: #e74c3c !important; }
+
+.text-highlight, 
+.text-link{
+	color: #3498db !important;		/* peterriver */
+}
+.text-primary{ color: #34495e !important; }		/* wetasphalt */
+.text-success{ color: #2ecc71 !important; }
+.text-info{ color: #5bc0de !important; }
+.text-warning{ color: #f39c12 !important; }
+.text-danger{ color: #e74c3c !important; }
+.text-inverse{ color: #ecf0f1 !important; }		/* cloud */ 
+
+
+
+/**
+ * Theme Split Layout
+ * We use fixe mode layout width every section inside wrapper
+ */
+.side-left{
+	background-color: #34495e;		/* wetasphalt */
+	color: #ecf0f1;					/* cloud */
+}
+	.side-header{
+		background-color: #2980b9;	/* belizehole */
+		color: #ecf0f1;				/* cloud */
+	}
+		.side-header > .brand a{
+			color: #ecf0f1;			/* cloud */
+		}
+		.side-header > .brand a:hover{
+			text-decoration: none;
+			color: #ecf0f1;			/* cloud */
+		}
+			.side-header > .side-form > .form-control{
+				color: #ecf0f1;					/* cloud */
+				background-color: #3498db;		/* peterriver */
+				border: 1px solid #3498db;		/* peterriver */
+			}
+			.side-header > .side-form > .form-control::-webkit-input-placeholder { color: #ecf0f1; }
+			.side-header > .side-form > .form-control:-moz-placeholder { color: #ecf0f1;   /* Firefox 18- */ }
+			.side-header > .side-form > .form-control::-moz-placeholder { color: #ecf0f1;   /* Firefox 19+ */ }
+			.side-header > .side-form > .form-control:-ms-input-placeholder {  color: #ecf0f1;  }
+
+			.side-header > .side-form > .form-control:focus{
+				border: 1px solid #3498db;		/* peterriver */
+			}
+		
+
+		.side-body > .side-wrapper{
+			background-color: rgba(52, 73, 94, .9);			/* wetasphalt */
+		}
+		.side-body > .side-wrapper.open.active{
+			background-color: #2980b9;						/* belizehole */
+		}
+			.side-wrapper .side-wrapper-result{
+				color: #34495e;
+			}
+			.side-wrapper .side-wrapper-result > .panel{
+				background-color: rgba(255, 255, 255, .8);
+				margin-bottom: 10px;
+			}
+
+	/* side body */
+			.side-nav-item > a{
+				color: #ecf0f1;			/* cloud */
+			}
+			.side-nav-item > a:hover,
+			.side-nav-item > a:focus {
+			  	background-color: rgba(44, 62, 80, .4);			/* midnightblue */
+			}
+
+			.side-nav-item.active > a,
+			.side-nav-item.active > a:hover,
+			.side-nav-item.active > a:focus {
+			  	color: #ecf0f1;									/* cloud */
+			  	background-color: rgba(44, 62, 80, .75);		/* midnightblue */
+			  	border-color: rgba(44, 62, 80,  .75);			/* midnightblue */
+			}
+			
+			.nav-item-caret{
+				color: #7f8c8d;					/* asbestos */
+			}
+
+			.side-nav-item > a > .badge {
+				background-color: #2c3e50;		/* midnightblue */
+				color: #ecf0f1;					/* cloud */
+			}
+			.side-nav-item.active > a > .badge {
+				background-color: #ecf0f1;		/* cloud */
+				color: #2c3e50;					/* midnightblue */
+			}
+
+				.side-nav-child{
+					background-color: #34495e;	/* wetasphalt => sincronize to side left background (recomended set to same bg color with .side-left) */
+				}
+			
+				.side-nav .side-nav-item-heading > a{
+					color: #ecf0f1;								/* cloud */
+				  	background-color: rgba(44, 62, 80, .75);	/* midnightblue */
+				  	border-color: rgba(44, 62, 80, .75);		/* midnightblue */
+				}
+			
+
+
+.content{
+	background-color: #ecf0f1;		/* cloud */
+	color: #2c3e50;					/* midnightblue */
+}
+	.content-header{
+		background-color: #3498db;	/* peterriver */
+		color: #ecf0f1;				/* cloud */
+	}
+	
+		.content-main{
+			background-color: #ecf0f1;				/* cloud */
+			border-right: 1px solid #E5E5E5;		/* silver */
+		}
+
+				.app-header{
+					background-color: #ffffff;				/* white */
+					color: #2c3e50;							/* midnightblue */
+					border-bottom: 1px solid #E5E5E5;		/* softsilver */
+				}
+				.content-app.fixed-header > .app-header{
+					border-width: 0;
+				}
+			
+				.app-body{
+					background-color: transparent;	/* white */
+				}
+			
+
+		.content-aside{
+			background-color: #ecf0f1;
+			border-left: 1px solid #E5E5E5;			/* silver */
+		}
+
+				.module-header{
+					background-color: #ffffff;		/* white */
+					color: #34495e;					/* midnightblue */
+					border-bottom: 1px solid #E5E5E5;		/* softsilver */
+				}
+				.content-module.fixed-header > .module-header{
+					border-width: 0;
+				}
+			
+				.module-body{
+					background-color: transparent;	/* none */
+				}
+
+
+
+/* Page Gallery style */
+.gallery-item-marker{
+	background-color: #222222;
+	color: #ffffff;
+	border-color: #ffffff;
+}
+.gallery-item.marked .gallery-item-marker{
+	color: #ffffff;
+	background-color: #3498db;
+	border-color: #ffffff;
+}
+.gallery-item.marked .gallery-thumb:after{
+	background-color: rgba(52, 152, 219, .8);
+}
+.gallery-item-caption{
+	background: #e5e5e5;
+}
+.gi-caption-close:hover,
+.gi-toggle-details:hover{
+	color: #34495e;
+}
+.gallery-item-caption .panel{
+	background-color: #ffffff;
+}
+/* end Page Gallery style */
+
+
+
+/* Profile page */
+.pc-details .pc-details-content{
+	background-color: rgba(52, 73, 94, .25);
+	color: #ffffff;
+}
+.profile-actions{
+	background-color: #ffffff;
+}
+/* End Profile page */
+
+
+
+/* Message page */
+.message-content{
+	background-color: #ecf0f1;
+}
+	.message-content-heading{
+		background-color: #ecf0f1;
+	}
+		.message-content-heading h3 small{
+			color: #999999;
+		}
+	.message-content-search{
+		background-color: #ecf0f1;
+	}
+		.message-content-search .form-control,
+		.message-content-search .form-control:focus{
+			background-color: rgba(255, 255, 255, 0.4);
+		}
+
+	.mc-group .mc-group-item.active,
+	.mc-group .mc-group-item.selected,
+	.mc-group .mc-group-item.active:hover,
+	.mc-group .mc-group-item.selected:hover,
+	.mc-group .mc-group-item:hover{
+		background-color: rgba(52, 152, 219, .25);
+	}
+
+		.mc-group .mc-group-item.unread > .mcgi-subject{
+			color: #3498db;
+		}
+		.mc-group .mc-group-item > .mcgi-time{
+			color: rgba(52, 73, 94, .6);
+		}
+
+		.mcgi-actions > a{
+			color: rgba(52, 73, 94, .6);
+		}
+		.mcgi-actions > a:hover{
+			background-color: rgba(52, 152, 219, .25);
+		}
+
+	.mcgi-attach{
+		color: #34495e;
+	}
+.message-preview{
+	background-color: #ffffff;
+}
+.message-preview.empty:before{
+	color: #999999;
+}
+	.mpc-msg p,
+	.mpc-msg{
+		color: #7f8c8d;
+	}
+	.mpc-attach{
+		border-color: #e5e5e5;
+	}
+/* End Message page */
+
+
+
+
+/* Pricing table */
+.pricing-table{
+	background-color: #3498db;
+	color: #ecf0f1;
+}
+.pricing-table.pricing-success{
+	background-color: #2ecc71;
+	color: #ecf0f1;
+}
+.pricing-table.pricing-warning{
+	background-color: #f39c12;
+	color: #ecf0f1;
+}
+.pricing-table.pricing-danger{
+	background-color: #e74c3c;
+	color: #ecf0f1;
+}
+.pricing-table li{
+	border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+}
+	.pricing-table > .pricing-heading{
+		background-color: rgba(0, 0, 0, 0.15);
+	}
+
+		.pricing-table > .pricing-price small{
+			color: rgba(255, 255, 255, 0.6);
+		}
+
+		.pricing-features .pricing-feature-item{
+			border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+		}
+
+		.pricing-footer .pricing-action,
+		.pricing-footer .pricing-action-alt{
+			background-color: rgba(0, 0, 0, 0.15);
+		}
+		.pricing-footer .pricing-action-alt{
+			background-color: #2c3e50;
+		}
+/* End Pricing table */
+
+
+
+
+/* Module */
+/* Chats module */
+.cm-contact{
+	background-color: #ffffff;
+}
+	.cm-contact .cm-contact-separate,
+	.cm-contact .cm-contact-item{
+		border-color: #e5e5e5;
+	}
+	.cm-contact .cm-contact-separate{
+		background-color: #ecf0f1;
+	}
+	.cm-contact .cm-contact-item{
+		color: #34495e;
+	}
+	.cm-contact .cm-contact-item:hover{
+		background-color: #ecf0f1;
+	}
+		.cm-contact-item .cmci-name small{
+			color: #999999;
+		}
+.cm-content{
+	background-color: #ffffff;
+}
+	.cm-content-heading{
+		background-color: #95a5a6;
+		color: #ecf0f1;
+	}
+		.cm-content-heading:hover{
+			color: #ecf0f1;
+		}
+	.cm-content-status{
+		color: #999999;
+	}
+	.cm-content-input{
+		background-color: #ecf0f1;
+	}
+	.cm-content-chats{
+		background-color: #ffffff;
+		color: inherit;
+	}
+			.chat-in .chat-avatar:after{
+				border-color: #ecf0f1;
+				border-left-color: transparent;
+				border-bottom-color: transparent;
+			}
+			.chat-in .chat-msg{
+				background-color: #ecf0f1;
+				border-color: #e5e5e5;
+			}
+			.chat-out .chat-avatar:after{
+				border-color: #ecf0f1;
+				border-right-color: transparent;
+				border-bottom-color: transparent;
+			}
+
+			.chat-out .chat-msg{
+				background-color: #ecf0f1;
+				border-color: #e5e5e5;
+			}
+		.cm-content-chats time,
+		.cm-content-chats small{
+			color: #999999;
+		}
+/* End Chats module */

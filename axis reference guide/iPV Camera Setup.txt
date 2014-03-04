@@ -1,0 +1,41 @@
+WeeklyPowercycle
+
+support@caesartouch.mojohelpdesk.com
+
+http://127.0.0.1:9090/axis-cgi/admin/restart.cgi
+
+1606-3 Video Loss
+Camera has successfully restarted, however there is still no video stream.
+
+
+
+
+173.15.238.50
+
+ipreview
+
+IPV@2012
+
+
+%m-%d-%y-%H
+
+Cam1_.jpg
+
+Zach:
+Turn Off Dark Images Chaz
+
+
+BankgkokAH	Record Done
+Orange		Record Done SD Done
+1491		Record Done SD Done
+Wyckoff		Record Done SD Done
+715		Record Done SD Done
+Perth		Record Done SD Done
+Plainfield	Record Done SD Done
+
+Macomb
+1970-1
+1970-2
+1970-3
+1970-4
+1970-5

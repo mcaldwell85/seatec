@@ -1,0 +1,820 @@
+1. Authentication 
+Description: 
+Authenticate the caller by checking user name and password. If passed, the API will return a 
+session ID (sid) so that the caller can use the sid for further file operations. 
+ 
+Command: 
+http://IP:8080/cgi-bin/authLogin.cgi?user=${username}&pwd=${encode_string} 
+Parameter Description 
+${username} Login user name 
+${encode_string} Password 
+(Please download “get_sid.js” to get ezEncode function) 
+http://eu1.qnap.com/Storage/SDK/get_sid.js 
+Note: encode_string = ezEncode(utf16to8('${real_password}')) 
+ 
+Example: 
+http://IP:8080/cgi-bin/authLogin.cgi?user=admin&pwd=YWRtaW4%3D 
+(if real_password is "admin", it will be encoded as "YWRtaW4%3D") 
+ 
+Return value: 
+ Example of successful authentication: 
+ <?xml version="1.0" encoding="UTF-8" ?> 
+ <QDocRoot version="1.0"> 
+ <authPassed><![CDATA[1]]></authPassed> 
+ <authSid><![CDATA[ral08opo]]></authSid> <= here is sid 
+ <isAdmin><![CDATA[1]]></isAdmin> 
+ </QDocRoot> 
+ 
+ Example of failed authentication: 
+ <QDocRoot version="1.0"> 
+ <authPassed>0</authPassed> 
+ <errorValue>-1</errorValue> 
+ </QDocRoot> 
+ 
+ 
+ 14. Get Status 
+Description: 
+Get status of folder(s)/file(s), such as file size, privilege…, etc. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=stat 
+&sid=${sid}&path=${path}&file_total=${file_total}&file_name=${file_name} 
+Parameter name Description 
+${path} Folder path. 
+${file_total} Total number of folder/file(s). 
+${file_name} Folder/file name. 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=stat&sid=xxxx&path=/Public&file_tot
+al=2&file_name=folder_name&file_name=file_name 
+ 
+Return value: 
+ Success: 
+{ "total": 1, "acl": 1, "is_acl_enable": 0, "is_winacl_support": 1, 
+"is_winacl_enable": 1, "datas": [ { "filename": "sample008.jpg", "isfolder": 0, "filesize": 
+"51445", "group": "everyone", "owner": "httpdusr", "iscommpressed": 0, "privilege": 
+"776", "filetype": 0, "mt": "2012\/05\/10 14:43:30", "epochmt": 1336632210 } ] } 
+ 
+Fail: 
+ Permission deny 
+{ "status": 4, "success": "true" } 
+
+
+17.5 Get hostname and external IP address 
+Description: 
+Get hostname and external IP address of the NAS. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_domain_ip_list&sid=${sid} 
+ 
+Return Value: 
+ 
+ { 
+ "status": 1, 
+"mycloudnas_hn": "example.mycloudnas.com", 
+"ddns_hn": "example.anydns.com", 
+"external_ip": "123.123.123.123", 
+"local_ip": "192.168.1.101" 
+“host_ip”: “172.17.20.62 
+} 
+Response field: 
+Field Description 
+status 1.(for UI reflash parameter)(donot reload web page) 
+mycloudnas_hn MyCloudNAS name (if the MyCloudNAS was enabled) 
+ddns_hn The hostname of the DDNS service (if the DDNS 
+service was enabled) 
+external_ip External IP address of the NAS 
+local_ip Local (LAN) IP address of the NAS 
+host_ip host IP addresss of the NAS 
+
+
+ 
+ 
+ 2. Create Folder 
+Description: 
+Create a folder in the specified path. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=createdir&sid=${sid}&dest_folder=$
+{dest_folder}&dest_path=${dest_path} 
+Parameter Description 
+${sid} Input sid for authentication 
+${dest_folder} Folder name 
+${dest_path} Path of the folder 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=createdir&sid=xxxxxxxx&dest_folder
+=test&dest_path=/Public 
+Create a folder named “test” in /Public 
+ 
+Return value: 
+Success: 
+{ "status": 1, "success": "true" } 
+Failure: 
+File exists 
+{ "status": 2, "success": "true" } 
+Permission denied 
+{ "status": 4, "success": "true" } 
+
+
+
+8. Download 
+Description: 
+Download a file, a folder, or multiple files as a zip file, a compressed file, or just the same as they 
+are. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=download&sid=${sid}&isfolder= 
+${isfolder}&compress=${compress}&source_path=${source_path}&source_file=${source_file
+}&source_total=${source_total} 
+Parameter name Description 
+${isfolder} The request file is a folder. 1: yes, 0: no. 
+${compress} If the request file is a folder or files then 
+0/1: zip archive only, 2: compress files. 
+else the request file is a single file then 
+0: transfer the original file to client 
+1: zip archive only 
+2:compress files 
+${source_path} Path of the file. Start with the share name. 
+${source_file} File name. 
+${source_total} Total number of files. 
+ 
+Example: 
+Download a single file. 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=download&sid=xxxx&isfolder=0&com
+press=0&source_path=/Public&source_file=test.txt&source_total=1 
+ 
+Download multiple files, it will return an archive zip file. 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=download&sid=xxxx&isfolder=0&sour
+ce_path=/Public&source_file=test.txt&source_file=test2.txt&source_total=2 
+ 
+Return value: 
+ Success: 
+ Return a file for download 
+ Failure: 
+ Return empty contents
+ 
+ 
+ 
+ 9. Get Image Thumbnail 
+Description: 
+Get a size-specified thumbnail of an image file. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/ 
+utilRequest.cgi?func=${func}&sid=${sid}&path=${source_path }&name=${source_file }&size
+=${size} 
+Parameter name Description 
+${func} get_thumb 
+${path} Path of the file. Start with the share name. 
+${name} File name. 
+${size} 80/320/640; default value:320 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi? func=get_thumb& 
+sid=xxxx&path=/Public&name=sample.jpg&size=80 
+get Wx80 or 80xH thumbnail of sample.jpg 
+
+
+
+10. Upload 
+Description: 
+Upload a file. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=${func}&type=${type}&sid=${sid}&
+dest_path=${dest_path}&overwrite=${overwrite}&progress=${progress} 
+Parameter name Description 
+${func} upload 
+${type} standard 
+${dest_path} Destination dir path 
+${overwrite} 1: overwrite, 0: skip 
+${progress} Destination file path, “/” needs to be replaced with “-” 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=upload&type=standard&sid=xxxx&de
+st_path=/Public&overwrite=1&progress=-Public-test.zip 
+Upload test.zip to /Public. If the file exists, overwrite the file. 
+ 
+Return value: 
+ Success: 
+ { "status": 1, "success": “true” } 
+Failure: 
+ Permission denied 
+{ "status": 4, "success": "true" } 
+ 
+Quota limit exceeded 
+{ "status": 9, "success": "true" } 
+
+
+
+11. Open 
+Description: 
+Open a multimedia file stream for viewing or playing. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi/${source_file}?sid=xxxx&func=get_viewer
+&source_path=${source_path}&source_file=${source_file}&player=${player}&rtt=${rtt}form
+at=${format} 
+ 
+Parameter name Description 
+${func} open 
+${source_path} Source dir path 
+${source_file} Source file name 
+${player} Use the jwplayer player or not (1/0) 
+${rtt} 1:FLV for video or music, 3:MP3 for music 
+${format} Video trnascode format type for opening. 
+${format} can be : 
+mp4_360 / mp4_720 / flv_720 
+ 
+Example: 
+http://172.17.20.38:8080/cgi-bin/filemanager/utilRequest.cgi/123.jpg?sid=m3cop5xh&func=g
+et_viewer&source_path=/Download&source_file=123.jpg 
+Open 123.jpg file. 
+ 
+http://172.17.20.38:8080/cgi-bin/filemanager/utilRequest.cgi/Dream.mp4?sid=m3cop5xh&fun
+c=get_viewer&source_path=/Download&source_file=Dream.mp4&format=mp4_360 
+Open Dearm4.mp4 360p formt type media code. 
+ 
+http://172.17.20.38:8080/cgi-bin/filemanager/utilRequest.cgi/123.avi?sid=m3cop5xh&func=g
+et_viewer&source_path=/Download&source_file=123.avi&player=1 
+Open 123.avi with jwplayer. 
+ 
+http://172.17.20.38:8080/cgi-bin/filemanager/utilRequest.cgi/123.avi?sid=m3cop5xh&func=g
+et_viewer&source_path=/Download&source_file=123.avi&rtt=1 
+Open 123.avi with FLV player. 
+ 
+ 
+Return value: 
+ Success: 
+ Return a file for viewer 21 
+ 
+ Failure: 
+ Return empty contents 
+
+
+
+ 12. Get List 
+12.1 Get Folder List 
+Description: 
+Get folder list in a folder, a shared iso, the shared root folder, or the recycle bin. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_tree&sid=${sid}&is_iso=${is_iso
+}&node=${node} 
+ 
+Parameter name Description 
+${is_iso} Is a iso share. 1: yes, 0: no. 
+Default is 0. 
+This value is according to a field “iconCls” in get_tree 
+response. 
+If “iconCls” is “iso”, this value is 1. 
+${node} Target folder path. 
+Use folder path to get folder list, and use the value with 
+„share_root‟ to get share list, or use the value with 
+„recycle_root‟ to get recycle bin share list. 
+ 
+Example: 
+1. Get share list 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_tree&sid=xxxx&is_iso=0&no
+de=share_root 
+ 
+2. Get folder list 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_tree&sid=xxxx&is_iso=0&no
+de=/Public 
+ 
+3. Get folder list (in iso share) 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_tree&sid=xxxx&is_iso=1&no
+de=/folder_name 
+ 
+4. Get recycle bin list 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_tree&sid=xxxx&node=recycl
+e_root 
+ 
+ 
+ 23 
+ 
+Return value: 
+ Success: 
+ [ 
+ { 
+ "text": "Luke", 
+ "id": "\/Luke", 
+ "cls": "w", 
+ "draggable": 0, 
+ "iconCls": "folder", 
+ "noSupportACL": 0 
+ },{ 
+ "text": "android-x86-1.6-r2", 
+ "id": "\/android-x86-1.6-r2", 
+ "cls": "r", 
+ "draggable": 0, 
+ "iconCls": "iso", 
+ "noSupportACL": 0 
+ } 
+] 
+ 
+Response field: 
+Field Description 
+cls Folder permission. r: read only, w: read write 
+iconCls “iso” for iso share 
+noSupportACL 0: support ACL, 1: not support ACL 
+ 
+Fail: 
+ Permission deny 
+{ "status": 4, "success": "true" } 
+
+
+
+12.2 Get File List 
+Description: 
+Retrieve both file and folder list in a specified folder or a shared iso, with filters such as response 
+record count, file type…, etc. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_list&sid=${sid}&is_iso=${is_iso}
+&list_mode=${list_mode}&path=${path}&dir=${dir}&limit=${limit}&sort=${sort}&start=${s
+tart}&hidden_file=${hidden_file}&type=${type}&mp4_360=${mp4_360}&mp4_720=${mp4
+_360}&flv_720=${flv_720}&filename=${filename} 
+Parameter name Description 
+${is_iso} Is a iso share. 1: yes, 0: no 
+${list_mode} Value is “all” 
+${path} Folder path 
+${dir} Sorting direction. ASC: Ascending , DESC: Descending 
+${limit} Number of response datas 
+${sort} Sort field 
+(filename/filesize/filetype/mt/privilege/owner/group) 
+${start} Response data start index 
+${hidden_file} List hidden file or not. 0:donnot list hidden files, 1:list files 
+${type} 1: MUSIC, 2:VIDEO, 3:PHOTO (1/2/3) 
+${mp4_360} Video format type mp4_360 true or not(1/0) 
+${mp4_720} Video format type mp4_720 true or not(1/0) 
+${flv_720} Video format type flv_720 true or not(1/0) 
+${filename} Search video file name 
+ 
+Example 1: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_list&sid=xxxx&is_iso=0&list_mod
+e=all&path=/Public&dir=ASC&limit=20&sort=filename&start=0 
+ 
+Example 2: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_list&sid=xxxx&&path=/Public&dir
+=ASC&limit=20&sort=nartual&start=0&limit=100type=2&flv_720=1&mp4_360=1&filename=D
+ream.mp4 
+(list for type is VIDEO(type=2) and format FLV 720(flv_720=1) or format MP4 360(mp4_360=1) 
+and file name is Dream.mp4(filename=Dream.mp4)) 
+ 
+Return value: 
+ Success: 25 
+ 
+ { 
+ "total": 1, 
+ "acl": 7, 
+ "is_acl_enable": 1, 
+ "is_winacl_support": 1, 
+ "is_winacl_enable": 0, 
+ "rtt_support": 1, 
+ "page": 1, 
+ "datas": [ 
+ { 
+ "filename": "TS-439_20110504-3.5.0.img", 
+ "isfolder": 0, 
+ "filesize": "137595818", 
+ "group": "administrators", 
+ "owner": "admin", 
+ "iscommpressed": 0, 
+ "privilege": "770", 
+ "filetype": 0, 
+ "mt": "2011\/05\/06 14:35:20\n" 
+ "mp4_360": 0, 
+ "mp4_720": 0, 
+ "flv_720": 0 
+ "trnas": 0, 
+ "play": 0 
+ 
+ } 
+ ] 
+} 
+ 
+Response field: 
+Field Description 
+total Total numer. 
+acl ACL permission. 7: read write, 4: read only, 0: deny 
+is_acl_enable ACL if enable. 0: not enable, 1: enable 
+is_winacl_support WIN ACL if support. 0: not support, 1: support 
+is_winacl_enable WIN ACL if enable. 0: not enable, 1: enable 
+rtt_support rtt if support. 0: not support, 1: support 
+page List media type that the file position page(for media 
+type) (for example 2) 
+datas List datas 26 
+ 
+filename File name 
+isfolder 1: folder, 0: file 
+filesize File size. unit: byte 
+filetype 1:MUSIC, 2:VIDEO, 3:PHOTO, 0:undefined 
+group File group 
+owner File owner 
+mp4_360 mp4 360p transcoded media ready or not 
+mp4_720 mp4 720p transcoded media ready or not 
+flv_720 flv 720 transcoded media ready or not 
+trans added transcode or not 
+play Is mp4 video format for playing or not(in the 
+“@Transcode” folder) 
+ 
+Fail: 
+ Permission deny 
+{ "status": 4, "success": "true" } 
+
+
+
+
+13. Delete 
+Description: 
+Delete folder(s)/file(s) in a specified path. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=delete&sid=${sid}&path=${path}&fil
+e_total=${file_total}&file_name=${file_name} 
+Parameter name Description 
+${path} Folder path. 
+${file_total} Total number of folder/file(s). 
+${file_name} Folder/file name. 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=delete&sid=xxxx&path=/Public&file_t
+otal=2&file_name=folder_name&file_name=file_name 
+ 
+Return value: 
+ Success: 
+{ "status": 1, "success": "true" } 
+ 
+Fail: 
+ Permission deny 
+{ "status": 4, "success": "true" } 
+
+
+16. Search 
+Description: 
+Search file/folder by key word within a specified path. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=search&sid=${sid}&keyword=${key
+word}&source_path=${source_path}&dir=${dir}&limit=${limit}&sort=${sort}&start=${start
+} 
+Parameter name Description 
+${is_iso} Is a iso share. 1: yes, 0: no 
+${keyword} keyword 
+${source_path} Folder path 
+${dir} Sorting direction. ASC: Ascending , DESC: Descending 
+${limit} Number of response data 
+${sort} Sort field 
+(filename/filesize/filetype/mt/privilege/owner/group) 
+${start} Response data start index 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=search&sid=xxxx&keyword=keyword
+&source_path=/Public&dir=ASC&limit=20&sort=filename&start=0 
+ 
+Return value: 
+ Success: 
+ { 
+ "total": 1, 
+ "acl": 7, 
+ "is_acl_enable": 1, 
+ "datas": [ 
+ { 
+ "filename": "\/share\/HDA_DATA\/Public\/keyword.txt", 
+ "isfolder": 0, 
+ "filesize": "5818", 
+ "group": "administrators", 
+ "owner": "admin", 
+ "iscommpressed": 0, 
+ "privilege": "770", 
+ "filetype": 0, 
+ "mt": "2011\/05\/06 14:35:20\n" 32 
+ 
+ } 
+ ] 
+} 
+ 
+Response field: 
+Field Description 
+total Total numer. 
+acl ACL permission. 7: read write, 4: read only, 0: deny 
+is_acl_enable ACL if enable. 0: not enable, 1: enable 
+datas List datas 
+filename File name. 
+It must to remove “/share/HDX_DATA/” to display or 
+do any actions. 
+isfolder 1: folder, 0: file 
+filesize File size. unit: byte 
+group File group 
+owner File owner 
+ 
+Fail: 
+ Permission deny 
+{ "status": 4, "success": "true" } 
+
+
+17. Share File 
+17.1 Download shared file 
+Description: 
+Download a shared file by an unique ID (ssid). 
+ 
+Command: 
+http://IP:8080/share.cgi?ssid=${uniqe_id} 
+Parameter name Description 
+${uniqe_id} Use the unique id to download the shared file. 
+ 
+Example: 
+http://IP:8080/share.cgi?ssid=xxxxxxxxxxxxxxxxxx 
+ 
+Return value: 
+ Got the shared file from browser !! 
+ 
+Wirte Log: 
+ [WFM2] Download share file /Public/Interface.txt. From IP : 172.17.20.60. 
+ 
+
+ 
+17.2 Get share link 
+Description: 
+Create share links of specified files, and retrieve or email the links to someone. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_share_link&sid=${sid}&access_c
+ode=${access_code}&access_enabled=${access_enabled}&network_type=${network_type}&
+download_type=${download_type}&ssl=${ssl}&valid_duration=${valid_duration}&day=${da
+y}&hour=${hour}&path=${path}&file_total=${file_total}&file_name=${file_name}&hostnam
+e=${hostname}&addressee=${addressee}&subject=${subject}&content=${content}&include
+_access_code=${include_access_code} 
+Parameter name Description 
+${network_type} internet: from network, local: from local 
+${download_type} create_download_link: create download link, 
+email_download_link: email download link 
+${valid_duration} specific_time: specific the download time, 
+period_of_time: 
+time period, forever: forver download load 
+${hostname} host IP or domain name 
+${day} shared day time if valid_duration=period_of_time 
+${hour} shared hour time if valid_duration=period_of_time 
+${file_total} shared datetime if valid_duration=specific_time 
+${file_name} 0(zero) if valid_duration=forever 
+${path} download file path 
+${ssl} enabled ssl 
+${access_enabled} enable access code 
+${access_code} access code 
+${include_access_code} email contents include access code or not 
+${addressee} get email addressee 
+${subject} get email subject 
+${content} get email content 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_share_link&sid= 
+ahe84nc5&access_code=GolZ9hiI&access_enabled=true&network_type=internet&download_ty
+pe=email_download_link&ssl=true&valid_duration=period_of_time&day=07&hour=00&path=/
+Multimedia/Samples&file_total=1&file_name=sample01.jpg&hostname=172.17.20.62&address
+ee=admin@qnap.com&subject=To Share with 
+You&content=content&include_access_code=true& 35 
+ 
+ 
+Return value: 
+ Check sharing URL response: 
+ { 
+ "status": 1, 
+ "expire_time": 1337310416, 
+ "total": 1, 
+ "count": 0, 
+"limit": 0, 
+"misc": "----", 
+ "links": [ { "filename": "\/Multimedia\/Annekei - Tsuki\/01 - Tsuki.flac", 
+"link_url": "https:\/\/172.17.20.65\/share.cgi?ssid=0BPNigh" } ] 
+} 
+ 
+Response field: 
+Field Description 
+status 1.(for UI reflash parameter)(donot reload web page) 
+expire_time expire time(seconds) 
+total total shared file 
+creator creator 
+count reserved 
+limit reserved 
+misc reserved 
+links link data contents 
+ 
+ 
+17.3 Send share link 
+Description: 
+Create share link and email to someone. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=share_file&sid=${sid}&dowdownload
+_type=${dowdownload_type}&addressee=${addressee}&subject=${subject}&content=${con
+tent}&valid_duration=${valid_duration}&day=${day}&hour=${hour}&file_total=${file_total}
+&access_code=${access_code}&access_enabled=${access_enabled}&hostname=${hostname
+}&ssl=${ssl}&include_access_code=${include_access_code}&file_name=${file_name}&path=
+${path}&network_type=${network_type}&link_url=${link_url}&mail_content_date=${mail_c
+ontent_date}&mail_content_pwd=${mail_content_pwd}&expire_time=${expire_time} 
+Parameter name Description 
+${network_type} internet: from network, local: from local 
+${download_type} create_download_link: create download link, 
+email_download_link: email download link 
+${valid_duration} specific_time: specific the download time, 
+period_of_time: 
+time period, forever: forver download load 
+${hostname} host IP or domain name 
+${day} shared day time if valid_duration=period_of_time 
+${hour} shared hour time if valid_duration=period_of_time 
+${file_total} shared datetime if valid_duration=specific_time 
+${file_name} 0(zero) if valid_duration=forever 
+${path} download file path 
+${ssl} enabled ssl 
+${access_enabled} enable access code 
+${access_code} access code 
+${include_access_code} email contents include access code or not 
+${addressee} get email addressee 
+${subject} get email subject 
+${content} get email content 
+${link_url} internet: from network, local: from local 
+${mail_content_date} mail contents for valid date information 
+${mail_content_pwd} mail contents for password information 
+${expire_time} expire time(seconds) 
+ 
+Example: 37 
+ 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=share_file&sid=ahe84nc5&access_co
+de=GolZ9hiI&access_enabled=true&network_type=internet&download_type=email_download_
+link&ssl=true&valid_duration=period_of_time&day=07&hour=00&path=/Multimedia/Samples&
+file_total=1&file_name=sample01.jpg&hostname=172.17.20.62&addressee=admin@qnap.com
+&subject=To Share with you&content=content& 
+include_access_code=ture&link_url=https://172.17.20.62/share.cgi?ssid=0qvyiuF&mail_conte
+nt_date=Period of validity: 05/18/2012 09:55&mail_content_pwd=Password: 
+Go1Z9hiI&expire_time=1337306140 
+ 
+Return value: 
+ Check email response: 
+ { 
+ "status": 1, 
+ "email_error": 1, 
+} 
+ 
+Response field: 
+Field Description 
+status 1.(for UI reflash parameter)(donot reload web page) 
+email_error 1: error occur. 
+ 
+ 
+ 
+ 
+17.4 Get shared file list 
+Description: 
+Get whole shared file list. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_share_list&sid=${sid}&dir=${dir
+}&limit=${limit}&sort=${sort}&start=${start} 
+Parameter name Description 
+${dir} Sorting direction. ASC: Ascending , DESC: Descending 
+${limit} Number of response data 
+${sort} Sort field 
+(filename/filesize/filetype/mt/privilege/owner/group) 
+${start} Response data start index 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=get_share_list&sid=0QNAP1234&dir=
+ASC&limit=20&sort=filename&start=0 
+ 
+Return value: 
+ Success: 
+ { 
+ “max_share_file”: 1000 
+"total": 1, 
+ "datas": [ 
+ { 
+ "ssid": "0QNAP1234", 
+ "filename": "\/share\/HDA_DATA\/Public\/keyword.txt", 
+ "filesize": "5818", 
+ "filetype": 0, 
+ "download_link": “http://IP:8080/share.cgi?ssid=0QNAP1234”, 
+ “start_time”:1336718447 
+ "expire_time": 1337323247 
+ "addressee": "peterlai@qnap.com", 
+ "creator": "admin", 
+"access_code": "222", 
+"download_count": 4, 
+"download_limit": 0, 
+"misc": "----" 
+ } 
+ ] 
+ 
+} 
+ 
+Response field: 
+Field Description 
+max_share_file Max share file number. 
+total Total numer 
+datas List datas 
+ssid unique primary key 
+filename File name. 
+It must to remove “/share/HDX_DATA/” to display or 
+do any actions. 
+filesize File size. unit: byte 
+filetype reserved 
+download_link http://IP:8080/share.cgi?ssid=xxxxxxxxxxxxxxxxxx 
+start_time sharing start time 
+expire_time expire time 
+addressee email address 
+creator creator 
+access_code access code 
+download_count download counter 
+download_limit download limitation 
+misc reserved 
+
+
+17.6 Stop file(s) sharing 
+Description: 
+Stop specified file(s) sharing. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=delete_share&sid=${sid}&file_total=
+${file_total}&download_link=${download_link}&filename=${file_name} 
+Parameter name Description 
+${file_total} number of total files 
+${download_link} link url 
+${filename} shared file 
+ 
+Return Value: 
+ Time expire: 
+ { 
+ "status": 1, 
+ "success”: ture 
+} 
+ 
+Response field: 
+Field Description 
+status 1.(for UI reflash parameter)(donot reload web page) 
+success delete success 
+
+
+17.7 Stop all file sharing 
+Description: 
+Stop all file sharing. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=delete_share_all&sid=${sid} 
+ 
+Return Value: 
+ Time expire: 
+ { 
+ "status": 1, 
+ "success”: ture 
+} 
+ 
+Response field: 
+Field Description 
+status 1.(for UI reflash parameter)(donot reload web page) 
+success delete success 
+
+
+
+17.8 Update share link 
+Description: 
+Update the attributes of specified share links. 
+ 
+Command: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=update_share_link&sid=${sid}&dowd
+ownload_type=${dowdownload_type}&valid_duration=${valid_duration}&datetime=${dateti
+me}&file_total=${file_total}&access_code=${access_code}&access_enabled=${access_enabl
+ed}&hostname=${hostname}&ssids=${ssids}&ssl=${ssl} 
+Parameter name Description 
+${download_type} create_download_link: create download link, 
+email_download_link: email download link 
+${valid_duration} specific_time: specific the download time, 
+period_of_time: 
+time period, forever: forver download load 
+${hostname} host IP or domain name 
+${datetime} expire sharing time 
+${file_total} shared datetime if valid_duration=specific_time 
+${ssl} enabled ssl 
+${access_enabled} enable access code 
+${access_code} access code 
+${ssids} the ssid of shared files 
+ 
+Example: 
+http://IP:8080/cgi-bin/filemanager/utilRequest.cgi?func=update_share_link&sid=e5866gwo&d
+ownload_type=create_download_link&valid_duration=specific_time&datetime=2012/05/18 
+15:34&file_total=1& 
+access_code=0AUDPsDc&access_enabled=true&hostname=211.75.189.169&ssids=41YzNil&ssl
+=false 
+ 
+Return value: 
+ Check update response: 
+ { 
+ "status": 1, 
+ "success": “true”, 
+} 
+ 
+Response field: 
+Field Description 44 
+ 
+status 1.(for UI reflash parameter)(donot reload web page) 
+success ture/false 

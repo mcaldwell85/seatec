@@ -1,0 +1,12 @@
+http://16060004.axiscam.net:9090/admin-bin/editcgi.cgi?
+/etc/user.task.list
+
+http://16060004.axiscam.net:9090/admin-bin/editcgi.cgi?file=/etc/user.task.list
+
+# Camera restart script (1x per day) 
+time(h(06) m(0) s(0)) immune once % /bin/shttpclient : http://127.0.0.1:9090/axis-cgi/admin/restart.cgi -u root -w admin;
+
+
+
+
+%m-%d-%y-%H

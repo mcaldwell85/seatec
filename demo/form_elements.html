@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=yes" />
+    <title>Syrena Admin Template</title>
+    
+    <!-- fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/app/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/app/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/app/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/app/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/app/ico/favico.png">
+    <link rel="shortcut icon" href="assets/app/ico/favico.ico">
+
+    <!-- theme fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- theme bootstrap stylesheets -->
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- theme dependencies stylesheets -->
+    <link href="assets/app/css/dependencies.css" rel="stylesheet" />
+
+    <!-- theme app main.css (this import of all custom css, you can use requirejs for optimizeCss or grunt to optimize them all) -->
+    <link href="assets/app/css/syrena-admin.css" rel="stylesheet" />
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .controls > input,
+        .controls > select,
+        .controls > .row,
+        .controls > .input-group,
+        .controls > .form-group > .input-group{
+            margin-bottom: 15px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- content wrapper to define fullpage or container -->
+    <!-- (recomended: dont change the id value) -->
+    <section id="wrapper" class="container">
+        <!-- define side left theme -->
+        <aside class="side-left">
+            <!-- side header -->
+            <div class="side-header">
+                <!-- place your brand (recomended: dont change the id value) -->
+                <!-- (recomended: dont change the id value) -->
+                <h1 id="brand" class="brand">
+                    <a href="index.html">
+                        <!-- <i class="icon ion-waterdrop"></i> -->
+                        <img src="assets/app/img/brand.png" alt="Brand">   <!-- 32px image logo -->
+                        Syrena
+                    </a>
+                </h1><!-- /brand -->
+
+                <!-- form search, remove class hide if you not place your brand -->
+                <!-- (recomended: dont change the id value) -->
+                <form id="smart-search" class="side-form hide" role="form">
+                    <input type="text" class="form-control" data-target=".side-wrapper" placeholder="Smart Finder">
+                </form><!-- /side wrapper -->
+            </div><!-- /side header -->
+
+            <!-- side body -->
+            <div class="side-body">
+                <!-- this you can place your search result with ajax -->
+                <div class="side-wrapper side-wrapper-large">
+                    <div class="side-wrapper-status lead">No result, please start typing!</div>
+                    <div class="side-wrapper-result">
+                        <!-- just sample result -->
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar1.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Post title <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar2.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Username <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar3.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Item name <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar4.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Other result <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+
+                        <div class="panel panel-default bordered-none no-radius">
+                            <a href="#" class="panel-body-heading full-line">
+                                <div class="pb-object pb-object-circle pb-object-sm">
+                                    <img src="assets/app/img/avatar5.png" alt="">
+                                </div><!-- /pb-object -->
+                                <h3 class="pb-title pb-title-sm">
+                                    Something else <small>Lorem ipsum dolor sit amet, consectetur</small>
+                                </h3><!-- /pb-title -->
+                            </a><!-- /panel-body-heading -->
+                        </div><!-- /panel -->
+                    </div><!-- /side-wrapper-result -->
+                </div><!-- /side wrapper -->
+
+                <!-- separate nav for ease development -->
+                <nav class="side-nav">
+                    <!-- open nav ul -->
+                    <ul>
+                        <li class="side-nav-item">
+                            <a href="index.html">
+                                <i class="nav-item-icon icon ion-social-rss-outline"></i>
+                                Dashboard
+                            </a>
+                        </li><!-- /coverage -->
+                        <li class="side-nav-item">
+                            <a href="#layouts">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-ios7-monitor-outline"></i>
+                                Layouts
+                            </a>
+                            <ul id="layouts" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Layouts
+                                    </a>
+                                </li><!-- /header layouts child -->
+                                <li class="side-nav-item">
+                                    <a href="layout_blank.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Blank Page
+                                    </a>
+                                </li><!-- /blank -->
+                                <li class="side-nav-item">
+                                    <a href="layout_static.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Static Header App
+                                    </a>
+                                </li><!-- /variation -->
+                                <li class="side-nav-item">
+                                    <a href="layout_variation.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Variation Header App
+                                    </a>
+                                </li><!-- /variation -->
+                                <li class="side-nav-item">
+                                    <a href="layout_transition.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Transition Layout
+                                    </a>
+                                </li><!-- /transition -->
+                                <li class="side-nav-item">
+                                    <a href="layout_magic.html">
+                                        <i class="nav-item-icon icon ion-laptop"></i>
+                                        Magic Layout
+                                    </a>
+                                </li><!-- /magic -->
+                            </ul><!-- /layouts child -->
+                        </li><!-- /layout -->
+                        <li class="side-nav-item">
+                            <a href="messages.html">
+                                <span class="badge">3</span>
+                                <i class="nav-item-icon icon ion-ios7-email-outline"></i>
+                                Messages
+                            </a>
+                        </li><!-- /messages -->
+                        <li class="side-nav-item">
+                            <a href="#uielements">
+                                <span class="badge">7</span>
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-ios7-navigate-outline"></i>
+                                UI Elements
+                            </a>
+                            <!-- ui elements child -->
+                            <ul id="uielements" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        UI Elements
+                                    </a>
+                                </li><!-- /header ui elements child -->
+                                <li class="side-nav-item">
+                                    <a href="components.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-flag-outline"></i>
+                                        General Elements
+                                    </a>
+                                </li><!-- /components -->
+                                <li class="side-nav-item">
+                                    <a href="typography.html">
+                                        <i class="nav-item-icon icon ion-ios7-paperplane-outline"></i>
+                                        Typography
+                                    </a>
+                                </li><!-- /typography -->
+                                <li class="side-nav-item">
+                                    <a href="grids.html">
+                                        <i class="nav-item-icon icon ion-grid"></i>
+                                        Grids
+                                    </a>
+                                </li><!-- /grids -->
+                                <li class="side-nav-item">
+                                    <a href="buttons.html">
+                                        <i class="nav-item-icon icon ion-ios7-circle-outline"></i>
+                                        Buttons
+                                    </a>
+                                </li><!-- /Buttons -->
+                                <li class="side-nav-item">
+                                    <a href="icons.html">
+                                        <i class="nav-item-icon icon ion-ios7-ionic-outline"></i>
+                                        Icons
+                                    </a>
+                                </li><!-- /icons -->
+                                <li class="side-nav-item">
+                                    <a href="nestable_list.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-drag"></i>
+                                        Nestable List
+                                    </a>
+                                </li><!-- /nestable list -->
+                                <li class="side-nav-item">
+                                    <a href="calendar.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-calendar-outline"></i>
+                                        Calendar
+                                    </a>
+                                </li><!-- /calendar -->
+                                <li class="side-nav-item">
+                                    <a href="helper_class.html">
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Helper Class
+                                    </a>
+                                </li><!-- /helper class -->
+                            </ul><!-- /ui elements child -->
+                        </li><!-- /ui elements -->
+                        <li class="side-nav-item">
+                            <a href="#widgets">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-ios7-heart-outline"></i>
+                                Widgets
+                            </a>
+                            <!-- widgets child -->
+                            <ul id="widgets" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Widgets
+                                    </a>
+                                </li><!-- /header pages child -->
+                                <li class="side-nav-item">
+                                    <a href="widget_panels.html">
+                                        <i class="nav-item-icon icon ion-ios7-glasses-outline"></i>
+                                        Panels
+                                    </a>
+                                </li><!-- /panel -->
+                                <li class="side-nav-item">
+                                    <a href="widget_kits.html">
+                                        <i class="nav-item-icon icon ion-ios7-glasses-outline"></i>
+                                        Kits
+                                    </a>
+                                </li><!-- /panel -->
+                                <li class="side-nav-item">
+                                    <a href="widget_tabs.html">
+                                        <i class="nav-item-icon icon ion-ios7-glasses-outline"></i>
+                                        Tabs
+                                    </a>
+                                </li><!-- /panel -->
+                            </ul><!-- /widgets child -->
+                        </li><!-- /widgets -->
+                        <li class="side-nav-item active">
+                            <a href="#forms">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                Forms
+                            </a>
+                            <!-- forms child -->
+                            <ul id="forms" class="side-nav-child open">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Forms
+                                    </a>
+                                </li><!-- /header pages child -->
+                                <li class="side-nav-item active">
+                                    <a href="form_elements.html">
+                                        <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                        Form Elements
+                                    </a>
+                                </li><!-- /form-element -->
+                                <li class="side-nav-item">
+                                    <a href="form_wizard.html">
+                                        <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                        Wizard & Validation
+                                    </a>
+                                </li><!-- /wizard&validation -->
+                                <li class="side-nav-item">
+                                    <a href="form_wysiwyg.html">
+                                        <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                        Wysiwyg
+                                    </a>
+                                </li><!-- /wysiwyg -->
+                                <li class="side-nav-item">
+                                    <a href="form_dropzone.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-compose-outline"></i>
+                                        Dropzone
+                                    </a>
+                                </li><!-- /dropzone -->
+                            </ul><!-- /forms child -->
+                        </li><!-- /forms -->
+                        <li class="side-nav-item">
+                            <a href="tables.html">
+                                <i class="nav-item-icon icon ion-ios7-at-outline"></i>
+                                Tables
+                            </a>
+                        </li><!-- /tables -->
+                        <li class="side-nav-item">
+                            <a href="#charts">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-stats-bars"></i>
+                                Charts
+                            </a>
+                            <!-- charts child -->
+                            <ul id="charts" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Charts
+                                    </a>
+                                </li><!-- /header pages child -->
+                                <li class="side-nav-item">
+                                    <a href="chart_morris.html">
+                                        <i class="nav-item-icon icon ion-arrow-graph-up-right"></i>
+                                        Morris Chart
+                                    </a>
+                                </li><!-- /xChart -->
+                                <li class="side-nav-item">
+                                    <a href="chart_others.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-pie-outline"></i>
+                                        Other Charts
+                                    </a>
+                                </li><!-- /other charts -->
+                            </ul><!-- /charts child -->
+                        </li><!-- /charts -->
+                        <li class="side-nav-item">
+                            <a href="#pages">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-document"></i>
+                                Pages
+                            </a>
+                            <!-- pages child -->
+                            <ul id="pages" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Pages
+                                    </a>
+                                </li><!-- /header pages child -->
+                                <li class="side-nav-item">
+                                    <a href="page_dashboard2.html">
+                                        <i class="nav-item-icon icon ion-ios7-speedometer-outline"></i>
+                                        Dashboard #2
+                                    </a>
+                                </li><!-- /dashboard #2 -->
+                                <li class="side-nav-item">
+                                    <a href="page_profile.html">
+                                        <i class="nav-item-icon icon ion-ios7-person-outline"></i>
+                                        Profile
+                                    </a>
+                                </li><!-- /profile -->
+                                <li class="side-nav-item">
+                                    <a href="page_gallery.html">
+                                        <i class="nav-item-icon icon ion-ios7-albums-outline"></i>
+                                        Gallery
+                                    </a>
+                                </li><!-- /galery -->
+                                <li class="side-nav-item">
+                                    <a href="page_invoice.html">
+                                        <i class="nav-item-icon icon ion-ios7-checkmark-outline"></i>
+                                        Invoice
+                                    </a>
+                                </li><!-- /invoice -->
+                                <li class="side-nav-item">
+                                    <a href="page_pricing.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-briefcase-outline"></i>
+                                        Pricing Table
+                                    </a>
+                                </li><!-- /invoice -->
+                                <li class="side-nav-item">
+                                    <a href="page_help.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Help page
+                                    </a>
+                                </li><!-- /invoice -->
+                                <li class="side-nav-item">
+                                    <a href="page_search.html">
+                                        <span class="badge">New</span>
+                                        <i class="nav-item-icon icon ion-ios7-search-strong"></i>
+                                        Search page
+                                    </a>
+                                </li><!-- /invoice -->
+                                <li class="side-nav-item">
+                                    <a href="page_signin.html">
+                                        <i class="nav-item-icon icon ion-ios7-locked-outline"></i>
+                                        Signin Page
+                                    </a>
+                                </li><!-- /signin -->
+                                <li class="side-nav-item">
+                                    <a href="page_404.html">
+                                        <i class="nav-item-icon icon ion-ios7-minus-outline"></i>
+                                        404 Page
+                                    </a>
+                                </li><!-- /404 -->
+                            </ul><!-- /pages child -->
+                        </li><!-- /pages -->
+                        <li class="side-nav-item">
+                            <a href="#level1">
+                                <span class="badge">4</span>
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon ion-navicon"></i>
+                                Level Menu
+                            </a>
+                            <!-- /level menu child -->
+                            <ul id="level1" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Level Menu
+                                    </a>
+                                </li><!-- /header level menu child -->
+                                <li class="side-nav-item">
+                                    <a href="#">
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Menu
+                                    </a>
+                                </li><!-- /menu -->
+                                <li class="side-nav-item">
+                                    <a href="#level2">
+                                        <i class="nav-item-caret"></i>
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Go to level 2
+                                    </a>
+                                    <ul id="level2" class="side-nav-child">
+                                        <li class="side-nav-item-heading">
+                                            <a href="#" class="side-nav-back">
+                                                <i class="nav-item-caret"></i>
+                                                Go to level 2
+                                            </a>
+                                        </li><!-- /header level2 child -->
+                                        <li class="side-nav-item">
+                                            <a href="#level3">
+                                                <i class="nav-item-caret"></i>
+                                                <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                Go to level 3
+                                            </a>
+                                            <ul id="level3" class="side-nav-child">
+                                                <li class="side-nav-item-heading">
+                                                    <a href="#" class="side-nav-back">
+                                                        <i class="nav-item-caret"></i>
+                                                        Go to level 3
+                                                    </a>
+                                                </li><!-- /header level3 child -->
+                                                <li class="side-nav-item">
+                                                    <a href="#">
+                                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                        List menu
+                                                    </a>
+                                                </li><!-- /list menu -->
+                                                <li class="side-nav-item">
+                                                    <a href="#">
+                                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                        Other list Menu
+                                                    </a>
+                                                </li><!-- /other list menu -->
+                                                <li class="side-nav-item">
+                                                    <a href="#">
+                                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                        Unlimited Menu
+                                                    </a>
+                                                </li><!-- /unlimited menu -->
+                                            </ul><!-- /level3 child -->
+                                        </li><!-- /level3 -->
+                                    </ul><!-- /level2 child -->
+                                </li><!-- /level2 -->
+                                <li class="side-nav-item">
+                                    <a href="#">
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Other menu
+                                    </a>
+                                </li><!-- /other menu -->
+                                <li class="side-nav-item">
+                                    <a href="#otherlevel2">
+                                        <i class="nav-item-caret"></i>
+                                        <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                        Other level 2
+                                    </a>
+                                    <ul id="otherlevel2" class="side-nav-child">
+                                        <li class="side-nav-item-heading">
+                                            <a href="#" class="side-nav-back">
+                                                <i class="nav-item-caret"></i>
+                                                Other level 2
+                                            </a>
+                                        </li><!-- /header other level2 -->
+                                        <li class="side-nav-item">
+                                            <a href="#">
+                                                <i class="nav-item-icon icon ion-ios7-help-outline"></i>
+                                                List menu #other
+                                            </a>
+                                        </li><!-- /other menu #other -->
+                                    </ul><!-- /other level2 child -->
+                                </li><!-- /other level2 -->
+                            </ul><!-- /level menu child -->
+                        </li><!-- /level menu -->
+                    </ul><!-- /nav ul-->
+                </nav>
+
+            </div><!-- /side body -->
+        </aside><!-- /side left -->
+
+        <!-- define content theme, use data-swipe="true" to enable gesture event -->
+        <!-- (recomended: dont change the id value) -->
+        <section id="content" class="content">
+            <!-- define your content header here -->
+            <header class="content-header">
+                <!-- header actions -->
+                <div class="header-actions pull-right">
+                    <!-- (recomended: dont change the id value) -->
+                    <div class="btn-group">
+                        <a id="notif-alerts" class="btn btn-icon hide-sm dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="icon ion-alert-circled"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-extend pull-right" role="menu">
+                            <li class="dropdown-header">Notofications</li><!-- /dropdown-header -->
+                            <li class="notif-minimal">
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-danger">
+                                        <i class="icon ion-ios7-heart-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-danger">Mr. Doe</span> favorite your Post</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-warning">
+                                        <i class="icon ion-ios7-personadd-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-warning">Iin T</span> register as a Member</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-success">
+                                        <i class="icon ion-ios7-heart-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-success">Harab</span> purchase an Item</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-danger">
+                                        <i class="icon ion-ios7-chatbubble-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-danger">Pathoel</span> Comment on your Post</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-info">
+                                        <i class="icon ion-social-twitter-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-info">Imran</span> is now following you</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="#">
+                                    <div class="notif-ico bg-success">
+                                        <i class="icon ion-ios7-cloud-upload-outline"></i>
+                                    </div>
+                                    <p class="notif-text"><span class="text-success">Bent</span> upload new Portofolio</p>
+                                </a><!-- /notif-item -->
+                            </li><!-- /dropdown-alert -->
+                            <li class="dropdown-footer">
+                                <a class="view-all" tabindex="-1" href="#">
+                                    <i class="icon ion-ios7-arrow-thin-right pull-right"></i> See all notifications
+                                </a>
+                            </li><!-- /dropdown-footer -->
+                        </ul><!-- /dropdown-extend -->
+                    </div><!-- /btn-group notifications -->
+
+                    <!-- (recomended: dont change the id value) -->
+                    <div class="btn-group">
+                        <a id="notif-messages" class="btn btn-icon hide-sm dropdown-toggle active" data-toggle="dropdown" role="button">
+                            <i class="icon ion-chatboxes"></i>
+                            <span class="badge">3</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-extend pull-right" role="menu">
+                            <li class="dropdown-header">You have 3 new messages</li><!-- /dropdown-header -->
+                            <li class="notif-media">
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar11.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Account Team <small>58 min</small></h3>
+                                    <p class="notif-text">Spread the Word & Earn!</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar5.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Mahatma, me (6) <small>Wed</small></h3>
+                                    <p class="notif-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar4.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Wrapbootstrap <small>Tue</small></h3>
+                                    <p class="notif-text">Consectetur adipisicing elit. Sequi, pariatur vel eum porro quae! Eos!</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar6.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Stilearning <small>Tue</small></h3>
+                                    <p class="notif-text">Approval for new design</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar9.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">janesmith@mail.com <small>Mon</small></h3>
+                                    <p class="notif-text">Consectetur adipisicing elit. Sequi, pariatur vel eum porro quae! Eos!</p>
+                                </a><!-- /notif-item -->
+                                <a class="notif-item" href="messages.html">
+                                    <div class="notif-img pull-left">
+                                        <img src="assets/app/img/avatar8.png" alt="" class="img-circle" />
+                                    </div>
+                                    <h3 class="notif-heading">Microsoft Customer Support <small>Mon</small></h3>
+                                    <p class="notif-text">Thanks for ordering Windows 8 (order #WD12345678)</p>
+                                </a><!-- /notif-item -->
+                            </li><!-- /dropdown-alert -->
+                            <li class="dropdown-footer">
+                                <a class="view-all" tabindex="-1" href="messages.html">
+                                    <i class="icon ion-ios7-arrow-thin-right pull-right"></i> See all messages
+                                </a>
+                            </li><!-- /dropdown-footer -->
+                        </ul><!-- /dropdown-extend -->
+                    </div><!-- /btn-group new messages -->
+
+                    <!-- (recomended: dont change the id value) -->
+                    <div class="btn-group">
+                        <a id="users-setting" class="btn btn-icon data-toggle" data-toggle="dropdown" role="button">
+                            <i class="icon ion-gear-b"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-extend pull-right" role="menu">
+                            <li class="dropdown-profile">
+                                <div class="dp-cover">
+                                    <img class="img-bg" src="assets/app/img/cover-blur.jpg" alt="">
+                                    <a class="img-avatar" href="page_profile.html">
+                                        <img class="img-circle" src="assets/app/img/avatar4.png" alt="">
+                                    </a>
+                                    <div class="dp-details">Mr. Doe - UI Designer</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">138 <small>Posts</small></a>
+                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">26 <small>Items</small></a>
+                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">570 <small>Follow</small></a>
+                                </div>
+                            </li>
+                            <li class="dropdown-footer">
+                                <div class="clearfix">
+                                    <a href="page_signin.html" class="btn btn-sm btn-default pull-right">Sign out</a>
+                                    <a href="page_profile.html" class="btn btn-sm btn-default pull-left">Profile</a>
+                                </div>
+                            </li><!-- /dropdown-footer -->
+                        </ul><!-- /dropdown-extend -->
+                    </div><!-- /btn-group setting -->
+                    
+                    
+                    <!-- (recomended: dont change the id value) -->
+                    <a id="toggle-aside" class="btn btn-icon" role="button"><i class="icon ion-navicon-round"></i></a>
+                </div><!-- /header actions -->
+
+                <!-- header actions -->
+                <div class="header-actions pull-left">
+                    <!-- (recomended: dont change the id value) -->
+                    <button id="toggle-content" class="btn btn-icon" type="button"><i class="icon ion-navicon-round"></i></button>
+                    <!-- (recomended: dont change the id value) -->
+                    <button id="toggle-search" class="btn btn-icon" type="button"><i class="icon ion-search"></i></button>
+                </div><!-- /header actions -->
+
+                <!-- your Awesome App title -->
+                <h1 class="content-title">Form Elements</h1>
+            </header><!-- /side left -->
+            
+
+            <!-- define content row -->
+            <div class="content-spliter">
+                <!-- define your awesome apps here -->
+                <!-- (recomended: dont change the id value) -->
+                <section id="content-main" class="content-main">
+                    
+                    <!-- your app content -->
+                    <div class="content-app fixed-header">
+                        <!-- app header -->
+                        <div class="app-header">
+                            <div class="pull-right">
+                                <a class="btn btn-default" role="button">Left</a>
+                                <a class="btn btn-default" role="button">Midle</a>
+                                <a class="btn btn-default" role="button">Right</a>
+                            </div>
+                            <ol class="breadcrumb bg-none pull-left hide-xs">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Library</a></li>
+                                <li class="active">Data</li>
+                            </ol>
+                            <!-- <h3 class="app-title">Drop App Modules</h3> -->
+                        </div><!-- /app header -->
+
+                        <!-- app body -->
+                        <div class="app-body">
+                            
+                            <!-- app content here -->
+                            <div class="magic-layout">
+                                <div class="box magic-element width-full">
+                                    <h2 class="box-heading">
+                                        <div class="btn-group pull-right">
+                                            <a href="#" role="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                                                <i class="icon ion-ios7-arrow-down"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a class="form-theme" data-toggle="default" href="#">Default</a></li>
+                                                <li><a class="form-theme" data-toggle="flat" href="#">Flat</a></li>
+                                                <li><a class="form-theme" data-toggle="ion" href="#">Ion</a></li>
+                                                <li class="divider"></li>
+                                                <li><a class="form-theme" data-toggle="flat-ion" href="#">Flat & Ion</a></li>
+                                                <li class="divider"></li>
+                                                <li><a class="form-theme" data-toggle="disabled-fieldset" href="#">Toggle Disable</a></li>
+                                            </ul>
+                                        </div>
+                                        Input Fields
+                                    </h2>
+                                    <form class="form-horizontal" role="form">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="input">Text Input</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="input" placeholder="Username" >
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="inputPass">Password Input</label>
+                                                <div class="col-sm-10">
+                                                    <input type="password" class="form-control" id="inputPass" placeholder="Password" />
+                                                    <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="inputSelect">Selects</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" id="inputSelect">
+                                                        <option>- Select One -</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="inputMultiple">Multiple</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" id="inputMultiple" multiple>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Static control</label>
+                                                <div class="col-sm-10">
+                                                    <p class="form-control-static">email@example.com</p>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Checkboxes</label>
+                                                <div class="col-sm-10">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="checkboxes" value="1"> Option one is this and that
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="checkboxes" value="2"> Be sure to include why it's great
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Inline checkboxes</label>
+                                                <div class="col-sm-10">
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" id="inlineCheckbox1" value="option1"> @bent
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" id="inlineCheckbox2" value="option2"> @Iin
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" id="inlineCheckbox3" value="option3"> @stilearning
+                                                    </label>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Radios</label>
+                                                <div class="col-sm-10">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                                            Option one is this and that—be sure to include why it's great
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                            Option two can be something else and selecting it will deselect option one
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="inputTextarea">Textarea</label>
+                                                <div class="col-sm-10">
+                                                    <textarea rows="3" class="form-control" id="inputTextarea"></textarea>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button type="reset" class="btn btn-default">Reset</button>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                        </fieldset><!-- /fieldset -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Control states</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label for="disabledInput">Disabled input</label>
+                                            <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <label for="disabledSelect">Disabled select menu</label>
+                                            <select id="disabledSelect" class="form-control" disabled>
+                                                <option>Disabled select</option>
+                                            </select>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" disabled> Can't check this
+                                                </label>
+                                            </div>
+                                        </div><!-- /form-group -->
+                                        <div class="form-group has-success">
+                                            <label class="control-label" for="inputSuccess">Input with success</label>
+                                            <input type="text" class="form-control" id="inputSuccess">
+                                        </div><!-- /form-group -->
+                                        <div class="form-group has-warning">
+                                            <label class="control-label" for="inputWarning">Input with warning</label>
+                                            <input type="text" class="form-control" id="inputWarning">
+                                        </div><!-- /form-group -->
+                                        <div class="form-group has-error">
+                                            <label class="control-label" for="inputError">Input with error</label>
+                                            <input type="text" class="form-control" id="inputError">
+                                        </div><!-- /form-group -->
+
+                                        <div class="form-group has-success">
+                                            <label class="control-label" for="addonSucces">States with addon</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">@</span>
+                                                <input type="text" class="form-control" name="addonSucces">
+                                            </div><!-- /input-group -->
+                                        </div><!-- /form-group -->
+                                        <div class="form-group has-warning">
+                                            <label class="control-label" for="addonWarning">States with addon</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">@</span>
+                                                <input type="text" class="form-control" name="addonWarning">
+                                            </div><!-- /input-group -->
+                                        </div><!-- /form-group -->
+                                        <div class="form-group has-error">
+                                            <label class="control-label" for="addonError">States with addon</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">@</span>
+                                                <input type="text" class="form-control" name="addonError">
+                                            </div><!-- /input-group -->
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Control sizing</h2>
+                                    <form role="form">
+                                        <div class="controls">
+                                            <input class="form-control input-lg" type="text" placeholder=".input-lg">
+                                            <input class="form-control" type="text" placeholder="Default input">
+                                            <input class="form-control input-sm" type="text" placeholder=".input-sm">
+
+                                            <select class="form-control input-lg">
+                                                <option>.input-lg</option>
+                                            </select>
+                                            <select class="form-control">
+                                                <option>Default input</option>
+                                            </select>
+                                            <select class="form-control input-sm">
+                                                <option>.input-sm</option>
+                                            </select>
+                                        </div><!-- /controls -->
+                                    </form><!-- /form -->
+
+                                    <h2 class="box-heading">Column sizing</h2>
+                                    <form role="form">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <input type="text" class="form-control" placeholder=".col-xs-6">
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <input type="text" class="form-control" placeholder=".col-xs-6">
+                                            </div>
+                                        </div><!-- /row -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Input groups</h2>
+                                    <form role="form">
+                                        <div class="controls">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">@</span>
+                                                <input type="text" class="form-control" placeholder="Default input">
+                                            </div><!-- /input-group -->
+                                            <div class="input-group input-group-lg">
+                                                <input type="text" class="form-control" placeholder=".input-lg">
+                                                <span class="input-group-addon">.00</span>
+                                            </div><!-- /input-group -->
+                                            <div class="input-group input-group-sm">
+                                                <span class="input-group-addon">$</span>
+                                                <input type="text" class="form-control" placeholder=".input-sm">
+                                                <span class="input-group-addon">.00</span>
+                                            </div><!-- /input-group -->
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <input type="checkbox">
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="Checkbox addon">
+                                            </div><!-- /input-group -->
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <input type="radio">
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="Radio addon">
+                                            </div><!-- /input-group -->
+                                            
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button">Go!</button>
+                                                        </span>
+                                                        <input type="text" class="form-control" placeholder="Button addon">
+                                                    </div><!-- /input-group -->
+                                                </div><!-- /.col-lg-6 -->
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="Button addon">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button">Go!</button>
+                                                        </span>
+                                                    </div><!-- /input-group -->
+                                                </div><!-- /.col-lg-6 -->
+                                            </div><!-- /.row -->
+
+                                            <div class="input-group">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Action</a></li>
+                                                        <li><a href="#">Another action</a></li>
+                                                        <li><a href="#">Something else here</a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#">Separated link</a></li>
+                                                    </ul>
+                                                </div><!-- /btn-group -->
+                                                <input type="text" class="form-control" placeholder="Dropdown addon">
+                                            </div><!-- /input-group -->
+
+                                            <div class="input-group">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" tabindex="-1">Action</button>
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                                                        <span class="caret"/>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="#">Action</a></li>
+                                                        <li><a href="#">Another action</a></li>
+                                                        <li><a href="#">Something else here</a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#">Separated link</a></li>
+                                                    </ul>
+                                                </div>
+                                                <input type="text" class="form-control"/ placeholder="Segmented addon">
+                                            </div>
+                                        </div><!-- /controls -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">With helper class</h2>
+                                    <form role="form">
+                                        <div class="controls">
+                                            <div class="input-group">
+                                                <span class="input-group-addon bg-peterriver">
+                                                    <i class="icon ion-ios7-personadd-outline"></i>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="Username">
+                                            </div><!-- /input-group -->
+                                            <div class="input-group">
+                                                <span class="input-group-addon bg-emerald">
+                                                    <i class="icon ion-ios7-locked-outline"></i>
+                                                </span>
+                                                <input type="password" class="form-control" placeholder="********">
+                                            </div><!-- /input-group -->
+                                            
+                                            <div class="input-group">
+                                                <input type="email" class="form-control bg-cloud" placeholder="email@example.com">
+                                                <span class="input-group-addon bg-orange">.com</span>
+                                            </div><!-- /input-group -->
+                                            <div class="input-group has-error">
+                                                <input type="text" class="form-control bg-cloud" placeholder="Has error state...">
+                                                <span class="input-group-addon bg-alizarin">
+                                                    <input type="checkbox">
+                                                </span>
+                                            </div><!-- /input-group -->
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon bg-amethyst">
+                                                    <i class="icon ion-ios7-personadd-outline"></i>
+                                                </span>
+                                                <input type="text" class="form-control bg-cloud" placeholder="Username">
+                                            </div><!-- /input-group -->
+                                            <div class="input-group">
+                                                <span class="input-group-addon bg-turquoise">
+                                                    <i class="icon ion-ios7-locked-outline"></i>
+                                                </span>
+                                                <input type="password" class="form-control bg-cloud" placeholder="********">
+                                            </div><!-- /input-group -->
+                                        </div><!-- /controls -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Select2</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <select class="select2" style="width:100%">
+                                                <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="HI">Hawaii</option>
+                                                </optgroup>
+                                                <optgroup label="Pacific Time Zone">
+                                                    <option value="CA">California</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="WA">Washington</option>
+                                                </optgroup>
+                                                <optgroup label="Mountain Time Zone">
+                                                    <option value="AZ">Arizona</option>
+                                                    <option value="CO">Colorado</option>
+                                                    <option value="ID">Idaho</option>
+                                                    <option value="MT">Montana</option><option value="NE">Nebraska</option>
+                                                    <option value="NM">New Mexico</option>
+                                                    <option value="ND">North Dakota</option>
+                                                    <option value="UT">Utah</option>
+                                                    <option value="WY">Wyoming</option>
+                                                </optgroup>
+                                            </select>
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <select class="select2" style="width:100%" placeholder="Multiple" multiple>
+                                                <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="HI">Hawaii</option>
+                                                </optgroup>
+                                                <optgroup label="Pacific Time Zone">
+                                                    <option value="CA">California</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="WA">Washington</option>
+                                                </optgroup>
+                                                <optgroup label="Mountain Time Zone">
+                                                    <option value="AZ">Arizona</option>
+                                                    <option value="CO">Colorado</option>
+                                                    <option value="ID">Idaho</option>
+                                                    <option value="MT">Montana</option><option value="NE">Nebraska</option>
+                                                    <option value="NM">New Mexico</option>
+                                                    <option value="ND">North Dakota</option>
+                                                    <option value="UT">Utah</option>
+                                                    <option value="WY">Wyoming</option>
+                                                </optgroup>
+                                            </select>
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                    <h2 class="box-heading">Multiselect</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <select class="multiselect" multiple>
+                                                <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="HI">Hawaii</option>
+                                                </optgroup>
+                                                <optgroup label="Pacific Time Zone">
+                                                    <option value="CA">California</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="WA">Washington</option>
+                                                </optgroup>
+                                                <optgroup label="Mountain Time Zone">
+                                                    <option value="AZ">Arizona</option>
+                                                    <option value="CO">Colorado</option>
+                                                    <option value="ID">Idaho</option>
+                                                    <option value="MT">Montana</option><option value="NE">Nebraska</option>
+                                                    <option value="NM">New Mexico</option>
+                                                    <option value="ND">North Dakota</option>
+                                                    <option value="UT">Utah</option>
+                                                    <option value="WY">Wyoming</option>
+                                                </optgroup>
+                                            </select>
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Tags Input</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <input id="tags-input1" type="text" class="tags" value="foo,bar,baz,roffle" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="tags-input2" type="text" class="tags" value="php,ios,javascript,ruby,android,kindle" />
+                                        </div>
+                                    </form>
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Mask & File Input</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" data-mask="999-99-999-9999" placeholder="Number">
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" data-mask="aaa-aa-aaa-aaaa" placeholder="Letter">
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" data-mask="***-**-***-****" placeholder="Any character">
+                                        </div><!-- /form-group -->
+
+                                        <div class="form-group">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="input-group">
+                                                <div class="form-control uneditable-input span3" data-trigger="fileinput">
+                                                    <i class="glyphicon glyphicon-file fileinput-exists"></i> 
+                                                    <span class="fileinput-filename"></span>
+                                                </div>
+                                                <span class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">Select file</span>
+                                                    <span class="fileinput-exists">Change</span>
+                                                    <input type="file" name="fileinput">
+                                                </span>
+                                                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                                </div>
+                                            </div><!-- /fileinput -->
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <span class="btn btn-ion btn-success btn-file">
+                                                    <span class="fileinput-new">Select file</span>
+                                                    <span class="fileinput-exists">Change</span>
+                                                    <input type="file" name="fileinput-inline">
+                                                </span>
+                                                <span class="fileinput-filename"></span>
+                                                <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                                            </div><!-- /fileinput -->
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                                                <div>
+                                                    <span class="btn btn-ion btn-primary btn-file">
+                                                        <span class="fileinput-new">Select image</span>
+                                                        <span class="fileinput-exists">Change</span>
+                                                        <input type="file" name="fileinput-thumb" accept="image/*">
+                                                    </span>
+                                                    <a href="#" class="btn btn-ion btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                                </div>
+                                            </div><!-- /fileinput -->
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+                                
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">DateTime picker</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' class="form-control" data-format="YYYY/MM/DD" />
+                                                <span class="input-group-addon">
+                                                    <span class="icon ion-ios7-calendar-outline"></span>
+                                                </span>
+                                            </div>
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <div class='input-group date' id='datetimepicker2'>
+                                                <input type='text' class="form-control" placeholder="Disable the date picker" />
+                                                <span class="input-group-addon">
+                                                    <span class="icon ion-ios7-calendar-outline"></span>
+                                                </span>
+                                            </div>
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <div class='input-group date' id='datetimepicker3'>
+                                                <input type='text' class="form-control" data-format="YYYY-MM-DD" placeholder="Disable the time picker" />
+                                                <span class="input-group-addon">
+                                                    <span class="icon ion-ios7-calendar-outline"></span>
+                                                </span>
+                                            </div>
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <input type='text' class="form-control" id='datetimepicker4' placeholder="Without icon">
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Date range picker</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <div class='input-group date'>
+                                                <span class="input-group-addon">
+                                                    <span class="icon ion-ios7-calendar-outline"></span>
+                                                </span>
+                                                <input type='text' class="form-control" id='daterangepicker1' />
+                                            </div>
+                                        </div><!-- /form-group -->
+                                        <div class="form-group">
+                                            <button class="btn btn-flat btn-default" id="daterangepicker2" class="pull-right">
+                                                <span class="icon ion-ios7-calendar-outline"></span>
+                                                <span class="text-date">October 30, 2013 - November 29, 2013</span> 
+                                                <b class="caret"></b>
+                                            </button>
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Color picker</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control colorpicker bscp" value="#8fff00">
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <input type="text" class="form-control colorpicker bscp" value="rgb(0,194,255,0.78)" data-color-format="rgba">
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <div class="input-group colorpicker colorpicker-component bscp">
+                                                            <input type="text" class="form-control" />
+                                                            <span class="input-group-addon">
+                                                                <i></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /form-group -->
+
+                                            <div class="form-group">
+                                                <label for="simpleColorpicker1">Line</label>
+                                                <div class="input-group">
+                                                    <select id="simpleColorpicker1" name="simpleColorpicker1">
+                                                        <option value="#1abc9c">Turquoise</option>
+                                                        <option value="#16a085">Greensea</option>
+                                                        <option value="#f1c40f">Sunflower</option>
+                                                        <option value="#f39c12">Orange</option>
+                                                        <option value="#2ecc71">Emerald</option>
+                                                        <option value="#27ae60">Nephritis</option>
+                                                        <option value="#e67e22">Carrot</option>
+                                                        <option value="#d35400">Pumpkin</option>
+                                                        <option value="#3498db">Peterriver</option>
+                                                        <option value="#2980b9">Belizehole</option>
+                                                    </select>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                            <div class="form-group">
+                                                <label for="simpleColorpicker2">Picker</label>
+                                                <div class="input-group">
+                                                    <select id="simpleColorpicker2" name="simpleColorpicker2">
+                                                        <option value="#1abc9c">Turquoise</option>
+                                                        <option value="#16a085">Greensea</option>
+                                                        <option value="#f1c40f">Sunflower</option>
+                                                        <option value="#f39c12">Orange</option>
+                                                        <option value="#2ecc71">Emerald</option>
+                                                        <option value="#27ae60">Nephritis</option>
+                                                        <option value="#e67e22">Carrot</option>
+                                                        <option value="#d35400">Pumpkin</option>
+                                                        <option value="#3498db">Peterriver</option>
+                                                        <option value="#2980b9">Belizehole</option>
+                                                        <option value="#e74c3c">Alizarin</option>
+                                                        <option value="#c0392b">Pomegranate</option>
+                                                        <option value="#9b59b6">Amethyst</option>
+                                                        <option value="#8e44ad">Wisteria</option>
+                                                        <option value="#ecf0f1">Cloud</option>
+                                                        <option value="#bdc3c7">Silver</option>
+                                                        <option value="#34495e">Wetasphalt</option>
+                                                        <option value="#2c3e50">Midnightblue</option>
+                                                        <option value="#95a5a6">Concrete</option>
+                                                        <option value="#7f8c8d">Asbestos</option>
+                                                    </select>
+                                                </div>
+                                            </div><!-- /form-group -->
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">iCheck - custom checkbox & radio</h2>
+                                    <form role="form">
+                                        <div class="controls">
+                                            <div class="form-group">
+                                                <label>Checkboxes</label>
+                                                <div class="input-group">
+                                                    <input class="iCheck" type="checkbox" checked>
+                                                    <input class="iCheck" data-color="blue" type="checkbox" checked>
+                                                    <input class="iCheck" data-color="red" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="minimal" data-color="green" type="checkbox" checked>
+                                                    <input class="iCheck" data-color="red" type="checkbox" disabled>
+                                                    <input class="iCheck" data-skin="minimal" data-color="green" type="checkbox" checked disabled>
+                                                </div><!-- /input-group -->
+                                                <div class="input-group">
+                                                    <input class="iCheck" data-skin="square" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="square" data-color="blue" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="square" data-color="red" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="square" data-color="green" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="square" data-color="red" type="checkbox" disabled>
+                                                    <input class="iCheck" data-skin="square" data-color="green" type="checkbox" checked disabled>
+                                                </div><!-- /input-group -->
+                                                <div class="input-group">
+                                                    <input class="iCheck" data-skin="flat" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="flat" data-color="blue" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="flat" data-color="red" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="flat" data-color="green" type="checkbox" checked>
+                                                    <input class="iCheck" data-skin="flat" data-color="red" type="checkbox" disabled>
+                                                    <input class="iCheck" data-skin="flat" data-color="green" type="checkbox" checked disabled>
+                                                </div><!-- /input-group -->
+                                                <div class="input-group">
+                                                    <div class="checkbox-line">
+                                                        <input class="iCheck" data-skin="line" type="checkbox" checked>
+                                                        <label>Checkbox 1</label>
+                                                    </div>
+                                                    <div class="checkbox-line">
+                                                        <input class="iCheck" data-skin="line" data-color="blue"  type="checkbox" checked>
+                                                        <label>Checkbox 2</label>
+                                                    </div>
+                                                    <div class="checkbox-line">
+                                                        <input class="iCheck" data-skin="line" data-color="red"  type="checkbox" checked>
+                                                        <label>Checkbox 3</label>
+                                                    </div>
+                                                    <div class="checkbox-line">
+                                                        <input class="iCheck" data-skin="line" data-color="green"  type="checkbox" disabled>
+                                                        <label>Checkbox 4</label>
+                                                    </div>
+                                                    <div class="checkbox-line">
+                                                        <input class="iCheck" data-skin="line" data-color="grey"  type="checkbox" checked disabled>
+                                                        <label>Checkbox 5</label>
+                                                    </div>
+                                                </div><!-- /input-group -->
+                                            </div><!-- /form-group -->
+                                            
+                                            <div class="form-group">
+                                                <label>Radios</label>
+                                                <div class="input-group">
+                                                    <input class="iCheck" name="iradio1" type="radio">
+                                                    <input class="iCheck" name="iradio1" type="radio" checked>
+                                                    <input class="iCheck" name="iradio1" type="radio" disabled>
+                                                    <input class="iCheck" name="iradio1" data-skin="minimal" type="radio">
+                                                </div><!-- /input-group -->
+                                                <div class="input-group">
+                                                    <input class="iCheck" name="iradio2" data-skin="square" data-color="blue" type="radio">
+                                                    <input class="iCheck" name="iradio2" data-skin="square" data-color="blue" type="radio" checked>
+                                                    <input class="iCheck" name="iradio2" data-skin="square" data-color="blue" type="radio" disabled>
+                                                    <input class="iCheck" name="iradio2" data-skin="square" data-color="blue" type="radio">
+                                                </div><!-- /input-group -->
+                                                <div class="input-group">
+                                                    <input class="iCheck" name="iradio3" data-skin="flat" data-color="red" type="radio">
+                                                    <input class="iCheck" name="iradio3" data-skin="flat" data-color="red" type="radio" checked>
+                                                    <input class="iCheck" name="iradio3" data-skin="flat" data-color="red" type="radio" disabled>
+                                                    <input class="iCheck" name="iradio3" data-skin="flat" data-color="red" type="radio">
+                                                </div><!-- /input-group -->
+                                                <div class="input-group">
+                                                    <div class="radio-line">
+                                                        <input class="iCheck" name="iradio4" data-skin="line" data-color="green" type="radio">
+                                                        <label>Radio 1</label>
+                                                    </div>
+                                                    <div class="radio-line">
+                                                        <input class="iCheck" name="iradio4" data-skin="line" data-color="green" type="radio" checked>
+                                                        <label>Radio 2</label>
+                                                    </div>
+                                                    <div class="radio-line">
+                                                        <input class="iCheck" name="iradio4" data-skin="line" data-color="green" type="radio" disabled>
+                                                        <label>Radio 3</label>
+                                                    </div>
+                                                    <div class="radio-line">
+                                                        <input class="iCheck" name="iradio4" data-skin="line" data-color="green" type="radio">
+                                                        <label>Radio 4</label>
+                                                    </div>
+                                                </div><!-- /input-group -->
+                                            </div><!-- /form-group -->
+                                        </div><!-- /controls -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Switcher</h2>
+                                    <form class="form-inline" role="form">
+                                        <div class="form-group">
+                                            <div class="switcher">
+                                                <input type="checkbox" name="switcher1" class="switcher-checkbox" id="switcher1">
+                                                <label class="switcher-label" for="switcher1">
+                                                    <div class="switcher-inner">
+                                                        <div class="switcher-active">
+                                                            <div class="switcher-switch">ON</div>
+                                                        </div>
+                                                        <div class="switcher-inactive">
+                                                            <div class="switcher-switch">OFF</div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div><!-- /switcher -->
+                                        
+                                            <div class="switcher-flat">
+                                                <input type="checkbox" name="switcher2" class="switcher-flat-checkbox" id="switcher2" checked>
+                                                <label class="switcher-flat-label" for="switcher2">
+                                                    <div class="switcher-flat-inner"></div>
+                                                    <div class="switcher-flat-switch"></div>
+                                                </label>
+                                            </div><!-- /switcher-flat -->
+
+                                            <div class="switcher-ion">
+                                                <input type="checkbox" name="switcher3" class="switcher-ion-checkbox" id="switcher3">
+                                                <label class="switcher-ion-label" for="switcher3">
+                                                    <div class="switcher-ion-inner"></div>
+                                                    <div class="switcher-ion-switch"></div>
+                                                </label>
+                                            </div><!-- /switcher-flat -->
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+
+                                <div class="box magic-element">
+                                    <h2 class="box-heading">Switcher Sizing</h2>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <div class="switcher switcher-lg">
+                                                <input type="checkbox" name="switcherSize1" class="switcher-checkbox" id="switcherSize1">
+                                                <label class="switcher-label" for="switcherSize1">
+                                                    <div class="switcher-inner">
+                                                        <div class="switcher-active">
+                                                            <div class="switcher-switch">ON</div>
+                                                        </div>
+                                                        <div class="switcher-inactive">
+                                                            <div class="switcher-switch">OFF</div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div><!-- /switcher -->
+
+                                            <div class="switcher">
+                                                <input type="checkbox" name="switcherSize2" class="switcher-checkbox" id="switcherSize2" checked>
+                                                <label class="switcher-label" for="switcherSize2">
+                                                    <div class="switcher-inner">
+                                                        <div class="switcher-active">
+                                                            <div class="switcher-switch">ON</div>
+                                                        </div>
+                                                        <div class="switcher-inactive">
+                                                            <div class="switcher-switch">OFF</div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div><!-- /switcher -->
+
+                                            <div class="switcher switcher-sm">
+                                                <input type="checkbox" name="switcherSize3" class="switcher-checkbox" id="switcherSize3">
+                                                <label class="switcher-label" for="switcherSize3">
+                                                    <div class="switcher-inner">
+                                                        <div class="switcher-active">
+                                                            <div class="switcher-switch">ON</div>
+                                                        </div>
+                                                        <div class="switcher-inactive">
+                                                            <div class="switcher-switch">OFF</div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div><!-- /switcher -->
+                                        </div><!-- /form-group -->
+
+                                        <div class="form-group">
+                                            <div class="switcher-flat switcher-flat-lg">
+                                                <input type="checkbox" name="switcher-flat1" class="switcher-flat-checkbox" id="switcher-flat1">
+                                                <label class="switcher-flat-label" for="switcher-flat1">
+                                                    <div class="switcher-flat-inner"></div>
+                                                    <div class="switcher-flat-switch"></div>
+                                                </label>
+                                            </div><!-- /switcher-flat -->
+
+                                            <div class="switcher-flat">
+                                                <input type="checkbox" name="switcher-flat2" class="switcher-flat-checkbox" id="switcher-flat2" checked>
+                                                <label class="switcher-flat-label" for="switcher-flat2">
+                                                    <div class="switcher-flat-inner"></div>
+                                                    <div class="switcher-flat-switch"></div>
+                                                </label>
+                                            </div><!-- /switcher-flat -->
+
+                                            <div class="switcher-flat switcher-flat-sm">
+                                                <input type="checkbox" name="switcher-flat3" class="switcher-flat-checkbox" id="switcher-flat3">
+                                                <label class="switcher-flat-label" for="switcher-flat3">
+                                                    <div class="switcher-flat-inner"></div>
+                                                    <div class="switcher-flat-switch"></div>
+                                                </label>
+                                            </div><!-- /switcher-flat -->
+                                        </div><!-- /form-group -->
+
+                                        <div class="form-group">
+                                            <div class="switcher-ion switcher-ion-lg">
+                                                <input type="checkbox" name="switcherIon1" class="switcher-ion-checkbox" id="switcherIon1">
+                                                <label class="switcher-ion-label" for="switcherIon1">
+                                                    <div class="switcher-ion-inner"></div>
+                                                    <div class="switcher-ion-switch"></div>
+                                                </label>
+                                            </div><!-- /switcher-flat -->
+
+                                            <div class="switcher-ion">
+                                                <input type="checkbox" name="switcherIon2" class="switcher-ion-checkbox" id="switcherIon2" checked>
+                                                <label class="switcher-ion-label" for="switcherIon2">
+                                                    <div class="switcher-ion-inner"></div>
+                                                    <div class="switcher-ion-switch"></div>
+                                                </label>
+                                            </div><!-- /switcher-flat -->
+
+                                            <div class="switcher-ion switcher-ion-sm">
+                                                <input type="checkbox" name="switcherIon3" class="switcher-ion-checkbox" id="switcherIon3">
+                                                <label class="switcher-ion-label" for="switcherIon3">
+                                                    <div class="switcher-ion-inner"></div>
+                                                    <div class="switcher-ion-switch"></div>
+                                                </label>
+                                            </div><!-- /switcher-flat -->
+                                        </div><!-- /form-group -->
+                                    </form><!-- /form -->
+                                </div><!-- /box -->
+                            </div><!-- /magic-layout -->
+                            
+                        </div><!-- /app body -->
+                    </div><!-- /content app -->
+
+                </section><!-- /content main -->
+                
+
+                
+                <!-- define your extra apps here -->
+                <!-- (recomended: dont change the id value) -->
+                <section id="content-aside" class="content-aside">
+                    <!-- your module content -->
+                    <div class="content-module fixed-header">
+                        <!-- module header -->
+                        <div class="module-header">
+                            <h3 class="module-title">
+                                <i class="icon ion-ios7-chatboxes-outline"></i> Chats
+                            </h3>
+                        </div><!-- /module header -->
+
+                        <!-- module body -->
+                        <div class="module-body">
+                            
+                            <!-- app module here -->
+                            
+                            <!-- chat module -->
+                            <div class="chats-module">
+                                <div class="cm-contact">
+                                    <div class="cm-contact-separate">Top contacts</div>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar8.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Iin Bent <small>Team Leader</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar1.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Mr. Doe <small>UI Designer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar9.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Yu Darsih <small>Data Analyst</small></p>
+                                    </a>
+
+                                    <div class="cm-contact-separate">More contacts</div>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar2.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Mba Jessica <small>PHP Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar1.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Doel Jony <small>Rubi Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar11.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Yumiko <small>Java Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar4.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Mark Londrian <small>PHP Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar5.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Mahatma <small>PHP Programmer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar6.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Harab <small>Junior Designer</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar7.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Sungep <small>Acountant</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar10.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Pathoel <small>Acountant</small></p>
+                                    </a>
+                                    <a href="#" class="cm-contact-item">
+                                        <div class="cmci-avatar">
+                                            <img src="assets/app/img/avatar6.png" alt="">
+                                        </div>
+                                        <p class="cmci-name">Opytama <small>Data Analyst</small></p>
+                                    </a>
+                                </div><!-- /chat module contact -->
+
+                                <div class="cm-content">
+                                    <a href="#" class="cm-content-heading">
+                                        <h3><i class="icon ion-ios7-arrow-left"></i> Mr. Doe</h3>
+                                    </a><!-- /cm-content-heading -->
+
+                                    <div class="cm-content-chats">
+                                        <div class="chat-in">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar5.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>In eget pellentesque vehicula, quam aliquet turpis convallis</p>
+                                                <time datetime="2013-12-13T20:00">Mr. Doe - 12 min</time>
+                                            </div>
+                                        </div><!-- /chat-in -->
+
+                                        <div class="chat-out">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar4.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>lorem nibh nam suspendisse lacinia</p>
+                                                <time datetime="2013-12-13T20:00">8 min</time>
+                                            </div>
+                                        </div><!-- /chat-out -->
+
+                                        <div class="chat-in">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar5.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>massa cursus auctor urna parturient</p>
+                                                <p>
+                                                    <small><a href="#"><i class="icon ion-paperclip"></i> paperclips.zip</a></small>
+                                                </p>
+                                                <time datetime="2013-12-13T20:00">Mr. Doe - 5 min</time>
+                                            </div>
+                                        </div><!-- /chat-in -->
+
+                                        <div class="chat-out">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar4.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>Great!</p>
+                                                <time datetime="2013-12-13T20:00">4 min</time>
+                                            </div>
+                                        </div><!-- /chat-out -->
+
+                                        <div class="chat-in">
+                                            <div class="chat-avatar">
+                                                <img src="assets/app/img/avatar5.png" title="" />
+                                            </div>
+                                            <div class="chat-msg">
+                                                <p>Pulvinar aute massa amet dapibus, etiam consectetuer consectetuer sagittis, egestas massa nibh vestibulum, sapien in sodales, quisque nec habitasse phasellus ultricies tempus</p>
+                                                <time datetime="2013-12-13T20:00">Mr. Doe - 2 min</time>
+                                            </div>
+                                        </div><!-- /chat-in -->
+                                    </div><!-- /cm-content-chats -->
+
+                                    <div class="cm-content-status">
+                                        <i class="icon ion-chatbubble-working"></i> Mr. Doe is typing...
+                                    </div><!-- /cm-content-status -->
+
+                                    <div class="cm-content-input">
+                                        <form id="frm-send-chat" role="form">
+                                            <button type="button" class="btn btn-lg btn-transparent" title="Attach file">
+                                                <i class="icon ion-paperclip"></i>
+                                            </button>
+                                            <input type="text" name="chat-msg" class="form-control" placeholder="Write a message" />
+                                            <button type="submit" class="btn btn-lg btn-transparent" title="Send">
+                                                <i class="icon ion-ios7-paperplane-outline"></i>
+                                            </button>
+                                        </form>
+                                    </div><!-- /cm-content-input -->
+                                </div><!-- /chat module content -->
+                            </div><!-- /chat module -->
+                            
+                        </div><!-- /module body -->
+                    </div><!-- /content module -->
+                </section><!-- /content asside -->
+            </div><!-- /content spliter -->
+
+        </section><!-- /content -->
+    </section><!-- /wrapper -->
+
+    
+
+
+    <!-- jQuery, theme required for theme -->
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- theme dependencies -->
+    <!-- 
+        Contents List
+        1. Raphaël
+        2. Isotope
+        3. verge
+        4. Moment
+        5. Prettify
+    -->
+    <script src="assets/app/js/dependencies.js"></script>
+        
+        <!-- other dependencies -->
+        <script src="assets/jquery-icheck/jquery.icheck.min.js"></script>
+        <script src="assets/jquery-tags-input/jquery.tagsinput.min.js"></script>
+        <script src="assets/select2/select2.min.js"></script>
+        <script src="assets/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/bootstrap-jasny/js/inputmask.js"></script>
+        <script src="assets/bootstrap-jasny/js/fileinput.js"></script>
+        <script src="assets/moment/moment.min.js"></script>
+        <script src="assets/bootstrap3-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="assets/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="assets/mjaalnir-bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/jquery-simplecolorpicker/jquery.simplecolorpicker.js"></script>
+    
+    <!-- theme app main.js -->
+    <script src="assets/app/js/main.js"></script>
+
+    <!-- theme app demo form_elements.js, remove this from your project -->
+    <script src="assets/app-demo/form_elements.js"></script>
+
+    <script type="text/javascript">
+
+    $(function() {
+        'use strict';
+
+        // checkbox and radio with iCheck
+        // Initialize all components iCheck
+        $('.iCheck').each(function(){
+            // var each element .iCheck
+            var $this = $(this),
+                skin = $this.attr('data-skin'),
+                color = $this.attr('data-color'),
+                checkbox, radio, insert = '';
+
+            /**
+             * default usage skin
+             * 
+             * Skins options:
+             * @data-skin minimalis
+             * @data-skin square
+             * @data-skin flat
+             * @data-skin line
+             * @data-skin polaris
+             * @data-skin futurico
+             */
+            if (skin === undefined) {
+                checkbox = 'icheckbox_minimal';
+                radio = 'iradio_minimal';
+            }
+            else{
+                checkbox = 'icheckbox_' + skin;
+                radio = 'iradio_' + skin;
+            }
+
+            /**
+             * default usage color
+             * 
+             * Available colors:
+             * @data-color black
+             * @data-color red
+             * @data-color green
+             * @data-color blue
+             * @data-color aero
+             * @data-color grey
+             * @data-color orange
+             * @data-color yellow
+             * @data-color pink
+             * @data-color purple
+             */
+            if (color !== undefined) {
+                checkbox = checkbox + '-' + color;
+                radio = radio + '-' + color;
+            }
+
+            // handle iCheck skin 'line'
+            if (skin == 'line') {
+                var label = $this.next(),
+                    label_text = label.text();
+
+                insert = '<div class="icheck_line-icon"></div>' + label_text;
+                label.remove();
+            }
+
+            // initialize
+            $this.iCheck({
+                checkboxClass: checkbox,
+                radioClass: radio,
+                insert: insert,
+                increaseArea: '20%' // optional
+            });
+        }); 
+        // end iCheck
+
+
+
+        // tags input
+        $('#tags-input1').tagsInput({
+            height: "32px",
+            width:'auto',           // support percent (90%)
+        });
+        $('#tags-input2').tagsInput({
+            width:'auto',
+            defaultText: 'Add Tag',
+            onChange: function(elem, elem_tags)
+            {
+                var languages = ['php','ruby','javascript'];
+                $('.tag', elem_tags).each(function()
+                {
+                    if($(this).text().search(new RegExp('\\b(' + languages.join('|') + ')\\b')) >= 0){
+                        $(this).css({
+                            'border-color': '#2980b9',
+                            'background-color': '#3498db',
+                            'color': '#ecf0f1'
+                        });
+                    }
+                });
+            }
+        });
+        // manual style for .tagsinput
+        $('div.tagsinput input').on('focus', function(){
+            var tagsinput = $(this).parent().parent();
+            tagsinput.addClass('focus');
+        }).on('focusout', function(){
+            var tagsinput = $(this).parent().parent();
+            tagsinput.removeClass('focus');
+        });
+        // end tags input
+
+
+
+        // select2
+        $(".select2").select2();
+
+
+        // multiselect
+        $(".multiselect").multiSelect();
+
+
+        // bootstrap3-datetimepicker
+        $('#datetimepicker1').datetimepicker({
+            icons : {
+                time: 'icon ion-ios7-clock-outline',
+                date: 'icon ion-ios7-calendar-outline',
+                up:   'icon ion-ios7-arrow-up',
+                down: 'icon ion-ios7-arrow-down'
+            }
+        });
+        $('#datetimepicker2').datetimepicker({
+            icons : {
+                time: 'icon ion-ios7-clock-outline',
+                date: 'icon ion-ios7-calendar-outline',
+                up:   'icon ion-ios7-arrow-up',
+                down: 'icon ion-ios7-arrow-down'
+            },
+            pickDate: false
+        });
+        $('#datetimepicker3').datetimepicker({
+            icons : {
+                time: 'icon ion-ios7-clock-outline',
+                date: 'icon ion-ios7-calendar-outline',
+                up:   'icon ion-ios7-arrow-up',
+                down: 'icon ion-ios7-arrow-down'
+            },
+            pickTime: false
+        });
+        $('#datetimepicker4').datetimepicker({
+            icons : {
+                time: 'icon ion-ios7-clock-outline',
+                date: 'icon ion-ios7-calendar-outline',
+                up:   'icon ion-ios7-arrow-up',
+                down: 'icon ion-ios7-arrow-down'
+            }
+        });
+        
+        
+
+        // date range picker
+        $('#daterangepicker1').daterangepicker();
+        $('#daterangepicker2').daterangepicker(
+            {
+              ranges: {
+                 'Today': [moment(), moment()],
+                 'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+                 'Last 7 Days': [moment().subtract('days', 6), moment()],
+                 'Last 30 Days': [moment().subtract('days', 29), moment()],
+                 'This Month': [moment().startOf('month'), moment().endOf('month')],
+                 'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+              },
+              startDate: moment().subtract('days', 29),
+              endDate: moment()
+            },
+            function(start, end) {
+                $('#daterangepicker2 .text-date').text(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            }
+        );
+
+
+
+
+        // colorpicker
+        $('.colorpicker').colorpicker();
+        $('#simpleColorpicker1').simplecolorpicker({
+            theme: 'glyphicons'
+        });
+        $('#simpleColorpicker2').simplecolorpicker({
+            picker: true,
+            theme: 'glyphicons'
+        });
+    });
+
+    </script>
+  </body>
+</html>

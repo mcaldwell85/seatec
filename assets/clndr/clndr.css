@@ -1,0 +1,204 @@
+/* Mini Clndr */
+.mini-clndr { 
+  width: 294px; 
+  border-bottom: 2px solid #2980b9;
+}
+.panel .mini-clndr { width: 100%; }
+
+.mini-clndr .clndr {
+  /*border-radius: 3px; enable border radius*/
+  overflow: hidden;
+}
+.mini-clndr .clndr .controls {
+  position: relative;
+  background-color: #2980b9;
+  color: #ecf0f1;
+}
+.mini-clndr .clndr .controls .clndr-previous-button, 
+.mini-clndr .clndr .controls .clndr-next-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-user-select:none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 15px;
+  text-align: center;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+.mini-clndr .clndr .controls .clndr-next-button {
+  left: auto;
+  right: 0;
+}
+.mini-clndr .clndr .controls .clndr-previous-button:hover, 
+.mini-clndr .clndr .controls .clndr-next-button:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.mini-clndr .clndr .controls .month {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.mini-clndr .clndr .days-container {
+  position:relative;
+  display: block;
+  width: 100%;
+}
+.mini-clndr .clndr .days-container .days {
+  position:relative;
+  background-color:#ffffff;
+  width: 100%;
+  -webkit-transition: left 0.5s;
+  -moz-transition: left 0.5s;
+  -ms-transition: left 0.5s;
+  -o-transition: left 0.5s;
+  transition: left 0.5s;
+}
+.mini-clndr .clndr .days-container .days .headers {
+  background-color: #3498db;
+  padding: 5px 0;
+  display: block;
+  width: 100%;
+}
+.mini-clndr .clndr .days-container .days .headers .day-header {
+  color: #ecf0f1;
+  display: inline-block;
+  text-align: center;
+  width: 14.2856%;
+}
+.mini-clndr .clndr .days-container .days .day, 
+.mini-clndr .clndr .days-container .days .empty {
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5); */
+  color: #2c3e50;
+  display: inline-block;
+  padding: 8px 0;
+  text-align: center;
+  width: 14.2856%;
+}
+.mini-clndr .clndr .days-container .days .day.today{
+  background-color: #ecf0f1;
+}
+.mini-clndr .clndr .days-container .days .day.event, 
+.mini-clndr .clndr .days-container .days .empty.event {
+  /*background-color: #D2D2D2;*/
+  cursor: pointer;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -ms-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  color: #3498db;
+}
+.mini-clndr .clndr .days-container .days .circle,
+.mini-clndr .clndr .days-container .days .circle{
+  border-radius: 50%;
+}
+.mini-clndr .clndr .days-container .days .day.event:hover, 
+.mini-clndr .clndr .days-container .days .empty.event:hover {
+  /*background-color: #B8B8B8;*/
+  color: #2980b9;
+}
+.mini-clndr .clndr .days-container .days .day.adjacent-month, 
+.mini-clndr .clndr .days-container .days .empty.adjacent-month {
+  color:rgba(0, 0, 0, 0.298039);
+}
+.mini-clndr .clndr .days-container .days .empty {
+  vertical-align: bottom;
+}
+.mini-clndr .clndr .days-container .events {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  -webkit-transition: left 0.5s;
+  -moz-transition: left 0.5s;
+  -ms-transition: left 0.5s;
+  -o-transition: left 0.5s;
+  transition: left 0.5s;
+  z-index: 2;
+}
+.mini-clndr .clndr .days-container .events .headers {
+  position: relative;
+}
+.mini-clndr .clndr .days-container .events .event-header {
+  background-color: #3498db;
+  color: #ecf0f1;
+  padding: 8px 0;
+  text-align: center;
+  width: 100%;
+}
+.mini-clndr .clndr .days-container .events .x-button {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  cursor: pointer;
+  font-size: .9em;
+  -webkit-transition: color 0.25s;
+  -moz-transition: color 0.25s;
+  -ms-transition: color 0.25s;
+  -o-transition: color 0.25s;
+  transition: color 0.25s;
+}
+.mini-clndr .clndr .days-container .events .x-button.pull-right {
+  clear: both;
+  right: 15px;
+  left: auto;
+}
+.mini-clndr .clndr .days-container .events .x-button:hover {
+  color: #ecf0f1;
+}
+.mini-clndr .clndr .days-container .events .events-list {
+  height: 100%;
+  overflow: auto;
+}
+.mini-clndr .clndr .days-container .events .events-list .event {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.498039);
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-top: 8px;
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  -ms-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+.mini-clndr .clndr .days-container .events .events-list .event:hover {
+  background-color: rgba(0, 0, 0, .075);
+}
+.mini-clndr .clndr .days-container .events .events-list .event a {
+  position: relative;
+  color: #7f8c8d;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-transition: color 0.25s;
+  -moz-transition: color 0.25s;
+  -ms-transition: color 0.25s;
+  -o-transition: color 0.25s;
+  transition: color 0.25s;
+}
+.mini-clndr .clndr .days-container .events .events-list .event a:hover {
+  color: inherit;
+}
+.mini-clndr .clndr .days-container.show-events .days {
+  /*left:-294px;*/
+}
+.mini-clndr .clndr .days-container.show-events .events {
+  left: 0;
+  right: auto;
+}

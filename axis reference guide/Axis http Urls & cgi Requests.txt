@@ -1,0 +1,52 @@
+Get Entire camera parameter list: (From here you can see all the different types requests)
+http://16060012.axiscam.net:9090/axis-cgi/admin/param.cgi?action=list
+
+Live View:
+http://16060012.axiscam.net:9090/axis-cgi/mjpg/video.cgi?camera=1
+
+Get Type/Model of Camera:
+http://19700001a.axiscam.net:90/axis-cgi/admin/param.cgi?action=list&group=Brand.ProdNbr
+
+Get Camera Date/Time:
+http://<servername>/axis-cgi/admin/date.cgi?action=get
+
+Get Camera IP Address:
+http://16060012.axiscam.net:9090/axis-cgi/admin/getparam.cgi?Network.IPAddress
+
+Soft Factory Default Camera: (Retains Network IP Settings)
+http://16060012.axiscam.net:9090/axis-cgi/admin/factorydefault.cgi
+
+Hard Factory Default: (Complete Factory reset)
+http://<servername>/axis-cgi/admin/hardfactorydefault.cgi
+
+Restart Camera:
+http://16060012.axiscam.net:9090/axis-cgi/admin/restart.cgi
+
+Get Video Status Of Encoder: (Video1-4)
+http://16060012.axiscam.net:9090/axis-cgi/view/videostatus.cgi?status=1,2,3,4
+
+Get a jpeg Snapshot of Camera 1 (640x480)
+http://16060012.axiscam.net:9090/axis-cgi/jpg/image.cgi?resolution=640x480&camera=1
+
+Get a jpeg thumbnail of Camera 1:
+http://16060012.axiscam.net:9090/axis-cgi/jpg/image.cgi?resolution=160x120&camera=1
+
+PTZ Controls:
+http://<servername>/axis-cgi/com/ptz.cgi?move=home,up,down,left,right,upleft,upright,downleft,downright
+		pan=-180, tilt=180, zoom=1-9999, autofocus=on/off, continouspantiltmove=-100,100
+		setdevicepresetno=1,2,3,4,5,6,7,8,9 (Set current position as preset)
+		gotodevicepresetname=1,2,3,etc
+
+Regquest Audio Stream:
+http://<servername>/axis-cgi/audio/receive.cgi
+
+
+Dynamic text overlay:
+
+http://16800001a.axiscam.net:9080/axis-cgi/dynamicoverlay.cgi?action=settext&text=MCaldwell-Trans20034-$7.96
+http://<servername>/axis-cgi/dynamicoverlay.cgi?action=gettext
+http://<servername>/axis-cgi/dynamicoverlay.cgi?text=
+http://<servername>/axis-cgi/dynamicoverlay.cgi?camera=
+
+
+

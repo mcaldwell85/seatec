@@ -1,0 +1,75 @@
+/**
+ * main-desktop.css v1.1
+ * Syrena admin template
+ *
+ * License:
+ * For License Information check out - https://wrapbootstrap.com
+ * 
+ * Copyright 2014, Stilearning
+ * http://stilearning.com
+ */
+
+
+/* Small Desktop */
+@media (max-width: 1280px) {
+	/**
+	 * Theme Split Layout
+	 * We use fixe mode layout width every section inside wrapper
+	 */
+	.content-main.content-main-md{
+		-ms-transform: translateX(-300px);
+		-webkit-transform: translateX(-300px);
+		-moz-transform: translateX(-300px);
+		transform: translateX(-300px);
+		right: -1px;
+	}
+
+	.center-box{
+		width: 85%;
+		min-width: 85%;
+	}
+
+	/**
+	 * Visibility class
+	 */
+	.view-lg{ display: inline; } 	/* visible from 1280  */
+	.view-md{ display: none; } 		/* visible from 767  */
+	.view-sm{ display: none; } 		/* visible from 480  */
+}
+
+/* Landscape tablet to old desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+	/* Gallery page */
+	.gallery-item-caption{
+		right: 0;
+	}
+	.gallery-item-caption.open{
+		-webkit-transform: translateX(-300px);
+		-moz-transform: translateX(-300px);
+		-ms-transform: translateX(-300px);
+		-o-transform: translateX(-300px);
+		transform: translateX(-300px);
+	}
+	.gi-caption-close{
+		right: 60px;
+	}
+	.gi-toggle-details{
+		display: block;
+	}
+	.gallery-item-caption .panel{
+		-webkit-transform: translateX(300px);
+		-moz-transform: translateX(300px);
+		-ms-transform: translateX(300px);
+		-o-transform: translateX(300px);
+		transform: translateX(300px);
+	}
+	/* Gallery page */
+	
+	
+	/**
+	 * Visibility class
+	 */
+	.view-lg{ display: inline; } 	/* visible from 1280  */
+	.view-md{ display: none; } 	/* visible from 767  */
+	.view-sm{ display: none; } 	/* visible from 480  */
+}

@@ -1,0 +1,27 @@
+Set Resolution to 320x240:
+http://myserver/axis-cgi/param.cgi?action=update&Image.I0.Resolution=320x240
+
+Set the maximum number of viewers to 5: 
+http://myserver/axis-cgi/param.cgi?action=update&Image.MaxViewers=5
+
+Create a new user account:
+http://19700001d.axiscam.net:93/axis-cgi/pwdgrp.cgi?action=add&user=user&pwd=user&grp=users&sgrp=viewer&comment=User
+
+Create a new event under the group Event; use H.264, set the name to “My Event” 
+and the Enabled parameter to yes. 
+http://myserver/axis-cgi/param.cgi?action=add 
+&group=Event&template=event 
+&Event.E.Name=Cam1Monitoring
+&Event.E.Enabled=yes 
+&Event.E.VideoFormat=mjpeg
+Example 2: A listing of the new group will output the following. 
+root.Event.E0.Name=My Event 
+root.Event.E0.Type=T 
+root.Event.E0.Enabled=yes 
+root.Event.E0.Priority=1 
+root.Event.E0.Image=0 
+root.Event.E0.HWInputs=xxxx 
+root.Event.E0.SWInput= 
+root.Event.E0.Weekdays=1111111 
+root.Event.E0.Starttime=00:00 
+VAPIX® HTTP API       17
